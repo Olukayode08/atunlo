@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import bg from '../assets/bg.png'
+import bg from '../assets/images-img-3.png'
+import { bgslider } from '../data'
 
 const Hero = () => {
+  const [currentSlide, SetcurrentSlide] = useState(0)
+  const bgImageStyle = {
+    backgroundImage: `url(${bgslider[1].url})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    height: '100%',
+  }
   return (
     <>
       <Wrapper>
         <main>
-          <div className='bg-img'></div>
+          <div style={bgImageStyle} className='bg-img'></div>
           <div className='bg-text'>
             <h1>
               Together, we can <br></br> restore the planet
@@ -28,6 +36,8 @@ const Hero = () => {
   )
 }
 const Wrapper = styled.section`
+height: 100vh;
+  /* background-color: #333; */
   main {
     color: #fff;
     display: flex;
@@ -35,21 +45,21 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
     margin: 0 0 50px 0;
+    height: 100vh;
+    position: relative;
   }
-  .bg-img {
+  /* .bg-img {
+    position: relative;
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 90vh;
     width: 100%;
-    filter: blur(3px);
-    backdrop-filter: blur(3px);
-    -webkit-filter: blur(3px);
-  }
+  } */
   .bg-text {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
@@ -78,7 +88,7 @@ const Wrapper = styled.section`
   p {
     border: 2px solid #4cc800;
     color: #4cc800;
-    width: 170px;
+    width: 190px;
     font-size: 18px;
     text-align: center;
     padding: 10px;

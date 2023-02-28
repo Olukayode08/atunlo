@@ -1,12 +1,27 @@
-import GoalOne from './assets/Sustainable_Development_Goal_01NoPoverty 1.png'
-import GoalTwo from './assets/Sustainable_Development_Goal_4 1.png'
-import GoalThree from './assets/Sustainable_Development_Goal_6 1.png'
-import GoalFour from './assets/Sustainable_Development_Goal_12 1.png'
-import GoalFive from './assets/Sustainable_Development_Goal_14 1.png'
+import GoalOne from './assets/Group-31.png'
+import GoalTwo from './assets/Group-30.png'
+import GoalThree from './assets/Group-28.png'
+import GoalFour from './assets/Group-27.png'
+import GoalFive from './assets/Group-26.png'
 import Pickup from './assets/logistics.png'
 import Dropoff from './assets/corporate.png'
 import Services from './assets/recycle-bin.png'
+import bgOne from './assets/images-img-3.png'
+import bgTwo from './assets/images-img-7.png'
+import bgThree from './assets/images-img-6.png'
 
+// IMAGE SLIDER
+export const bgslider = [
+  {
+    url: './assets/images-img-6.png',
+  },
+  {
+    image: './assets/images-img-7.png',
+  },
+  {
+    image: './assets/images-img-6.png',
+  },
+]
 // OUR VALUE PROPOSITIONS
 export const valueProposition = [
   {

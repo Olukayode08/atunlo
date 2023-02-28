@@ -41,6 +41,8 @@ const SectionThree = () => {
   )
 }
 const Wrapper = styled.section`
+  background-color: #333;
+
   main {
     display: flex;
     position: relative;
@@ -56,9 +58,9 @@ const Wrapper = styled.section`
     height: 100vh;
     width: 100%;
     margin: auto;
-    filter: blur(5px);
-    backdrop-filter: blur(5px);
-    -webkit-filter: blur(5px);
+    /* filter: blur(5px); */
+    /* backdrop-filter: blur(5px); */
+    /* -webkit-filter: blur(5px); */
   }
   .bg-text {
     position: absolute;
@@ -82,6 +84,7 @@ const Wrapper = styled.section`
       color: #4cc800;
       font-size: 25px;
       line-height: 30px;
+      font-weight: 600;
     }
     p {
       color: #fff;
@@ -121,7 +124,7 @@ const Wrapper = styled.section`
       margin: 4px;
     }
     img {
-      width: 18%;
+      width: 14%;
     }
     p {
       font-size: 15px;
@@ -170,7 +173,7 @@ const Wrapper = styled.section`
     .bg-text {
       width: 90%;
     }
-    .brief-desc{
+    .brief-desc {
       width: 93%;
     }
     .value-prop {

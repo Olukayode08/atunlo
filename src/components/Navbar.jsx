@@ -1,15 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { Squash as Hamburger } from 'hamburger-react'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
-import { Link } from 'react-scroll'
-import { RiArrowDownSLine } from 'react-icons/ri'
-
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import logo from '../assets/Atunlo full logo (black+green).png'
 
 const Navbar = () => {
-  let navigate = useNavigate()
 
   const { active, setActive, toggle } = useContext(Atunlo)
   return (
@@ -17,92 +13,32 @@ const Navbar = () => {
       <section>
         <Wrapper>
           <nav>
-            <img src={logo} alt='Atunlo' />
+            <Link to='/' className='navbar-logo'>
+              <img src={logo} alt='Atunlo' />
+            </Link>
             <ul className='links'>
               <li className='desktop-links'>
-                <p
-                  onClick={() => {
-                    navigate('/')
-                  }}
-                >
+                <Link className='link' to='/'>
                   Home
-                </p>
+                </Link>
               </li>
               <li className='desktop-links'>
-                <p>Services +</p>
-                <ul className='navigate'>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/pickup')
-                      }}
-                    >
-                      Pickup
-                    </p>
-                  </li>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/dropoff')
-                      }}
-                    >
-                      Dropoff
-                    </p>
-                  </li>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/corporate')
-                      }}
-                    >
-                      Corporate
-                    </p>
-                  </li>
-                </ul>
+                <Link className='link' to='/services'>
+                  Services +
+                </Link>
               </li>
               <li className='desktop-links'>
-                <p>About</p>
-                <ul className='navigate'>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/ourstory')
-                      }}
-                    >
-                      Our story
-                    </p>
-                  </li>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/ourteam')
-                      }}
-                    >
-                      Our Team
-                    </p>
-                  </li>
-                </ul>
+                <Link className='link' to='/about'>
+                  About +
+                </Link>
               </li>
               <li className='desktop-links'>
-                <p
-                  onClick={() => {
-                    navigate('/contact')
-                  }}
-                >
+                <Link className='link' to='/contact'>
                   Contact
-                </p>
+                </Link>
               </li>
               <li className='desktop-links'>
-                <Link
-                  to='faqs'
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  onClick={() => {
-                    navigate('/')
-                  }}
-                >
+                <Link className='link' to='/'>
                   FAQ
                 </Link>
               </li>
@@ -120,91 +56,19 @@ const Navbar = () => {
           <div className={active ? 'open-links' : 'close-links'}>
             <ul className='mobile-link'>
               <li className='mobile-links'>
-                <p
-                  onClick={() => {
-                    navigate('/')
-                  }}
-                >
-                  Home
-                </p>
+                <Link to='/'>Home</Link>
               </li>
               <li className='mobile-links'>
-                <p>Services</p>
-                <ul className='navigate'>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/pickup')
-                      }}
-                    >
-                      Pickup
-                    </p>
-                  </li>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/dropoff')
-                      }}
-                    >
-                      Dropoff
-                    </p>
-                  </li>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/corporate')
-                      }}
-                    >
-                      Corporate
-                    </p>
-                  </li>
-                </ul>
+                <Link to='/services'>Services +</Link>
               </li>
               <li className='mobile-links'>
-                <p>About</p>
-                <ul className='navigate'>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/ourstory')
-                      }}
-                    >
-                      Our story
-                    </p>
-                  </li>
-                  <li>
-                    <p
-                      onClick={() => {
-                        navigate('/ourteam')
-                      }}
-                    >
-                      Our Team
-                    </p>
-                  </li>
-                </ul>
+                <Link to='/about'>About +</Link>
               </li>
               <li className='mobile-links'>
-                <p
-                  onClick={() => {
-                    navigate('/contact')
-                  }}
-                >
-                  Contact
-                </p>
+                <Link to='/contact'>Contact</Link>
               </li>
               <li className='mobile-links'>
-                <Link
-                  to='faqs'
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  onClick={() => {
-                    navigate('/')
-                  }}
-                >
-                  FAQ
-                </Link>
+                <Link to='/'>FAQ</Link>
               </li>
             </ul>
           </div>
