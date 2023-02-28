@@ -1,8 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Squash as Hamburger } from 'hamburger-react'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
 import { Link } from 'react-scroll'
+import { RiArrowDownSLine } from 'react-icons/ri'
+
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/Atunlo full logo (black+green).png'
 
@@ -27,42 +29,59 @@ const Navbar = () => {
                 </p>
               </li>
               <li className='desktop-links'>
-                <p
-                  onClick={() => {
-                    navigate('/services')
-                  }}
-                >
-                  Services +
-                </p>
-                {/* <ul className='navigate'>
+                <p>Services +</p>
+                <ul className='navigate'>
                   <li>
-                    <p>Pickup</p>
+                    <p
+                      onClick={() => {
+                        navigate('/pickup')
+                      }}
+                    >
+                      Pickup
+                    </p>
                   </li>
                   <li>
-                    <p>Pickup</p>
+                    <p
+                      onClick={() => {
+                        navigate('/dropoff')
+                      }}
+                    >
+                      Dropoff
+                    </p>
                   </li>
                   <li>
-                    <p>Pickup</p>
+                    <p
+                      onClick={() => {
+                        navigate('/corporate')
+                      }}
+                    >
+                      Corporate
+                    </p>
                   </li>
-                </ul> */}
+                </ul>
               </li>
               <li className='desktop-links'>
-                <p
-                  onClick={() => {
-                    navigate('/about')
-                  }}
-                >
-                  About
-                </p>
-                {/* <ul className='navigate'>
+                <p>About</p>
+                <ul className='navigate'>
                   <li>
-                    <p>Our story</p>
+                    <p
+                      onClick={() => {
+                        navigate('/ourstory')
+                      }}
+                    >
+                      Our story
+                    </p>
                   </li>
                   <li>
-                    <p>Our Team</p>
+                    <p
+                      onClick={() => {
+                        navigate('/ourteam')
+                      }}
+                    >
+                      Our Team
+                    </p>
                   </li>
-
-                </ul> */}
+                </ul>
               </li>
               <li className='desktop-links'>
                 <p
@@ -110,22 +129,59 @@ const Navbar = () => {
                 </p>
               </li>
               <li className='mobile-links'>
-                <p
-                  onClick={() => {
-                    navigate('/services')
-                  }}
-                >
-                  Services
-                </p>
+                <p>Services</p>
+                <ul className='navigate'>
+                  <li>
+                    <p
+                      onClick={() => {
+                        navigate('/pickup')
+                      }}
+                    >
+                      Pickup
+                    </p>
+                  </li>
+                  <li>
+                    <p
+                      onClick={() => {
+                        navigate('/dropoff')
+                      }}
+                    >
+                      Dropoff
+                    </p>
+                  </li>
+                  <li>
+                    <p
+                      onClick={() => {
+                        navigate('/corporate')
+                      }}
+                    >
+                      Corporate
+                    </p>
+                  </li>
+                </ul>
               </li>
               <li className='mobile-links'>
-                <p
-                  onClick={() => {
-                    navigate('/about')
-                  }}
-                >
-                  About
-                </p>
+                <p>About</p>
+                <ul className='navigate'>
+                  <li>
+                    <p
+                      onClick={() => {
+                        navigate('/ourstory')
+                      }}
+                    >
+                      Our story
+                    </p>
+                  </li>
+                  <li>
+                    <p
+                      onClick={() => {
+                        navigate('/ourteam')
+                      }}
+                    >
+                      Our Team
+                    </p>
+                  </li>
+                </ul>
               </li>
               <li className='mobile-links'>
                 <p
@@ -228,12 +284,12 @@ const Wrapper = styled.section`
       transition: all 0.3s ease-in;
     }
   }
-  .navigate{
+  /* .navigate {
     position: absolute;
     left: 0;
     width: 200px;
     background: #fff;
-  }
+  } */
   @media screen and (min-width: 1100px) {
     .open-links,
     .mobile {

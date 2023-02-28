@@ -16,11 +16,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        {/* <Route path='/services' element={<PickupServices />} /> */}
-        {/* <Route path='/services' element={<DropoffServices />} /> */}
-        <Route path='/services' element={<CorporateServices />} />
-        <Route path='/about' element={<StoryAbout />} />
-        <Route path='/about' element={<TeamAbout />} />
+        <Route path='/pickup' element={<PickupServices />} />
+        <Route path='/dropoff' element={<DropoffServices />} />
+        <Route path='/corporate' element={<CorporateServices />} />
+        <Route path='/ourstory' element={<StoryAbout />} />
+        <Route path='/ourteam' element={<TeamAbout />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
       <OurPartners />
