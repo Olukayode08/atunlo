@@ -1,0 +1,220 @@
+import React from 'react'
+import styled from 'styled-components'
+import LogoBlack from '../assets/Atulo full logo (white+green).png'
+import { FooterAtunlo } from '../data'
+import Twitter from '../assets/Twitter Squared.png'
+import Instagram from '../assets/Instagram.png'
+import Linkedin from '../assets/LinkedIn.png'
+import Mail from '../assets/Mail.png'
+
+const Footer = () => {
+  return (
+    <>
+      <Wrapper>
+        <footer>
+          <div className='footer-content'>
+            <img src={LogoBlack} alt='Atunlo' />
+            <p>“The art of recycling”</p>
+          </div>
+          <div className='footer'>
+            {FooterAtunlo.map((data) => {
+              const { id, text, link1, link2, link3, link4 } = data
+              return (
+                <main className='footer-content' key={id}>
+                  <h1>{text}</h1>
+                  <p>{link1}</p>
+                  <p>{link2}</p>
+                  <p>{link3}</p>
+                  <p>{link4}</p>
+                </main>
+              )
+            })}
+          </div>
+        </footer>
+        <section>
+          <div>
+            <h5>
+              *Subscribe to our newsletter to receive news and updates from
+              Atunlo
+            </h5>
+            <div className='subscribe'>
+              <input type='email' required placeholder='Your Email' />
+              <button>Subscribe</button>
+            </div>
+          </div>
+          <div className='treegar'>
+            <h3>t </h3>
+            <h6>A member of the <br /> Treegar Group</h6>
+          </div>
+        </section>
+        <article>
+          <div className='copyright'>
+            <h3>Copyright 2023 @ Atunlotech. All rights reserved.</h3>
+            <h3>Privacy Policy</h3>
+            <h3>Terms of Service</h3>
+            <h3>Cookies Setting</h3>
+          </div>
+          <div>
+            <img src={Twitter} alt='Atunlo-Twitter' />
+            <img src={Instagram} alt='Atunlo-Instagram' />
+            <img src={Linkedin} alt='Atunlo-Linkedin' />
+            <img src={Mail} alt='Atunlo-Mail' />
+          </div>
+        </article>
+      </Wrapper>
+    </>
+  )
+}
+const Wrapper = styled.section`
+  background: #000;
+  padding: 20px;
+  color: #fff;
+  footer {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .footer {
+    display: flex;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: left;
+    h1 {
+      color: #4cc800;
+      font-size: 19px;
+      padding: 10px 0;
+    }
+    p {
+      font-size: 15px;
+      padding: 10px 0;
+    }
+  }
+  section {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  h5 {
+    color: #8a8a8a;
+  }
+  .subscribe {
+    display: flex;
+    border-radius: 3px;
+    background: #fff;
+    width: 400px;
+    padding-left: 14px;
+    height: 38px;
+    margin: 20px auto;
+    input {
+      width: 250px;
+      height: 37px;
+      border: none;
+      outline: 0;
+      font-family: inherit;
+      ::placeholder {
+        font-size: 15px;
+        font-family: inherit;
+      }
+    }
+    button {
+      border: none;
+      text-align: center;
+      background: #4cc800;
+      color: #fff;
+      border-radius: 3px;
+      font-size: 18px;
+      width: 150px;
+      height: 38px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+  }
+  .treegar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      color: #4cc800;
+      font-size: 40px;
+      padding-right: 5px;
+    }
+    h6 {
+      font-size: 10px;
+      color: #8a8a8a;
+    }
+  }
+
+  article {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 30px 0 10px 0;
+    border-top: 2px solid #8a8a8a;
+    width: 95%;
+  }
+  img {
+    padding: 0 5px;
+  }
+  .copyright {
+    display: flex;
+    h3 {
+      padding: 10px;
+      color: #8a8a8a;
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    footer,
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-content {
+      text-align: center;
+    }
+    article,
+    section {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+    .copyright {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .subscribe {
+      width: 300px;
+      input {
+        width: 200px;
+      }
+      button {
+        width: 100px;
+        font-size: 15px;
+      }
+    }
+    h5 {
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 290px) {
+    .subscribe {
+      width: 270px;
+      input {
+        width: 180px;
+      }
+      button {
+        width: 90px;
+        font-size: 15px;
+      }
+    }
+  }
+`
+export default Footer

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Cormorant Garamond', serif;
+}
+/* @font-face{
+  font-family:Imported;
+  src: url(./fonts/FilsonProBlack.ttf);
+  src: url(./fonts/FilsonProRegular.ttf);
+  src: url(./fonts/FilsonProMedium.ttf);
+  src: url(./fonts/FilsonProLight.otf);
+  src: url(./fonts/FilsonProBold.otf);
+
+
+}
+::root{
+  font-family:Imported;
+} */
