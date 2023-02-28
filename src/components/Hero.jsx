@@ -6,7 +6,7 @@ import { bgslider } from '../data'
 const Hero = () => {
   const [currentSlide, SetcurrentSlide] = useState(0)
   const bgImageStyle = {
-    backgroundImage: `url(${bgslider[1].url})`,
+    backgroundImage: `url(${bgslider[currentSlide].url})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     height: '100%',
@@ -37,7 +37,7 @@ const Hero = () => {
 }
 const Wrapper = styled.section`
 height: 100vh;
-  /* background-color: #333; */
+  background-color: #333;
   main {
     color: #fff;
     display: flex;
