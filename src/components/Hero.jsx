@@ -63,7 +63,7 @@ const Wrapper = styled.section`
   }
   .bg-text {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;

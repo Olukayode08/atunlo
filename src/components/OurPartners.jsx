@@ -44,13 +44,17 @@ const Wrapper = styled.section`
     margin: 10px;
   }
   @media screen and (max-width: 900px) {
-    .container{
+    .container {
       flex-direction: column;
     }
-    img{
+    img {
       width: 35%;
     }
-
+  }
+  @media screen and (max-width: 500px) {
+    img {
+      width: 40%;
+    }
   }
 `
 export default OurPartners

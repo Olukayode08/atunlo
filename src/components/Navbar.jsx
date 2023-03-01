@@ -171,6 +171,15 @@ const Wrapper = styled.section`
       left: 20px;
       z-index: 90;
     }
+    .logo {
+      width: 23%;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .logo {
+      width: 30%;
+    }
   }
 `
 export default Navbar
