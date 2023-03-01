@@ -5,10 +5,12 @@ import Twitter from '../assets/Twitter Squared.png'
 import Instagram from '../assets/Instagram.png'
 import Linkedin from '../assets/LinkedIn.png'
 import Mail from '../assets/Mail.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 
 const Footer = () => {
+  let navigate = useNavigate()
   return (
     <>
       <Wrapper>

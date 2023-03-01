@@ -118,5 +118,20 @@ const Wrapper = styled.section`
       width: 350px;
     }
   }
+  @media screen and (max-width: 290px) {
+    .accordion {
+      width: 280px;
+    }
+    h2 {
+      font-size: 15px;
+    }
+    h1 {
+      font-size: 17px;
+      padding: 0 5px;
+    }
+    .line {
+      width: 17px;
+    }
+  }
 `
 export default FAQS

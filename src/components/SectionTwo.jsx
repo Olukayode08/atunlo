@@ -91,7 +91,7 @@ const Wrapper = styled.section`
     .sec-two-r {
       text-align: center;
     }
-    h3{
+    h3 {
       text-align: center;
     }
 
@@ -100,11 +100,18 @@ const Wrapper = styled.section`
     }
   }
   @media screen and (max-width: 500px) {
-  img {
-    width: 350px;
-    height: 350px;
-    margin: 30px;
+    img {
+      width: 350px;
+      height: 350px;
+      margin: 30px;
+    }
   }
-}
+  @media screen and (max-width: 290px) {
+    img {
+      width: 270px;
+      height: 300px;
+      margin: 0px;
+    }
+  }
 `
 export default SectionTwo

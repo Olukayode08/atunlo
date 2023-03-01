@@ -79,9 +79,12 @@ const Navbar = () => {
 }
 
 const Wrapper = styled.section`
-  position: relative;
+  section {
+    position: relative;
+  }
   .logo {
     width: 20%;
+    margin-top: 15px;
   }
   nav {
     display: flex;
@@ -90,6 +93,7 @@ const Wrapper = styled.section`
     background-color: #fff;
     height: 70px;
     padding: 0 4em;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 70;
@@ -166,9 +170,11 @@ const Wrapper = styled.section`
     }
     .mobile,
     .desktop {
+      position: absolute;
+      height: 100vh;
       display: block;
-      top: 20px;
-      left: 20px;
+      top: 15px;
+      right: 30px;
       z-index: 90;
     }
     .logo {
@@ -180,6 +186,16 @@ const Wrapper = styled.section`
     .logo {
       width: 30%;
     }
+    nav {
+      padding: 0 1em;
+    }
+  }
+  @media screen and (max-width: 400px) {
+   .mobile,
+    .desktop {
+      right: 20px;
+    }
+
   }
 `
 export default Navbar

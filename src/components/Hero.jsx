@@ -39,8 +39,7 @@ const Hero = () => {
 }
 const Wrapper = styled.section`
   height: 100vh;
-  background-color: #333;
-  /* margin-top: 80px; */
+  margin-top: 80px;
 
   main {
     color: #fff;
@@ -54,7 +53,8 @@ const Wrapper = styled.section`
   }
   .bg-img {
     position: relative;
-    background-image: url(${bg});
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+      url(${bg});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -116,7 +116,6 @@ const Wrapper = styled.section`
     }
     .bg-text {
       top: 45%;
-
     }
   }
   @media screen and (max-width: 600px) {

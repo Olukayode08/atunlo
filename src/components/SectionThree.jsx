@@ -41,8 +41,6 @@ const SectionThree = () => {
   )
 }
 const Wrapper = styled.section`
-  background-color: #333;
-
   main {
     display: flex;
     position: relative;
@@ -51,13 +49,14 @@ const Wrapper = styled.section`
     margin: 70px 0;
   }
   .bg-img {
-    background-image: url(${bgchildren});
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+      url(${bgchildren});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 100vh;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
   }
   .bg-text {
     position: absolute;
@@ -69,7 +68,7 @@ const Wrapper = styled.section`
     justify-content: space-between;
     text-align: center;
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
   }
   .brief-desc {
     display: flex;
@@ -79,7 +78,7 @@ const Wrapper = styled.section`
     text-align: left;
     h3 {
       color: #4cc800;
-      font-size: 25px;
+      font-size: 28px;
       line-height: 30px;
       font-weight: 600;
     }
@@ -176,6 +175,28 @@ const Wrapper = styled.section`
     }
     .value-prop {
       width: 100%;
+    }
+  }
+  @media screen and (max-width: 290px) {
+    .bg-text,
+    .brief-desc {
+      width: 100%;
+    }
+    p {
+      font-size: 12px;
+      text-align: center;
+      padding-left: 0px;
+      width: 200px;
+      border: 2px solid yellow;
+    }
+    h3 {
+      color: #4cc800;
+      font-size: 20px;
+    }
+    .value-prop {
+      width: 100%;
+      padding: 0;
+      margin: 0;
     }
   }
 `
