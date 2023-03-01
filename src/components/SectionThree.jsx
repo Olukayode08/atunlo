@@ -58,9 +58,6 @@ const Wrapper = styled.section`
     height: 100vh;
     width: 100%;
     margin: auto;
-    /* filter: blur(5px); */
-    /* backdrop-filter: blur(5px); */
-    /* -webkit-filter: blur(5px); */
   }
   .bg-text {
     position: absolute;
@@ -91,6 +88,7 @@ const Wrapper = styled.section`
       font-size: 17px;
       line-height: 25px;
       padding: 14px 0;
+      font-weight: 600;
     }
     .view-more {
       background-color: #fff;

@@ -32,9 +32,6 @@ const Wrapper = styled.section`
     background-position: center center;
     height: 50vh;
     width: 100%;
-    filter: blur(3px);
-    backdrop-filter: blur(3px);
-    -webkit-filter: blur(3px);
   }
   .bg-text {
     position: absolute;

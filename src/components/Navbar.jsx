@@ -3,7 +3,7 @@ import { Squash as Hamburger } from 'hamburger-react'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
 import { Link } from 'react-router-dom'
-import logo from '../assets/Atunlo full logo (black+green).png'
+import logo from '../assets/Atunlo-logo.png'
 
 const Navbar = () => {
 
@@ -14,7 +14,7 @@ const Navbar = () => {
         <Wrapper>
           <nav>
             <Link to='/' className='navbar-logo'>
-              <img src={logo} alt='Atunlo' />
+              <img className='logo' src={logo} alt='Atunlo' />
             </Link>
             <ul className='links'>
               <li className='desktop-links'>
@@ -56,19 +56,19 @@ const Navbar = () => {
           <div className={active ? 'open-links' : 'close-links'}>
             <ul className='mobile-link'>
               <li className='mobile-links'>
-                <Link to='/'>Home</Link>
+                <Link className='link' to='/'>Home</Link>
               </li>
               <li className='mobile-links'>
-                <Link to='/services'>Services +</Link>
+                <Link className='link' to='/services'>Services +</Link>
               </li>
               <li className='mobile-links'>
-                <Link to='/about'>About +</Link>
+                <Link className='link' to='/about'>About +</Link>
               </li>
               <li className='mobile-links'>
-                <Link to='/contact'>Contact</Link>
+                <Link className='link' to='/contact'>Contact</Link>
               </li>
               <li className='mobile-links'>
-                <Link to='/'>FAQ</Link>
+                <Link className='link' to='/'>FAQ</Link>
               </li>
             </ul>
           </div>
@@ -80,15 +80,16 @@ const Navbar = () => {
 
 const Wrapper = styled.section`
   position: relative;
-
+  .logo {
+    width: 20%;
+  }
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    height: 80px;
+    height: 70px;
     padding: 0 4em;
-    position: sticky;
     top: 0;
     left: 0;
     z-index: 70;
@@ -99,20 +100,19 @@ const Wrapper = styled.section`
   }
   li {
     cursor: pointer;
-  }
-  .desktop-links {
-    padding: 2em;
-    font-size: 15px;
-    color: #8a8a8a;
     list-style: none;
+  }
+  .link {
+    padding: 25px 20px;
+    height: 70px;
+    text-decoration: none;
+    color: #8a8a8a;
+    font-size: 15px;
     :hover {
       color: #fff;
       background: #4cc800;
       transition: all 0.3s ease-in;
     }
-  }
-  .desktop {
-    display: none;
   }
   .open-links {
     position: fixed;
@@ -130,6 +130,7 @@ const Wrapper = styled.section`
     background: #fff;
     color: #8a8a8a;
   }
+  .desktop,
   .close-links {
     display: none;
   }
@@ -148,15 +149,11 @@ const Wrapper = styled.section`
       transition: all 0.3s ease-in;
     }
   }
-  /* .navigate {
-    position: absolute;
-    left: 0;
-    width: 200px;
-    background: #fff;
-  } */
+
   @media screen and (min-width: 1100px) {
     .open-links,
-    .mobile {
+    .mobile,
+    .desktop {
       display: none;
     }
   }
@@ -164,15 +161,15 @@ const Wrapper = styled.section`
     .links {
       display: none;
     }
-    .desktop {
-      display: block;
-    }
     .mobile {
       display: block;
-      position: fixed;
-      top: 11px;
-      right: 60px;
-      z-index: 10;
+    }
+    .mobile,
+    .desktop {
+      display: block;
+      top: 20px;
+      left: 20px;
+      z-index: 90;
     }
   }
 `

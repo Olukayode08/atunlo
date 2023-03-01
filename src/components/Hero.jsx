@@ -2,20 +2,22 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import bg from '../assets/images-img-3.png'
 import { bgslider } from '../data'
+import { Link } from 'react-router-dom'
+
 
 const Hero = () => {
-  const [currentSlide, SetcurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0)
   const bgImageStyle = {
     backgroundImage: `url(${bgslider[currentSlide].url})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    height: '100%',
+    height: '100vh',
   }
   return (
     <>
       <Wrapper>
         <main>
-          <div style={bgImageStyle} className='bg-img'></div>
+          <div className='bg-img'></div>
           <div className='bg-text'>
             <h1>
               Together, we can <br></br> restore the planet
@@ -26,8 +28,8 @@ const Hero = () => {
               sites
             </h4>
             <div className='request'>
-              <p>Request pickup</p>
-              <p>Find drop off points</p>
+              <Link className='location' to='/pickup'>Request pickup</Link>
+              <Link className='location' to='/dropoff'>Find drop off points</Link>
             </div>
           </div>
         </main>
@@ -36,8 +38,10 @@ const Hero = () => {
   )
 }
 const Wrapper = styled.section`
-height: 100vh;
+  height: 100vh;
   background-color: #333;
+  /* margin-top: 80px; */
+
   main {
     color: #fff;
     display: flex;
@@ -48,15 +52,15 @@ height: 100vh;
     height: 100vh;
     position: relative;
   }
-  /* .bg-img {
+  .bg-img {
     position: relative;
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
-  } */
+  }
   .bg-text {
     position: absolute;
     top: 60%;
@@ -85,15 +89,16 @@ height: 100vh;
     align-items: center;
     justify-content: center;
   }
-  p {
+  .location {
     border: 2px solid #4cc800;
     color: #4cc800;
     width: 190px;
-    font-size: 18px;
+    font-size: 17px;
     text-align: center;
     padding: 10px;
     margin: 15px 10px;
     cursor: pointer;
+    text-decoration: none;
     :hover {
       border: 2px solid #fff;
       color: #fff;
@@ -108,6 +113,10 @@ height: 100vh;
     }
     h4 {
       font-size: 18px;
+    }
+    .bg-text {
+      top: 45%;
+
     }
   }
   @media screen and (max-width: 600px) {

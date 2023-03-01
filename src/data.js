@@ -13,13 +13,13 @@ import bgThree from './assets/images-img-6.png'
 // IMAGE SLIDER
 export const bgslider = [
   {
-    url: './assets/images-img-6.png',
+    url: bgTwo,
   },
   {
-    image: './assets/images-img-7.png',
+    url: bgThree,
   },
   {
-    image: './assets/images-img-6.png',
+    url: bgOne,
   },
 ]
 // OUR VALUE PROPOSITIONS
@@ -66,29 +66,6 @@ export const logistics = [
     id: 3,
     text: 'Corporate Services',
     image: Services,
-  },
-]
-// FOOTER
-export const FooterAtunlo = [
-  {
-    id: 1,
-    text: 'SERVICES',
-    link1: 'Pick up',
-    link2: 'Drop Off',
-    link3: 'Corporate services',
-  },
-  {
-    id: 2,
-    text: 'About',
-    link1: 'Our Story',
-    link2: 'Our Partners',
-    link3: 'Our Team',
-    link4: 'Join Us',
-  },
-  {
-    id: 3,
-    text: 'Contact',
-    link1: 'Contact us',
   },
 ]
 // FREQUENTLY ASKED QUESTIONS

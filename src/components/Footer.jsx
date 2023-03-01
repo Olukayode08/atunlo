@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import LogoBlack from '../assets/Atulo full logo (white+green).png'
-import { FooterAtunlo } from '../data'
 import Twitter from '../assets/Twitter Squared.png'
 import Instagram from '../assets/Instagram.png'
 import Linkedin from '../assets/LinkedIn.png'
 import Mail from '../assets/Mail.png'
+import { Link } from 'react-router-dom'
+
 
 const Footer = () => {
   return (
@@ -17,18 +18,23 @@ const Footer = () => {
             <p>“The art of recycling”</p>
           </div>
           <div className='footer'>
-            {FooterAtunlo.map((data) => {
-              const { id, text, link1, link2, link3, link4 } = data
-              return (
-                <main className='footer-content' key={id}>
-                  <h1>{text}</h1>
-                  <p>{link1}</p>
-                  <p>{link2}</p>
-                  <p>{link3}</p>
-                  <p>{link4}</p>
-                </main>
-              )
-            })}
+            <main className='footer-content'>
+              <h1>Services</h1>
+              <Link className='locations' to='/pickup'>Pickup</Link>
+              <Link className='locations' to='/dropoff'>Drop Off</Link>
+              <Link className='locations' to='/corporate'>Corporate services</Link>
+            </main>
+            <main className='footer-content'>
+              <h1>About</h1>
+              <Link className='locations' to='/ourstory'>Our Story</Link>
+              <Link className='locations' to='/'>Our Partners</Link>
+              <Link className='locations' to='/ourteam'>Our Team</Link>
+              <Link className='locations' to='/contact'>Join Us</Link>
+            </main>
+            <main className='footer-content'>
+              <h1>Contact</h1>
+              <Link className='locations' to='/contact'>Contact us</Link>
+            </main>
           </div>
         </footer>
         <section>
@@ -44,7 +50,9 @@ const Footer = () => {
           </div>
           <div className='treegar'>
             <h3>t </h3>
-            <h6>A member of the <br /> Treegar Group</h6>
+            <h6>
+              A member of the <br /> Treegar Group
+            </h6>
           </div>
         </section>
         <article>
@@ -88,9 +96,15 @@ const Wrapper = styled.section`
       font-size: 19px;
       padding: 10px 0;
     }
-    p {
+    .locations {
       font-size: 15px;
       padding: 10px 0;
+      text-decoration: none;
+      color: #fff;
+      :hover {
+        color: #4cc800;
+        transition: all 0.1s ease-in;
+      }
     }
   }
   section {
