@@ -6,20 +6,92 @@ import GoalFive from './assets/Group-26.png'
 import Pickup from './assets/logistics.png'
 import Dropoff from './assets/corporate.png'
 import Services from './assets/recycle-bin.png'
-import bgOne from './assets/images-img-3.png'
+import bgOne from './assets/images-img-1.png'
 import bgTwo from './assets/images-img-7.png'
 import bgThree from './assets/images-img-6.png'
+import bgFour from './assets/images-img-8.png'
+import bgFive from './assets/images-img-5.png'
+import bgSix from './assets/images-img-2.png'
+import bgSeven from './assets/images-img-3.png'
+import Anita from './assets/Anita.png'
+import Aunmi from './assets/Aunmi.png'
+import Mayaki from './assets/Mayaki.png'
+
+// OUR TEAM
+export const teams = [
+  {
+    id: 1,
+    image: Anita,
+    name: 'Anita Odiete, Director',
+    about: `Anita is a solutions-driven individual with 9+ years’ experience serving as a Product Manager and Business Analyst while specialising in Strategy & Business Development, Performance Management, Process Improvement, Product Growth and Development, Digital Transformation, Customer Experience Management as well as Enterprise Systems Integration.
+She has a healthy track record of developing successful solutions to complex problems for startups and corporates in Banking, Financial Technology, Automobile, Education and eCommerce sectors, which have helped expand customer base, revenue and process efficiency as well as increase cost savings of over $1m. As the Director of Atunlo, Anita is focused on shaping the mindset of households around Nigeria to view waste as value and not trash. She is also responsible for developing the company’s strategy towards achieving our yearly collection goals and making an impact towards our identified SDG goals.`,
+  },
+  {
+    id: 2,
+    image: Aunmi,
+    name: 'Oluwafunmilola Esther Idris, Operations Manager',
+    about: `Oluwafunmilola has over 12 years experience in Operations Management, Human Resources, Banking, Business Development and Strategy.
+She is currently the Operations Manager at Atunlo and oversees all daily activities at our primary factory location while establishing partnerships with corporates for waste management. Funmi is also certified in Global Environmental Management, which enables her ensure our vision is accomplished in line with the SDG goals.`,
+  },
+  {
+    id: 1,
+    image: Mayaki,
+    name: 'Mayaki Emmanuel, Advisor',
+    about: `Mayaki has over 15 years experience managing global recycling companies. He currently serves as the General Manager for Sonnex Packaging, a subsidiary of Mohinani Group where he oversees the entire recycling value chain for PET bottles from collection to export of crushed and recycled PET to packaging companies.`,
+  },
+]
 
 // IMAGE SLIDER
+export const dropdownItems = [
+  {
+    id: 1,
+    text: 'Pickup',
+    path: '/pickup',
+  },
+  {
+    id: 2,
+    text: 'Dropoff',
+    path: '/dropoff',
+  },
+  {
+    id: 3,
+    text: 'Corporate services',
+    path: '/corporate',
+  },
+]
+export const dropdownAbout = [
+  {
+    id: 1,
+    text: 'Our Story',
+    path: '/ourstory',
+  },
+  {
+    id: 2,
+    text: 'Our Team',
+    path: '/ourteam',
+  },
+]
 export const bgslider = [
   {
-    url: bgTwo,
+    image: bgOne,
   },
   {
-    url: bgThree,
+    image: bgTwo,
   },
   {
-    url: bgOne,
+    image: bgThree,
+  },
+  {
+    image: bgFour,
+  },
+  {
+    image: bgFive,
+  },
+  {
+    image: bgSix,
+  },
+  {
+    image: bgSeven,
   },
 ]
 // OUR VALUE PROPOSITIONS

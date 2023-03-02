@@ -1,23 +1,51 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import bg from '../assets/images-img-3.png'
-import { bgslider } from '../data'
+import bg from '../assets/images-img-7.png'
+
+// import { bgslider } from '../data'
 import { Link } from 'react-router-dom'
 
-
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const bgImageStyle = {
-    backgroundImage: `url(${bgslider[currentSlide].url})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    height: '100vh',
-  }
+  // const [currentSlide, setCurrentSlide] = useState(0)
+  // const slideLength = bgslider.length
+
+  // const autoScroll = true
+  // let slideInterval
+  // let intervalTime = 5000
+
+  // function auto() {
+  //   slideInterval = setInterval(nextSlide, intervalTime)
+  // }
+
+  // const nextSlide = () => {
+  //   setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1)
+  // }
+  // useEffect(() => {
+  //   if (autoScroll) {
+  //     auto()
+  //   }
+  //   return () => clearInterval(slideInterval)
+  // }, [currentSlide])
   return (
     <>
       <Wrapper>
         <main>
-          <div className='bg-img'></div>
+          <div className='bg-img'>
+            {/* {bgslider.map((slide, index) => {
+              return (
+                <div
+                  key={index}
+                  className={index === currentSlide ? 'slide current' : 'slide'}
+                >
+                  {index === currentSlide && (
+                    <div>
+                      <img src={slide.image} alt='Atunlo' />
+                    </div>
+                  )}
+                </div>
+              )
+            })} */}
+          </div>
           <div className='bg-text'>
             <h1>
               Together, we can <br></br> restore the planet
@@ -28,8 +56,12 @@ const Hero = () => {
               sites
             </h4>
             <div className='request'>
-              <Link className='location' to='/pickup'>Request pickup</Link>
-              <Link className='location' to='/dropoff'>Find drop off points</Link>
+              <Link className='location' to='/pickup'>
+                Request pickup
+              </Link>
+              <Link className='location' to='/dropoff'>
+                Find drop off points
+              </Link>
             </div>
           </div>
         </main>
@@ -38,9 +70,7 @@ const Hero = () => {
   )
 }
 const Wrapper = styled.section`
-  height: 100vh;
-  margin-top: 80px;
-
+  /* height: 100vh; */
   main {
     color: #fff;
     display: flex;
@@ -52,18 +82,60 @@ const Wrapper = styled.section`
     position: relative;
   }
   .bg-img {
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
       url(${bg});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 100vh;
     width: 100%;
+    margin: 0 auto;
+  }
+  /* .bg-img {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  .slide img {
+    width: 100%;
+    height: 100vh;
+    animation: fadeIn 2s;
+    object-fit: cover;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+  } */
+  /* @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  } */
+  /* @keyframes fadeIn {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  } */
+  .current {
+    opacity: 1;
+    transform: translateX(0);
   }
   .bg-text {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
@@ -100,8 +172,14 @@ const Wrapper = styled.section`
     cursor: pointer;
     text-decoration: none;
     :hover {
-      border: 2px solid #fff;
+      background: #4cc800;
       color: #fff;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .slide img {
+      width: 100%;
+      height: 100vh;
     }
   }
   @media screen and (max-width: 900px) {

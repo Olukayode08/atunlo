@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import waste from '../assets/IMG_20230129_153109_285 1.png'
 import bgwhite from '../assets/web-bg-white.png'
+import { Link } from 'react-router-dom'
+
 const SectionTwo = () => {
   return (
     <>
@@ -16,7 +18,9 @@ const SectionTwo = () => {
                 waste generators, as well as municipal waste collectors whom we
                 pay to collect used PET bottles for sale to offtakers.
               </h5>
-              <p>Request pickup</p>
+              <Link className='location' to='/pickup'>
+                Request pickup
+              </Link>
             </div>
           </div>
         </main>
@@ -26,15 +30,6 @@ const SectionTwo = () => {
 }
 
 const Wrapper = styled.section`
-  /* background-image: url(${bgwhite}); */
-  /* background-repeat: no-repeat; */
-  /* backdrop-filter: blur(20px); */
-  /* filter: blur(40px);
-    -webkit-filter: blur(40px); */
-  /* background-size: cover; */
-  /* background-position: center; */
-  /* height: 80vh; */
-  /* width: 100%; */
   main {
     margin: 30px auto;
     width: 80%;
@@ -67,18 +62,25 @@ const Wrapper = styled.section`
   }
   h5 {
     color: #000;
-    padding: 10px;
+    padding: 15px;
     font-size: 15px;
     line-height: 23px;
   }
-  p {
+  .location {
     border: 2px solid #4cc800;
     color: #4cc800;
-    width: 170px;
+    width: 190px;
+    font-size: 17px;
     text-align: center;
     padding: 10px;
-    margin: 10px;
+    margin: 15px 14px;
     cursor: pointer;
+    text-decoration: none;
+    :hover {
+      background: #4cc800;
+      color: #fff;
+      transition: all 0.2s ease-in-out;
+    }
   }
 
   @media screen and (max-width: 1000px) {
@@ -94,8 +96,7 @@ const Wrapper = styled.section`
     h3 {
       text-align: center;
     }
-
-    p {
+    .location {
       margin: 0 auto;
     }
   }

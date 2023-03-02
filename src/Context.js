@@ -15,6 +15,7 @@ const Context = ({ children }) => {
     }
     setAccordion(i)
   }
+  const closeMobile = () => setActive(false)
   return (
     <>
       <Atunlo.Provider
@@ -23,7 +24,8 @@ const Context = ({ children }) => {
           setActive,
           accordion,
           setAccordion,
-          toggleAccordion
+          toggleAccordion,
+          closeMobile
         }}
       >
         {children}

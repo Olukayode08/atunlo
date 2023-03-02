@@ -112,6 +112,10 @@ const WasteDropoff = styled.section`
     p {
       margin: 0 auto;
     }
+    .waste-pick-up {
+      justify-content: center;
+      margin: 0 auto;
+    }
   }
   @media screen and (max-width: 500px) {
     img {

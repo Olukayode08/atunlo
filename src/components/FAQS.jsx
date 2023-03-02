@@ -5,7 +5,7 @@ import { Atunlo } from '../Context'
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi'
 
 const FAQS = () => {
-  const { accordion, setAccordion, toggleAccordion } = useContext(Atunlo)
+  const { accordion, toggleAccordion } = useContext(Atunlo)
   return (
     <>
       <Wrapper id='faqs'>

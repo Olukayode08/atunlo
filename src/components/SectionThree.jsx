@@ -49,7 +49,7 @@ const Wrapper = styled.section`
     margin: 70px 0;
   }
   .bg-img {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
       url(${bgchildren});
     background-repeat: no-repeat;
     background-size: cover;
@@ -96,6 +96,11 @@ const Wrapper = styled.section`
       font-size: 15px;
       text-align: center;
       border-radius: 10px;
+      :hover{
+        background: #4cc800;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
   .value-prop {

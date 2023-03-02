@@ -5,12 +5,11 @@ import Twitter from '../assets/Twitter Squared.png'
 import Instagram from '../assets/Instagram.png'
 import Linkedin from '../assets/LinkedIn.png'
 import Mail from '../assets/Mail.png'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 
 
 const Footer = () => {
-  let navigate = useNavigate()
   return (
     <>
       <Wrapper>
@@ -105,7 +104,7 @@ const Wrapper = styled.section`
       color: #fff;
       :hover {
         color: #4cc800;
-        transition: all 0.1s ease-in;
+        transition: all 0.4s ease-in;
       }
     }
   }

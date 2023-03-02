@@ -1,13 +1,37 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Squash as Hamburger } from 'hamburger-react'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
 import { Link } from 'react-router-dom'
 import logo from '../assets/Atunlo-logo.png'
+import Dropdown from './Dropdown'
+import DropdownAbout from './DropdownAbout'
 
 const Navbar = () => {
+  const { active, setActive, closeMobile } = useContext(Atunlo)
+  const [dropdown, setDropdown] = useState(false)
+  const [dropdownAbout, setDropdownAbout] = useState(false)
 
-  const { active, setActive, toggle } = useContext(Atunlo)
+  const onMouseEnter = () => {
+    setDropdown(true)
+  }
+  const onMouseLeave = () => {
+    setDropdown(false)
+  }
+  const onMouseEnterAbout = () => {
+    if (window.innerWidth < 960) {
+      setDropdownAbout(false)
+    } else {
+      setDropdownAbout(true)
+    }
+  }
+  const onMouseLeaveAbout = () => {
+    if (window.innerWidth < 960) {
+      setDropdownAbout(false)
+    } else {
+      setDropdownAbout(false)
+    }
+  }
   return (
     <>
       <section>
@@ -22,15 +46,23 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li className='desktop-links'>
-                <Link className='link' to='/services'>
+              <li
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                className='desktop-links'
+              >
+                <Link className='link' to='#'>
                   Services +
                 </Link>
+                {dropdown && <Dropdown />}
               </li>
-              <li className='desktop-links'>
-                <Link className='link' to='/about'>
-                  About +
-                </Link>
+              <li
+                onMouseEnter={onMouseEnterAbout}
+                onMouseLeave={onMouseLeaveAbout}
+                className='desktop-links'
+              >
+                <Link className='link'>About +</Link>
+                {dropdownAbout && <DropdownAbout />}
               </li>
               <li className='desktop-links'>
                 <Link className='link' to='/contact'>
@@ -56,19 +88,39 @@ const Navbar = () => {
           <div className={active ? 'open-links' : 'close-links'}>
             <ul className='mobile-link'>
               <li className='mobile-links'>
-                <Link className='link' to='/'>Home</Link>
+                <Link className='link' to='/' onClick={closeMobile}>
+                  Home
+                </Link>
+              </li>
+              <li
+                className='mobile-links'
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+              >
+                <Link className='link' to='/'>
+                  Services +
+                </Link>
+                {/* {dropdown && <Dropdown />} */}
+              </li>
+              <li
+                onMouseEnter={onMouseEnterAbout}
+                onMouseLeave={onMouseLeaveAbout}
+                className='mobile-links'
+              >
+                <Link className='link' onClick={closeMobile} to='/about'>
+                  About +
+                </Link>
+                {/* {dropdownAbout && <DropdownAbout />} */}
               </li>
               <li className='mobile-links'>
-                <Link className='link' to='/services'>Services +</Link>
+                <Link className='link' onClick={closeMobile} to='/contact'>
+                  Contact
+                </Link>
               </li>
               <li className='mobile-links'>
-                <Link className='link' to='/about'>About +</Link>
-              </li>
-              <li className='mobile-links'>
-                <Link className='link' to='/contact'>Contact</Link>
-              </li>
-              <li className='mobile-links'>
-                <Link className='link' to='/'>FAQ</Link>
+                <Link className='link' onClick={closeMobile} to='/'>
+                  FAQ
+                </Link>
               </li>
             </ul>
           </div>
@@ -79,6 +131,8 @@ const Navbar = () => {
 }
 
 const Wrapper = styled.section`
+  margin-bottom: 80px;
+
   section {
     position: relative;
   }
@@ -92,7 +146,7 @@ const Wrapper = styled.section`
     align-items: center;
     background-color: #fff;
     height: 70px;
-    padding: 0 4em;
+    padding: 0 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -107,8 +161,7 @@ const Wrapper = styled.section`
     list-style: none;
   }
   .link {
-    padding: 25px 20px;
-    height: 70px;
+    padding: 30px 20px;
     text-decoration: none;
     color: #8a8a8a;
     font-size: 15px;
@@ -191,11 +244,10 @@ const Wrapper = styled.section`
     }
   }
   @media screen and (max-width: 400px) {
-   .mobile,
+    .mobile,
     .desktop {
       right: 20px;
     }
-
   }
 `
 export default Navbar
