@@ -42,7 +42,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     width: 180px;
     position: absolute;
-    top: 35px;
+    top: 26px;
     list-style: none;
     text-align: left;
     transition: all 0.2s ease-in;
@@ -64,5 +64,16 @@ const Wrapper = styled.section`
     padding: 20px 10px;
     color: #000;
   }
+  /* @media screen and (max-width: 900px) {
+    .dropdown-menu{
+      width: 100px;
+    }
+    .dropdown-menu li,
+    .dropdown-link{
+      padding: 2px;
+      color: green;
+      font-size: 12px;
+    }
+  } */
 `
 export default Dropdown

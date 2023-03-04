@@ -58,13 +58,14 @@ const Wrapper = styled.section`
     font-size: 25px;
     line-height: 33px;
     padding: 10px;
-    text-align: left;
+    text-align: justify;
   }
   h5 {
     color: #000;
     padding: 15px;
     font-size: 15px;
     line-height: 23px;
+    text-align: justify;
   }
   .location {
     border: 2px solid #4cc800;
@@ -94,7 +95,7 @@ const Wrapper = styled.section`
       text-align: center;
     }
     h3 {
-      text-align: center;
+      text-align: justify;
     }
     .location {
       margin: 0 auto;

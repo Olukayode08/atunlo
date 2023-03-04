@@ -4,8 +4,11 @@ import styled from 'styled-components'
 import { Atunlo } from '../Context'
 import { Link } from 'react-router-dom'
 import logo from '../assets/Atunlo-logo.png'
+import down from '../assets/down-grey.png'
 import Dropdown from './Dropdown'
 import DropdownAbout from './DropdownAbout'
+import { Link as Scroll } from 'react-scroll'
+
 
 const Navbar = () => {
   const { active, setActive, closeMobile } = useContext(Atunlo)
@@ -52,7 +55,7 @@ const Navbar = () => {
                 className='desktop-links'
               >
                 <Link className='link' to='#'>
-                  Services +
+                  Services <img src={down} alt='Atunlo' />
                 </Link>
                 {dropdown && <Dropdown />}
               </li>
@@ -61,7 +64,9 @@ const Navbar = () => {
                 onMouseLeave={onMouseLeaveAbout}
                 className='desktop-links'
               >
-                <Link className='link'>About +</Link>
+                <Link className='link'>
+                  About <img src={down} alt='Atunlo' />
+                </Link>
                 {dropdownAbout && <DropdownAbout />}
               </li>
               <li className='desktop-links'>
@@ -70,9 +75,17 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className='desktop-links'>
-                <Link className='link' to='/'>
-                  FAQ
-                </Link>
+                <Scroll
+                  to='faqs'
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                >
+                  <Link className='link' to='/'>
+                    FAQ
+                  </Link>
+                </Scroll>
               </li>
             </ul>
             <div className={active ? 'mobile' : 'desktop'}>
@@ -88,7 +101,7 @@ const Navbar = () => {
           <div className={active ? 'open-links' : 'close-links'}>
             <ul className='mobile-link'>
               <li className='mobile-links'>
-                <Link className='link' to='/' onClick={closeMobile}>
+                <Link className='link-mobile' to='/' onClick={closeMobile}>
                   Home
                 </Link>
               </li>
@@ -97,8 +110,8 @@ const Navbar = () => {
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
               >
-                <Link className='link' to='/'>
-                  Services +
+                <Link className='link-mobile' to='#' onClick={closeMobile}>
+                  Services <img src={down} alt='Atunlo' />
                 </Link>
                 {/* {dropdown && <Dropdown />} */}
               </li>
@@ -107,18 +120,22 @@ const Navbar = () => {
                 onMouseLeave={onMouseLeaveAbout}
                 className='mobile-links'
               >
-                <Link className='link' onClick={closeMobile} to='/about'>
-                  About +
+                <Link className='link-mobile' onClick={closeMobile} to='#'>
+                  About <img src={down} alt='Atunlo' />
                 </Link>
                 {/* {dropdownAbout && <DropdownAbout />} */}
               </li>
               <li className='mobile-links'>
-                <Link className='link' onClick={closeMobile} to='/contact'>
+                <Link
+                  className='link-mobile'
+                  onClick={closeMobile}
+                  to='/contact'
+                >
                   Contact
                 </Link>
               </li>
               <li className='mobile-links'>
-                <Link className='link' onClick={closeMobile} to='/'>
+                <Link className='link-mobile' onClick={closeMobile} to='/'>
                   FAQ
                 </Link>
               </li>
@@ -132,12 +149,13 @@ const Navbar = () => {
 
 const Wrapper = styled.section`
   margin-bottom: 80px;
-
+  padding: 0;
   section {
     position: relative;
   }
   .logo {
     width: 20%;
+
     margin-top: 15px;
   }
   nav {
@@ -146,7 +164,7 @@ const Wrapper = styled.section`
     align-items: center;
     background-color: #fff;
     height: 70px;
-    padding: 0 20px;
+    padding: 0 30px;
     position: fixed;
     top: 0;
     left: 0;
@@ -161,15 +179,23 @@ const Wrapper = styled.section`
     list-style: none;
   }
   .link {
-    padding: 30px 20px;
+    padding: 24px 20px;
     text-decoration: none;
     color: #8a8a8a;
     font-size: 15px;
+    height: 100%;
     :hover {
       color: #fff;
       background: #4cc800;
       transition: all 0.3s ease-in;
     }
+  }
+  .link-mobile {
+    padding: 24px 20px;
+    text-decoration: none;
+    color: #8a8a8a;
+    font-size: 15px;
+    height: 100%;
   }
   .open-links {
     position: fixed;
@@ -180,7 +206,7 @@ const Wrapper = styled.section`
     top: 0;
     left: 0;
     z-index: 50;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;

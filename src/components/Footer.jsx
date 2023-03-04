@@ -26,7 +26,7 @@ const Footer = () => {
               <Link className='locations' to='/corporate'>Corporate services</Link>
             </main>
             <main className='footer-content'>
-              <h1>About</h1>
+              <h1>About Us</h1>
               <Link className='locations' to='/ourstory'>Our Story</Link>
               <Link className='locations' to='/'>Our Partners</Link>
               <Link className='locations' to='/ourteam'>Our Team</Link>

@@ -2,20 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 import bg from '../assets/images-img-3.png'
 
-const Services = () => {
+const Contact = () => {
   return (
     <>
       <Wrapper>
         <main>
           <div className='bg-img'></div>
           <div className='bg-text'>
-            <h1>Our Services</h1>
+            <h1>Contact</h1>
           </div>
         </main>
       </Wrapper>
     </>
   )
 }
+
 const Wrapper = styled.section`
   main {
     color: #fff;
@@ -49,4 +50,4 @@ const Wrapper = styled.section`
     padding: 6px 0;
   }
 `
-export default Services
+export default Contact

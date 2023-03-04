@@ -2,6 +2,9 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { FAQ } from '../data'
 import { Atunlo } from '../Context'
+import arrowUp from '../assets/arrow-up.png'
+import arrowDown from '../assets/arrow-down.png'
+
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi'
 
 const FAQS = () => {
@@ -22,7 +25,7 @@ const FAQS = () => {
                 <div className='title' onClick={() => toggleAccordion(i)}>
                   <h2>{question}</h2>
                   <span>
-                    {accordion === i ? <BiUpArrow /> : <BiDownArrow />}
+                    {accordion === i ? <img src={arrowUp} alt="Atunlo" /> : <img src={arrowDown} alt='Atunlo'/>}
                   </span>
                 </div>
                 <p className={accordion === i ? 'content show' : 'content'}>
@@ -79,13 +82,21 @@ const Wrapper = styled.section`
       cursor: pointer;
     }
     h2 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       color: #000;
     }
     span {
       color: #4cc800;
-      font-size: 14px;
+      font-size: 14px; 
+      text-align: right;
+      cursor: pointer;
+    }
+    img {
+      width: 20%;
+    }
+    p {
+      text-align: justify;
     }
     .content {
       max-height: 0;

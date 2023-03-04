@@ -6,10 +6,11 @@ import FAQS from "./FAQS";
 import Services from './Services'
 import Stats from './Stats'
 import About from './About'
+import Contact from './Contact'
 import PickupLocation from './PickupLocation'
 import DropoffLocation from './DropoffLocation'
 
 
 
 
-export {DropoffLocation, About, Services, PickupLocation, Stats, SectionFour, SectionThree, SectionTwo, Hero, FAQS}
+export {Contact, DropoffLocation, About, Services, PickupLocation, Stats, SectionFour, SectionThree, SectionTwo, Hero, FAQS}

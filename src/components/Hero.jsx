@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import bg from '../assets/images-img-7.png'
+import bgOne from '../assets/images-img-1.png'
+import bgTwo from '../assets/images-img-7.png'
+import bgThree from '../assets/images-img-6.png'
+import bgFour from '../assets/images-img-8.png'
+import bgFive from '../assets/images-img-5.png'
+import bgSix from '../assets/images-img-2.png'
+import bgSeven from '../assets/images-img-3.png'
 
 // import { bgslider } from '../data'
 import { Link } from 'react-router-dom'
@@ -77,20 +84,59 @@ const Wrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 0 50px 0;
+    margin: -10px 0 50px 0;
+    padding: 0;
     height: 100vh;
     position: relative;
   }
   .bg-img {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-      url(${bg});
+      url(${bgOne});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 100vh;
     width: 100%;
     margin: 0 auto;
+    /* transition: 5s;
+    animation-name: animate;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 45s;
+    animation-iteration-count: infinite; */
   }
+  /* @keyframes animate {
+    0% {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url(${bgOne});
+    }
+    17% {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url(${bgTwo});
+    }
+    33% {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url(${bgThree});
+    }
+    50% {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url(${bgFour});
+    }
+    67% {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url(${bgFive});
+    }
+    83% {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url(${bgSix});
+    }
+    100% {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+        url(${bgSeven});
+    }
+  } */
   /* .bg-img {
     position: relative;
     overflow: hidden;

@@ -24,7 +24,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 0 50px 0;
+    margin: -10px 0 50px 0;
   }
   .bg-img {
     background-image: url(${bg});

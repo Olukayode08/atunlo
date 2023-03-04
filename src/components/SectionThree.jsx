@@ -88,6 +88,7 @@ const Wrapper = styled.section`
       line-height: 25px;
       padding: 14px 0;
       font-weight: 600;
+      text-align: justify;
     }
     .view-more {
       background-color: #fff;
@@ -96,7 +97,7 @@ const Wrapper = styled.section`
       font-size: 15px;
       text-align: center;
       border-radius: 10px;
-      :hover{
+      :hover {
         background: #4cc800;
         color: #fff;
         transition: all 0.3s ease-in-out;
@@ -130,7 +131,7 @@ const Wrapper = styled.section`
     }
     p {
       font-size: 15px;
-      text-align: left;
+      text-align: justify;
       padding-left: 10px;
       width: 320px;
     }
@@ -156,6 +157,12 @@ const Wrapper = styled.section`
       text-align: center;
       margin: 0 auto;
     }
+    .brief-desc {
+      p {
+        text-align: center;
+      }
+    }
+
     .view-more {
       margin: 0 auto;
     }

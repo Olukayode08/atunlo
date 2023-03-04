@@ -4,6 +4,7 @@ import waste from '../assets/IMG_20230129_153109_285 1.png'
 import styled from 'styled-components'
 import Pickup from '../assets/Pickup-icon.png'
 
+
 const PickupServices = () => {
   return (
     <>
@@ -84,6 +85,7 @@ const WastePickup = styled.section`
     padding: 10px;
     font-size: 15px;
     line-height: 23px;
+    text-align: justify;
   }
   p {
     border: 2px solid #4cc800;
@@ -112,6 +114,9 @@ const WastePickup = styled.section`
     .waste-pick-up {
       justify-content: center;
       margin: 0 auto;
+    }
+    h5 {
+      text-align: center;
     }
   }
   @media screen and (max-width: 500px) {

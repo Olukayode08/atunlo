@@ -110,6 +110,7 @@ const Story = styled.section`
     padding: 6px;
     font-size: 15px;
     line-height: 20px;
+    text-align: justify;
   }
   .value-prop {
     width: 90%;
@@ -156,7 +157,8 @@ const Story = styled.section`
       width: 480px;
     }
     .sec-two-r,
-    h3 {
+    h3,
+    h5 {
       text-align: center;
     }
     p {
@@ -180,6 +182,9 @@ const Story = styled.section`
     .value-prop,
     .waste-img {
       width: 530px;
+    }
+    p{
+      text-align: justify;
     }
   }
   @media screen and (max-width: 550px) {
