@@ -14,7 +14,7 @@ const SectionThree = () => {
               <h3>
                 Social technology for <br /> community impact
               </h3>
-              <p>
+              <p className='desc'>
                 Atunlo operates in line with 5 of the Sustainable Development
                 goals to ensure a better, more sustainable future for the
                 communities we serve.
@@ -29,7 +29,7 @@ const SectionThree = () => {
                 return (
                   <section className='propositions' key={id}>
                     <img src={image} alt='Atunlo' />
-                    <p>{text}</p>
+                    <p className='prop-text'>{text}</p>
                   </section>
                 )
               })}
@@ -82,7 +82,7 @@ const Wrapper = styled.section`
       line-height: 30px;
       font-weight: 600;
     }
-    p {
+    .desc {
       color: #fff;
       font-size: 17px;
       line-height: 25px;
@@ -97,6 +97,7 @@ const Wrapper = styled.section`
       font-size: 15px;
       text-align: center;
       border-radius: 10px;
+      padding: 10px 0;
       :hover {
         background: #4cc800;
         color: #fff;
@@ -129,9 +130,9 @@ const Wrapper = styled.section`
     img {
       width: 14%;
     }
-    p {
+    .prop-text {
       font-size: 15px;
-      text-align: justify;
+      text-align: left;
       padding-left: 10px;
       width: 320px;
     }
@@ -158,7 +159,9 @@ const Wrapper = styled.section`
       margin: 0 auto;
     }
     .brief-desc {
-      p {
+      width: 100%;
+      padding: 15px;
+      .desc {
         text-align: center;
       }
     }
@@ -180,13 +183,14 @@ const Wrapper = styled.section`
       align-items: center;
     }
     .bg-text {
-      width: 90%;
+      width: 94%;
     }
     .brief-desc {
       width: 93%;
     }
     .value-prop {
       width: 100%;
+      padding: 10px 20px;
     }
   }
   @media screen and (max-width: 320px) {
@@ -194,7 +198,7 @@ const Wrapper = styled.section`
     .brief-desc {
       width: 100%;
     }
-    h3{
+    h3 {
       font-size: 19px;
     }
     p {
@@ -211,21 +215,20 @@ const Wrapper = styled.section`
       padding: 5px 20px;
       margin: 0;
     }
-      .brief-desc {
-    h3 {
-      font-size: 20px;
-      line-height: 25px;
+    .brief-desc {
+      h3 {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      p {
+        font-size: 13px;
+        line-height: 17px;
+        padding: 8px 0;
+      }
+      .view-more {
+        font-size: 12px;
+      }
     }
-    p {
-      font-size: 13px;
-      line-height: 17px;
-      padding: 8px 0;
-    }
-    .view-more {
-      font-size: 12px;
-
-    }
-  }
   }
 `
 export default SectionThree

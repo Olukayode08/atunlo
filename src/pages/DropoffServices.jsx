@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Stats, Services, DropoffLocation } from '../components'
+import { Stats, Services, DropoffLocation, Whatsapp } from '../components'
 import dropoff from '../assets/dropoff-icon.png'
 import waste from '../assets/IMG_20230129_153109_285 1.png'
 
@@ -8,7 +8,9 @@ import waste from '../assets/IMG_20230129_153109_285 1.png'
 const DropoffServices = () => {
   return (
     <>
-    <Services />
+      <Services />
+      <Whatsapp />
+
       <WasteDropoff>
         <main>
           <div className='sec-two'>

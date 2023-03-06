@@ -89,6 +89,9 @@ const Wrapper = styled.section`
       flex-direction: column;
       padding: 30px 0;
     }
+    .three-rs{
+      width: 90%;
+    }
   }
 `
 export default SectionFour

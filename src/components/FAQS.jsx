@@ -2,9 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { FAQ } from '../data'
 import { Atunlo } from '../Context'
-import arrowUp from '../assets/arrow-up.png'
-import arrowDown from '../assets/arrow-down.png'
-
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
 
 const FAQS = () => {
   const { accordion, toggleAccordion } = useContext(Atunlo)
@@ -24,7 +22,11 @@ const FAQS = () => {
                 <div className='title' onClick={() => toggleAccordion(i)}>
                   <h2>{question}</h2>
                   <span>
-                    {accordion === i ? <img src={arrowUp} alt="Atunlo" /> : <img src={arrowDown} alt='Atunlo'/>}
+                    {accordion === i ? (
+                      <MdKeyboardArrowUp />
+                    ) : (
+                      <MdKeyboardArrowDown />
+                    )}
                   </span>
                 </div>
                 <p className={accordion === i ? 'content show' : 'content'}>
@@ -87,13 +89,11 @@ const Wrapper = styled.section`
     }
     span {
       color: #4cc800;
-      font-size: 14px; 
+      font-size: 25px;
       text-align: right;
       cursor: pointer;
     }
-    img {
-      width: 20%;
-    }
+
     p {
       text-align: justify;
     }

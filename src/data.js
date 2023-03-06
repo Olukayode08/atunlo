@@ -10,9 +10,8 @@ import bgOne from './assets/images-img-1.png'
 import bgTwo from './assets/images-img-7.png'
 import bgThree from './assets/images-img-6.png'
 import bgFour from './assets/images-img-8.png'
-import bgFive from './assets/images-img-5.png'
 import bgSix from './assets/images-img-2.png'
-import bgSeven from './assets/images-img-3.png'
+import bgFive from './assets/images-img-3.png'
 import Anita from './assets/Anita.png'
 import Aunmi from './assets/Aunmi.png'
 import Mayaki from './assets/Mayaki.png'
@@ -41,7 +40,6 @@ She is currently the Operations Manager at Atunlo and oversees all daily activit
   },
 ]
 
-// IMAGE SLIDER
 export const dropdownItems = [
   {
     id: 1,
@@ -73,25 +71,31 @@ export const dropdownAbout = [
 ]
 export const bgslider = [
   {
+    id: 1,
     image: bgOne,
   },
   {
+    id: 2,
+
     image: bgTwo,
   },
   {
+    id: 3,
+
     image: bgThree,
   },
   {
+    id: 4,
+
     image: bgFour,
   },
   {
+    id: 5,
     image: bgFive,
   },
   {
+    id: 6,
     image: bgSix,
-  },
-  {
-    image: bgSeven,
   },
 ]
 // OUR VALUE PROPOSITIONS

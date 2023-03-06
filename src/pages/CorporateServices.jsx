@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stats, Services } from '../components'
+import { Stats, Services, Whatsapp } from '../components'
 import waste from '../assets/corporate-img.png'
 import styled from 'styled-components'
 import Pickup from '../assets/Pickup-icon.png'
@@ -8,6 +8,7 @@ const CorporateServices = () => {
   return (
     <>
       <Services />
+      <Whatsapp />
       <Corporate>
         <main>
           <div className='sec-two'>

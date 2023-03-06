@@ -1,5 +1,5 @@
 import React from 'react'
-import { About } from '../components'
+import { About, Whatsapp } from '../components'
 import styled from 'styled-components'
 import { teams } from '../data'
 
@@ -7,6 +7,7 @@ const TeamAbout = () => {
   return (
     <>
       <About />
+      <Whatsapp />
       <Team>
         <div className='atunlo-team'>
           <h3>Meet Our Team</h3>

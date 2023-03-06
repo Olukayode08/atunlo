@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import bgOne from '../assets/images-img-1.png'
 import { bgslider } from '../data'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
+  const [pictures, setPictures] = useState(bgslider)
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideLength = bgslider.length
 
@@ -29,8 +29,8 @@ const Hero = () => {
     <>
       <Wrapper>
         <main>
-          <div className='bg-img'>
-            {bgslider.map((slide, index) => {
+          {/* <div className='bg-img'>
+            {pictures.map((slide, index) => {
               return (
                 <div
                   key={index}
@@ -42,6 +42,26 @@ const Hero = () => {
                     </div>
                   )}
                 </div>
+              )
+            })}
+          </div> */}
+          <div>
+            {pictures.map((slide, slideIndex) => {
+              const { id, image } = slide
+              let position = 'nextSlide'
+              if (slideIndex === currentSlide) {
+                position = 'activeSlide'
+              }
+              if (
+                slideIndex === currentSlide - 1 ||
+                (currentSlide === 0 && slideIndex === pictures.length - 1)
+              ) {
+                position = 'lastSlide'
+              }
+              return (
+                <article className={position} key={id}>
+                  <img src={image} alt='Atunlo' />
+                </article>
               )
             })}
           </div>
@@ -70,6 +90,7 @@ const Hero = () => {
 }
 const Wrapper = styled.section`
   main {
+    overflow: hidden;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -80,35 +101,9 @@ const Wrapper = styled.section`
     height: 100vh;
     position: relative;
   }
-  .bg-img {
-    /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-      url(${bgOne});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 100vh;
-    width: 100%;
-    margin: 0 auto; */
-    /* transition: 5s;
-    animation-name: animate;
-    animation-direction: alternate-reverse;
-    animation-play-state: running;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-duration: 45s;
-    animation-iteration-count: infinite; */
-  }
-  .bg-img {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-  }
   .slide img {
     width: 100%;
     height: 100vh;
-    object-fit: cover;
   }
   .slide {
     position: absolute;
@@ -118,12 +113,12 @@ const Wrapper = styled.section`
     height: 100vh;
     opacity: 0;
     transform: translateX(-50%);
-    transition: all 5s ease;
+    transition: all 3s ease;
   }
+
   .current {
-    animation: fadeIn 2s;
+    animation: fadeIn 0.1s;
     opacity: 1;
-    transition: all 2s ease-in;
     transform: translateX(0);
   }
   @keyframes fadeIn {
@@ -153,6 +148,31 @@ const Wrapper = styled.section`
     100% {
       transform: scale(0);
     }
+  }
+  article {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+  }
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  article.activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  article.lastSlide {
+    transform: translateX(-100%);
+  }
+  article.nextSlide {
+    transform: translateX(100%);
   }
   .bg-text {
     position: absolute;
@@ -219,7 +239,7 @@ const Wrapper = styled.section`
   }
   @media screen and (max-width: 600px) {
     .bg-text {
-      width: 80%;
+      width: 90%;
     }
   }
   @media screen and (max-width: 320px) {

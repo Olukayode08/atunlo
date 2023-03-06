@@ -1,5 +1,5 @@
 import React from 'react'
-import { About } from '../components'
+import { About, Whatsapp } from '../components'
 import waste from '../assets/corporate-img.png'
 import styled from 'styled-components'
 import { valueProposition } from '../data'
@@ -7,6 +7,8 @@ const StoryAbout = () => {
   return (
     <>
       <About />
+      <Whatsapp />
+
       <Story>
         <main>
           <div className='sec-two'>

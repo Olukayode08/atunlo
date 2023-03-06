@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Contact } from '../components'
+import { Contact, Whatsapp } from '../components'
 import styled from 'styled-components'
 import envelope from '../assets/envelope.png'
 import location from '../assets/location.png'
@@ -23,6 +23,7 @@ const ContactPage = () => {
     <>
       <>
         <Contact />
+        <Whatsapp />
         <ContactUs>
           <section>
             <div className='form'>

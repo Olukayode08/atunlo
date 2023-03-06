@@ -9,8 +9,9 @@ import About from './About'
 import Contact from './Contact'
 import PickupLocation from './PickupLocation'
 import DropoffLocation from './DropoffLocation'
+import Whatsapp from './Whatsapp'
 
 
 
 
-export {Contact, DropoffLocation, About, Services, PickupLocation, Stats, SectionFour, SectionThree, SectionTwo, Hero, FAQS}
+export {Whatsapp, Contact, DropoffLocation, About, Services, PickupLocation, Stats, SectionFour, SectionThree, SectionTwo, Hero, FAQS}
