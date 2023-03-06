@@ -4,7 +4,6 @@ import { dropdownItems } from '../data'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
 
-
 const Dropdown = () => {
   const { closeMobile } = useContext(Atunlo)
 
@@ -37,6 +36,7 @@ const Dropdown = () => {
   )
 }
 const Wrapper = styled.section`
+
   .dropdown-menu {
     display: flex;
     flex-direction: column;
@@ -61,19 +61,8 @@ const Wrapper = styled.section`
     width: 100%;
     height: 100%;
     text-decoration: none;
-    padding: 20px 10px;
+    padding: 15px 0;
     color: #000;
   }
-  /* @media screen and (max-width: 900px) {
-    .dropdown-menu{
-      width: 100px;
-    }
-    .dropdown-menu li,
-    .dropdown-link{
-      padding: 2px;
-      color: green;
-      font-size: 12px;
-    }
-  } */
 `
 export default Dropdown

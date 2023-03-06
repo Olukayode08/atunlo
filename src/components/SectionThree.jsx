@@ -189,17 +189,18 @@ const Wrapper = styled.section`
       width: 100%;
     }
   }
-  @media screen and (max-width: 290px) {
+  @media screen and (max-width: 320px) {
     .bg-text,
     .brief-desc {
       width: 100%;
     }
+    h3{
+      font-size: 19px;
+    }
     p {
-      font-size: 12px;
+      font-size: 10px;
       text-align: center;
       padding-left: 0px;
-      width: 200px;
-      border: 2px solid yellow;
     }
     h3 {
       color: #4cc800;
@@ -207,9 +208,24 @@ const Wrapper = styled.section`
     }
     .value-prop {
       width: 100%;
-      padding: 0;
+      padding: 5px 20px;
       margin: 0;
     }
+      .brief-desc {
+    h3 {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    p {
+      font-size: 13px;
+      line-height: 17px;
+      padding: 8px 0;
+    }
+    .view-more {
+      font-size: 12px;
+
+    }
+  }
   }
 `
 export default SectionThree

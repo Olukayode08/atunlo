@@ -1,44 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import bg from '../assets/images-img-7.png'
 import bgOne from '../assets/images-img-1.png'
-import bgTwo from '../assets/images-img-7.png'
-import bgThree from '../assets/images-img-6.png'
-import bgFour from '../assets/images-img-8.png'
-import bgFive from '../assets/images-img-5.png'
-import bgSix from '../assets/images-img-2.png'
-import bgSeven from '../assets/images-img-3.png'
-
-// import { bgslider } from '../data'
+import { bgslider } from '../data'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
-  // const [currentSlide, setCurrentSlide] = useState(0)
-  // const slideLength = bgslider.length
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const slideLength = bgslider.length
 
-  // const autoScroll = true
-  // let slideInterval
-  // let intervalTime = 5000
+  const autoScroll = true
+  let slideInterval
+  let intervalTime = 5000
 
-  // function auto() {
-  //   slideInterval = setInterval(nextSlide, intervalTime)
-  // }
+  function auto() {
+    slideInterval = setInterval(nextSlide, intervalTime)
+  }
 
-  // const nextSlide = () => {
-  //   setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1)
-  // }
-  // useEffect(() => {
-  //   if (autoScroll) {
-  //     auto()
-  //   }
-  //   return () => clearInterval(slideInterval)
-  // }, [currentSlide])
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1)
+  }
+  useEffect(() => {
+    if (autoScroll) {
+      auto()
+    }
+    return () => clearInterval(slideInterval)
+  }, [currentSlide])
   return (
     <>
       <Wrapper>
         <main>
           <div className='bg-img'>
-            {/* {bgslider.map((slide, index) => {
+            {bgslider.map((slide, index) => {
               return (
                 <div
                   key={index}
@@ -51,7 +43,7 @@ const Hero = () => {
                   )}
                 </div>
               )
-            })} */}
+            })}
           </div>
           <div className='bg-text'>
             <h1>
@@ -77,7 +69,6 @@ const Hero = () => {
   )
 }
 const Wrapper = styled.section`
-  /* height: 100vh; */
   main {
     color: #fff;
     display: flex;
@@ -90,14 +81,14 @@ const Wrapper = styled.section`
     position: relative;
   }
   .bg-img {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+    /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
       url(${bgOne});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 100vh;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; */
     /* transition: 5s;
     animation-name: animate;
     animation-direction: alternate-reverse;
@@ -107,37 +98,8 @@ const Wrapper = styled.section`
     animation-duration: 45s;
     animation-iteration-count: infinite; */
   }
-  /* @keyframes animate {
-    0% {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-        url(${bgOne});
-    }
-    17% {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-        url(${bgTwo});
-    }
-    33% {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-        url(${bgThree});
-    }
-    50% {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-        url(${bgFour});
-    }
-    67% {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-        url(${bgFive});
-    }
-    83% {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-        url(${bgSix});
-    }
-    100% {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-        url(${bgSeven});
-    }
-  } */
-  /* .bg-img {
+  .bg-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
     position: relative;
     overflow: hidden;
     height: 100%;
@@ -146,7 +108,6 @@ const Wrapper = styled.section`
   .slide img {
     width: 100%;
     height: 100vh;
-    animation: fadeIn 2s;
     object-fit: cover;
   }
   .slide {
@@ -157,27 +118,41 @@ const Wrapper = styled.section`
     height: 100vh;
     opacity: 0;
     transform: translateX(-50%);
-    transition: all 0.5s ease;
-  } */
-  /* @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  } */
-  /* @keyframes fadeIn {
+    transition: all 5s ease;
+  }
+  .current {
+    animation: fadeIn 2s;
+    opacity: 1;
+    transition: all 2s ease-in;
+    transform: translateX(0);
+  }
+  @keyframes fadeIn {
     0% {
-      opacity: 1;
+      transform: scale(0);
     }
     100% {
-      opacity: 0;
+      transform: scale(1);
     }
-  } */
-  .current {
-    opacity: 1;
-    transform: translateX(0);
+  }
+  @keyframes fadeOut {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(0.8);
+    }
+    40% {
+      transform: scale(0.6);
+    }
+    60% {
+      transform: scale(0.4);
+    }
+    80% {
+      transform: scale(0.2);
+    }
+    100% {
+      transform: scale(0);
+    }
   }
   .bg-text {
     position: absolute;
@@ -245,6 +220,17 @@ const Wrapper = styled.section`
   @media screen and (max-width: 600px) {
     .bg-text {
       width: 80%;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    h1 {
+      font-size: 30px;
+    }
+    h4 {
+      font-size: 15px;
+    }
+    .location {
+      margin: 7px 0;
     }
   }
 `

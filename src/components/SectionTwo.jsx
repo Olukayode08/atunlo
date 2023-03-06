@@ -94,8 +94,9 @@ const Wrapper = styled.section`
     .sec-two-r {
       text-align: center;
     }
-    h3 {
-      text-align: justify;
+    h3,
+    h5 {
+      text-align: center;
     }
     .location {
       margin: 0 auto;
@@ -105,10 +106,14 @@ const Wrapper = styled.section`
     img {
       width: 350px;
       height: 350px;
-      margin: 30px;
+      margin: 20px;
+    }
+    h3,
+    h5 {
+      text-align: center;
     }
   }
-  @media screen and (max-width: 290px) {
+  @media screen and (max-width: 320px) {
     img {
       width: 270px;
       height: 300px;

@@ -4,7 +4,6 @@ import { dropdownAbout } from '../data'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
 
-
 const DropdownAbout = () => {
   const { closeMobile } = useContext(Atunlo)
 
@@ -64,15 +63,5 @@ const Wrapper = styled.section`
     padding: 20px 0;
     color: #000;
   }
-  /* @media screen and (max-width: 900px) {
-    .dropdown-menu {
-      width: 100px;
-    }
-    .dropdown-link {
-      padding: 2px;
-      color: green;
-      font-size: 12px;
-    }
-  } */
 `
 export default DropdownAbout

@@ -5,7 +5,6 @@ import { Atunlo } from '../Context'
 import arrowUp from '../assets/arrow-up.png'
 import arrowDown from '../assets/arrow-down.png'
 
-import { BiUpArrow, BiDownArrow } from 'react-icons/bi'
 
 const FAQS = () => {
   const { accordion, toggleAccordion } = useContext(Atunlo)
@@ -129,7 +128,7 @@ const Wrapper = styled.section`
       width: 350px;
     }
   }
-  @media screen and (max-width: 290px) {
+  @media screen and (max-width: 325px) {
     .accordion {
       width: 280px;
     }

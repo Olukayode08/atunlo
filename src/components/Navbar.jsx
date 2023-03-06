@@ -11,6 +11,7 @@ import { Link as Scroll } from 'react-scroll'
 
 
 const Navbar = () => {
+
   const { active, setActive, closeMobile } = useContext(Atunlo)
   const [dropdown, setDropdown] = useState(false)
   const [dropdownAbout, setDropdownAbout] = useState(false)
@@ -35,6 +36,7 @@ const Navbar = () => {
       setDropdownAbout(false)
     }
   }
+  
   return (
     <>
       <section>
@@ -76,15 +78,14 @@ const Navbar = () => {
               </li>
               <li className='desktop-links'>
                 <Scroll
+                  className='link'
                   to='faqs'
                   spy={true}
                   smooth={true}
                   offset={-100}
                   duration={500}
                 >
-                  <Link className='link' to='/'>
-                    FAQ
-                  </Link>
+                  FAQ
                 </Scroll>
               </li>
             </ul>
@@ -110,20 +111,20 @@ const Navbar = () => {
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
               >
-                <Link className='link-mobile' to='#' onClick={closeMobile}>
+                <Link className='link-mobile' to='#'>
                   Services <img src={down} alt='Atunlo' />
                 </Link>
-                {/* {dropdown && <Dropdown />} */}
+                {dropdown && <Dropdown />}
               </li>
               <li
                 onMouseEnter={onMouseEnterAbout}
                 onMouseLeave={onMouseLeaveAbout}
                 className='mobile-links'
               >
-                <Link className='link-mobile' onClick={closeMobile} to='#'>
+                <Link className='link-mobile' to='#'>
                   About <img src={down} alt='Atunlo' />
                 </Link>
-                {/* {dropdownAbout && <DropdownAbout />} */}
+                {dropdownAbout && <DropdownAbout />}
               </li>
               <li className='mobile-links'>
                 <Link
