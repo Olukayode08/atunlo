@@ -64,13 +64,13 @@ const Wrapper = styled.section`
   }
   h1 {
     color: #4cc800;
-    font-size: 23px;
+    font-size: 29px;
     padding: 25px 10px;
     font-weight: 700;
   }
 
   .accordion {
-    width: 550px;
+    width: 650px;
     margin: 7px 0;
     background: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);

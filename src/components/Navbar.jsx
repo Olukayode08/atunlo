@@ -162,8 +162,8 @@ const Wrapper = styled.section`
     align-items: center;
     background-color: #fff;
     height: 70px;
-    padding: 0 60px;
     position: fixed;
+    padding: 0 100px;
     top: 0;
     left: 0;
     z-index: 70;

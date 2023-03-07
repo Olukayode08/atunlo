@@ -73,22 +73,28 @@ const Wrapper = styled.section`
   .brief-desc {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    padding: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 47%;
     text-align: left;
     h3 {
       color: #4cc800;
-      font-size: 28px;
-      line-height: 30px;
+      font-size: 33px;
+      line-height: 38px;
       font-weight: 700;
+      margin-bottom: 10px;
     }
     .desc {
       color: #fff;
-      font-size: 17px;
+      font-size: 19px;
       line-height: 25px;
       padding: 14px 0;
-      font-weight: lighter;
-      text-align: justify;
+      letter-spacing: 0.4px;
+      width: 300px;
+      font-weight: normal;
+      text-align: left;
+      font-family: 'FilsonProThin';
+      src: url(./fonts/FilsonProThin.otf) format(opentype);
     }
     .view-more {
       background-color: #fff;
@@ -96,25 +102,25 @@ const Wrapper = styled.section`
       width: 150px;
       font-size: 15px;
       text-align: center;
-      border-radius: 10px;
-      padding: 10px 0;
-      :hover {
-        background: #4cc800;
-        color: #fff;
-        transition: all 0.3s ease-in-out;
-      }
+      border-radius: 4px;
+      padding: 15px 5px;
+      margin-top: 15px;
     }
   }
   .value-prop {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    padding: 15px;
+    width: 53%;
+    padding: 30px 25px;
     text-align: center;
     align-items: center;
     background-color: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    h4 {
+      font-size: 25px;
+      padding-bottom: 25px;
+    }
     .line {
       height: 2px;
       width: 190px;
@@ -124,17 +130,21 @@ const Wrapper = styled.section`
     .propositions {
       display: flex;
       align-items: center;
+      justify-content: center;
       margin: 4px;
+      padding: 8px 0;
     }
     img {
-      width: 14%;
+      width: 11%;
     }
   }
   .prop-text {
-    font-size: 15px;
+    font-size: 18px;
     text-align: left;
-    padding-left: 10px;
-    width: 400px;
+    padding-left: 15px;
+    width: 380px;
+    font-family: 'FilsonProThin';
+    src: url(./fonts/FilsonProThin.otf) format(opentype);
   }
 
   @media screen and (max-width: 1200px) {
@@ -159,12 +169,17 @@ const Wrapper = styled.section`
     }
     .value-prop {
       margin-top: 30px;
+      img {
+        width: 14%;
+      }
     }
     .brief-desc {
       width: 100%;
       padding: 15px;
       .desc {
         text-align: center;
+        margin: 0 auto;
+        width: 400px;
       }
     }
     .prop-text {
@@ -192,6 +207,9 @@ const Wrapper = styled.section`
     }
     .brief-desc {
       width: 93%;
+      .desc {
+        width: 300px;
+      }
     }
     .value-prop {
       width: 100%;

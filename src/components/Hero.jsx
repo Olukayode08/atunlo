@@ -126,20 +126,22 @@ const Wrapper = styled.section`
     padding: 15px;
   }
   h1 {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 700;
-    line-height: 60px;
-    margin-bottom: 15px;
+    line-height: 70px;
+    margin-bottom: 25px;
     letter-spacing: 2px;
   }
   h4 {
-    font-weight: lighter;
     max-width: 700px;
     padding: 10px;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0.7px;
+    font-size: 23px;
+    font-weight: lighter;
+    line-height: 45px;
+    letter-spacing: 1px;
     padding: 6px 0;
+    font-family: 'FilsonProThin';
+    src: url(./fonts/FilsonProThin.otf) format(opentype);
     text-align: center;
   }
   .request {
@@ -151,12 +153,12 @@ const Wrapper = styled.section`
   .location {
     border: 2px solid #4cc800;
     color: #4cc800;
-    width: 190px;
+    width: 210px;
     font-size: 17px;
     border-radius: 5px;
     text-align: center;
-    padding: 14px 10px;
-    margin: 15px 10px;
+    padding: 18px 10px;
+    margin: 20px 15px;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.2s ease-in;

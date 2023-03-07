@@ -21,20 +21,36 @@ const Footer = () => {
           <div className='footer'>
             <main className='footer-content'>
               <h1>Services</h1>
-              <Link className='locations' to='/pickup'>Pickup</Link>
-              <Link className='locations' to='/dropoff'>Drop Off</Link>
-              <Link className='locations' to='/corporate'>Corporate services</Link>
+              <Link className='locations' to='/pickup'>
+                Pickup
+              </Link>
+              <Link className='locations' to='/dropoff'>
+                Drop Off
+              </Link>
+              <Link className='locations' to='/corporate'>
+                Corporate services
+              </Link>
             </main>
             <main className='footer-content'>
               <h1>About Us</h1>
-              <Link className='locations' to='/ourstory'>Our Story</Link>
-              <Link className='locations' to='/'>Our Partners</Link>
-              <Link className='locations' to='/ourteam'>Our Team</Link>
-              <Link className='locations' to='/contact'>Join Us</Link>
+              <Link className='locations' to='/ourstory'>
+                Our Story
+              </Link>
+              <Link className='locations' to='/'>
+                Our Partners
+              </Link>
+              <Link className='locations' to='/ourteam'>
+                Our Team
+              </Link>
+              <Link className='locations' to='/contact'>
+                Join Us
+              </Link>
             </main>
             <main className='footer-content'>
               <h1>Contact</h1>
-              <Link className='locations' to='/contact'>Contact us</Link>
+              <Link className='locations' to='/contact'>
+                Contact us
+              </Link>
             </main>
           </div>
         </footer>
@@ -52,7 +68,7 @@ const Footer = () => {
           <div className='treegar'>
             <h3>t </h3>
             <h6>
-              A member of the <br /> Treegar Group
+              A member of the <br /> <span>Treegar Group</span>
             </h6>
           </div>
         </section>
@@ -76,12 +92,13 @@ const Footer = () => {
 }
 const Wrapper = styled.section`
   background: #000;
-  padding: 50px 30px;
+  padding: 90px 30px;
   color: #fff;
   footer {
     display: flex;
-    justify-content: space-around;
-    width: 95%;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
     margin: 0 auto;
   }
   .footer {
@@ -90,11 +107,12 @@ const Wrapper = styled.section`
   .footer-content {
     display: flex;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 50px;
     text-align: left;
     p {
-      margin-top: 20px;
+      margin-top: 30px;
       font-weight: 100;
+      color: #8a8a8a;
     }
     h1 {
       color: #4cc800;
@@ -105,7 +123,7 @@ const Wrapper = styled.section`
       font-size: 15px;
       padding: 10px 0;
       text-decoration: none;
-      color: #fff;
+      color: #8a8a8a;
       :hover {
         color: #4cc800;
         transition: all 0.4s ease-in;
@@ -114,24 +132,27 @@ const Wrapper = styled.section`
   }
   section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-end;
     margin: 0 auto;
-    width: 95%;
+    width: 90%;
+    padding: 90px 0 10px 0;
   }
   h5 {
     color: #8a8a8a;
+    padding-bottom: 8px;
   }
   .subscribe {
     display: flex;
     border-radius: 3px;
-    background: #fff;
-    width: 400px;
+    background: #ffffff;
+    width: 530px;
     padding-left: 14px;
-    height: 40px;
-    margin: 20px auto;
+    height: 53px;
+    margin: 0 auto;
     input {
-      width: 250px;
-      height: 39px;
+      width: 345px;
+      height: 52px;
       border: none;
       outline: 0;
       font-family: inherit;
@@ -147,8 +168,8 @@ const Wrapper = styled.section`
       color: #fff;
       border-radius: 3px;
       font-size: 18px;
-      width: 150px;
-      height: 40px;
+      width: 195px;
+      height: 53px;
       font-family: inherit;
       cursor: pointer;
     }
@@ -166,15 +187,19 @@ const Wrapper = styled.section`
       font-size: 10px;
       color: #8a8a8a;
     }
+    span {
+      font-size: 15px;
+    }
   }
 
   article {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
-    padding: 30px 0 10px 0;
+    padding: 5px 0 10px 0;
     border-top: 2px solid #8a8a8a;
-    width: 95%;
+    width: 90%;
   }
   img {
     padding: 0 5px;
@@ -184,7 +209,7 @@ const Wrapper = styled.section`
     h3 {
       padding: 10px;
       color: #8a8a8a;
-      font-size: 15px;
+      font-size: 13px;
     }
   }
   @media screen and (max-width: 900px) {

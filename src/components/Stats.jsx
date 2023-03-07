@@ -36,8 +36,7 @@ const Wrapper = styled.section`
     align-items: center;
     width: 50%;
     margin: 40px auto;
-    /* text-align: justify; */
-
+    padding: 8px 0;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background: #FFFFFF;

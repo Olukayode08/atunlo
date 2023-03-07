@@ -39,16 +39,19 @@ const Wrapper = styled.section`
     padding: 65px 0px;
     h4 {
       color: #4cc800;
-      font-size: 25px;
+      font-size: 28px;
       line-height: 30px;
-      padding: 10px 0;
+      padding: 30px 0;
       font-weight: 700;
     }
     p {
-      font-weight: 400;
-      font-size: 19px;
-      line-height: 28px;
+      font-weight: 100;
+      font-size: 20px;
+      line-height: 32px;
       margin-top: 15px;
+      font-family: 'FilsonProThin';
+      src: url(./fonts/FilsonProThin.otf) format(opentype);
+      text-align: center;
     }
   }
 
