@@ -40,8 +40,8 @@ const Wrapper = styled.section`
     align-items: center;
   }
   img {
-    width: 450px;
-    height: 400px;
+    width: 440px;
+    height: 360px;
     margin: 30px;
   }
   .sec-two-r {
@@ -50,21 +50,22 @@ const Wrapper = styled.section`
     align-items: left;
     justify-content: center;
     margin: 50px;
-    width: 300px;
+    width: 380px;
     text-align: left;
   }
   h3 {
     color: #4cc800;
-    font-size: 25px;
-    line-height: 33px;
+    font-size: 32px;
+    line-height: 38px;
     padding: 10px;
-    text-align: justify;
+    font-weight: 700;
   }
   h5 {
     color: #000;
     padding: 15px;
-    font-size: 15px;
-    line-height: 23px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
     text-align: justify;
   }
   .location {

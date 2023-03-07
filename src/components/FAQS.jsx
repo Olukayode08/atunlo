@@ -65,7 +65,8 @@ const Wrapper = styled.section`
   h1 {
     color: #4cc800;
     font-size: 23px;
-    padding: 0 10px;
+    padding: 25px 10px;
+    font-weight: 700;
   }
 
   .accordion {
@@ -84,7 +85,7 @@ const Wrapper = styled.section`
     }
     h2 {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
       color: #000;
     }
     span {
@@ -95,6 +96,8 @@ const Wrapper = styled.section`
     }
 
     p {
+      font-size: 15px;
+      font-weight: 300;
       text-align: justify;
     }
     .content {

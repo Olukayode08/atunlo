@@ -36,9 +36,11 @@ const Wrapper = styled.section`
     align-items: center;
     width: 50%;
     margin: 40px auto;
+    /* text-align: justify; */
+
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    background: #fff;
+    background: #FFFFFF;
     .stats {
       display: flex;
       flex-direction: column;
@@ -51,7 +53,8 @@ const Wrapper = styled.section`
     }
     h2 {
       font-size: 15px;
-      color: #8a8a8a;
+      color: #000;
+      font-weight: 400;
     }
     .line {
       height: 30px;

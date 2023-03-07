@@ -49,7 +49,7 @@ const About = () => {
             })}
           </div>
           <div className='bg-text'>
-            <h1>About</h1>
+            <h1>About Us</h1>
           </div>
         </main>
       </Wrapper>

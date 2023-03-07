@@ -162,7 +162,7 @@ const Wrapper = styled.section`
     align-items: center;
     background-color: #fff;
     height: 70px;
-    padding: 0 30px;
+    padding: 0 60px;
     position: fixed;
     top: 0;
     left: 0;
@@ -180,8 +180,9 @@ const Wrapper = styled.section`
     padding: 24px 20px;
     text-decoration: none;
     color: #8a8a8a;
-    font-size: 15px;
+    font-size: 14px;
     height: 100%;
+    font-weight: 300;
     :hover {
       color: #fff;
       background: #4cc800;

@@ -67,27 +67,27 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: space-between;
     text-align: center;
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
   }
   .brief-desc {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     padding: 40px;
     text-align: left;
     h3 {
       color: #4cc800;
       font-size: 28px;
       line-height: 30px;
-      font-weight: 600;
+      font-weight: 700;
     }
     .desc {
       color: #fff;
       font-size: 17px;
       line-height: 25px;
       padding: 14px 0;
-      font-weight: 600;
+      font-weight: lighter;
       text-align: justify;
     }
     .view-more {
@@ -109,7 +109,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     width: 50%;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     align-items: center;
     background-color: #fff;
@@ -134,7 +134,7 @@ const Wrapper = styled.section`
       font-size: 15px;
       text-align: left;
       padding-left: 10px;
-      width: 320px;
+      width: 400px;
     }
   }
 

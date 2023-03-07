@@ -1,25 +1,15 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+@font-face{
+  font-family: 'FilsonProRegular';
+  src: url(./fonts/FilsonProRegular.otf) format(opentype);
+  font-weight: normal;
+}
 body {
-  font-family: 'Vollkorn', serif;
-  /* font-family: 'Cormorant Garamond', serif; */
+  font-family: 'FilsonProRegular';
 }
-/* @font-face{
-  font-family:Imported;
-  src: url(./fonts/FilsonProBlack.ttf);
-  src: url(./fonts/FilsonProRegular.ttf);
-  src: url(./fonts/FilsonProMedium.ttf);
-  src: url(./fonts/FilsonProLight.otf);
-  src: url(./fonts/FilsonProBold.otf);
 
-
-}
-::root{
-  font-family:Imported;
-} */

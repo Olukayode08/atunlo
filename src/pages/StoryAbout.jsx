@@ -111,6 +111,8 @@ const Story = styled.section`
     color: #000;
     padding: 6px;
     font-size: 15px;
+    font-weight: lighter;
+
     line-height: 20px;
     text-align: justify;
   }
@@ -185,7 +187,7 @@ const Story = styled.section`
     .waste-img {
       width: 530px;
     }
-    p{
+    p {
       text-align: justify;
     }
   }

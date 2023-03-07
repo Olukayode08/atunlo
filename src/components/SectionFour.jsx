@@ -20,19 +20,6 @@ const SectionFour = () => {
               as a replacement for raw materials.
             </p>
           </div>
-          <div className='logistics'>
-            <section className='logistics-services'>
-              {logistics.map((data) => {
-                const { id, image, text } = data
-                return (
-                  <div key={id} className='services'>
-                    <h3>{text}</h3>
-                    <img src={image} alt='Atunlo' />
-                  </div>
-                )
-              })}
-            </section>
-          </div>
         </main>
       </Wrapper>
     </>
@@ -55,41 +42,18 @@ const Wrapper = styled.section`
       font-size: 25px;
       line-height: 30px;
       padding: 10px 0;
+      font-weight: 700;
     }
     p {
+      font-weight: 400;
       font-size: 19px;
       line-height: 28px;
+      margin-top: 15px;
     }
   }
 
-  .logistics {
-    background-color: #4cc800;
-  }
-  .logistics-services {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin: 0 auto;
-    padding: 65px 0px;
-    width: 70%;
-    img{
-      background-color: #fff;
-      padding: 11px;
-      border-radius: 13px;
-    }
-    h3{
-      color: #fff;
-      font-size: 17px;
-      padding: 10px;
-    }
-  }
   @media screen and (max-width: 900px) {
-    .logistics-services{
-      display: flex;
-      flex-direction: column;
-      padding: 30px 0;
-    }
-    .three-rs{
+    .three-rs {
       width: 90%;
     }
   }

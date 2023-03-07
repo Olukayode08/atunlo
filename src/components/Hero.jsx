@@ -51,7 +51,7 @@ const Hero = () => {
           </div>
           <div className='bg-text'>
             <h1>
-              Together, we can <br></br> restore the planet
+              Together, we can <br></br> restore the planet!
             </h1>
             <h4>
               You can benefit from keeping your used PET bottles by requesting
@@ -112,7 +112,7 @@ const Wrapper = styled.section`
   .bg-text {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -126,15 +126,19 @@ const Wrapper = styled.section`
     padding: 15px;
   }
   h1 {
-    font-size: 45px;
-    line-height: 50px;
-    padding: 6px 0;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 60px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
   }
   h4 {
-    max-width: 600px;
+    font-weight: lighter;
+    max-width: 700px;
     padding: 10px;
     font-size: 20px;
     line-height: 30px;
+    letter-spacing: 0.7px;
     padding: 6px 0;
     text-align: center;
   }
@@ -142,17 +146,20 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 15px;
   }
   .location {
     border: 2px solid #4cc800;
     color: #4cc800;
     width: 190px;
     font-size: 17px;
+    border-radius: 5px;
     text-align: center;
-    padding: 10px;
+    padding: 14px 10px;
     margin: 15px 10px;
     cursor: pointer;
     text-decoration: none;
+    transition: all 0.2s ease-in;
     :hover {
       background: #4cc800;
       color: #fff;
@@ -170,9 +177,11 @@ const Wrapper = styled.section`
     }
     h1 {
       font-size: 40px;
+      line-height: 50px;
     }
     h4 {
       font-size: 18px;
+      line-height: 25px;
     }
     .bg-text {
       top: 45%;
