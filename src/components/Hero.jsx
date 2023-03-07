@@ -135,13 +135,13 @@ const Wrapper = styled.section`
   h4 {
     max-width: 700px;
     padding: 10px;
-    font-size: 23px;
+    font-size: 22px;
     font-weight: lighter;
     line-height: 45px;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     padding: 6px 0;
-    font-family: 'FilsonProThin';
-    src: url(./fonts/FilsonProThin.otf) format(opentype);
+    font-family: 'FilsonProRegular';
+    src: url(./fonts/FilsonProRegular.ttf) format(truetype);
     text-align: center;
   }
   .request {

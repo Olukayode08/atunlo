@@ -93,8 +93,8 @@ const Wrapper = styled.section`
       width: 300px;
       font-weight: normal;
       text-align: left;
-      font-family: 'FilsonProThin';
-      src: url(./fonts/FilsonProThin.otf) format(opentype);
+      font-family: 'FilsonProRegular';
+      src: url(./fonts/FilsonProRegular.ttf) format(truetype);
     }
     .view-more {
       background-color: #fff;
@@ -143,8 +143,8 @@ const Wrapper = styled.section`
     text-align: left;
     padding-left: 15px;
     width: 380px;
-    font-family: 'FilsonProThin';
-    src: url(./fonts/FilsonProThin.otf) format(opentype);
+    font-family: 'FilsonProRegular';
+    src: url(./fonts/FilsonProRegular.ttf) format(truetype);
   }
 
   @media screen and (max-width: 1200px) {

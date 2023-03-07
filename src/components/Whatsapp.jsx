@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import whatsapp from '../assets/Chat-big.png'
+import { Link } from 'react-router-dom'
+
 
 
 const Whatsapp = () => {
@@ -10,7 +12,9 @@ const Whatsapp = () => {
         <section>
           <main>
             <img src={whatsapp} alt='Atunlo' />
-            <p>Chat with us</p>
+            <Link className='link-w' to='https://wa.link/wjjb8a'>
+              Chat with us
+            </Link>
           </main>
         </section>
       </Wrapper>
@@ -26,6 +30,7 @@ const Wrapper = styled.section`
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     position: absolute;
+    cursor: pointer;
     z-index: 10;
     top: -55px;
     padding: 5px;
@@ -44,7 +49,8 @@ const Wrapper = styled.section`
     img {
       width: 55%;
     }
-    p {
+    .link-w {
+      text-decoration: none;
       font-size: 13px;
       color: #fff;
       letter-spacing: 0.2px;

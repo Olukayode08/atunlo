@@ -45,12 +45,12 @@ const Wrapper = styled.section`
       font-weight: 700;
     }
     p {
-      font-weight: 100;
+      font-weight: lighter;
       font-size: 20px;
       line-height: 32px;
       margin-top: 15px;
-      font-family: 'FilsonProThin';
-      src: url(./fonts/FilsonProThin.otf) format(opentype);
+      font-family: 'FilsonProRegular';
+      src: url(./fonts/FilsonProRegular.ttf) format(truetype);
       text-align: center;
     }
   }

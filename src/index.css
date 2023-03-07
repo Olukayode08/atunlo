@@ -6,7 +6,7 @@
 
 @font-face{
   font-family: 'FilsonProRegular';
-  src: url(./fonts/FilsonProRegular.otf) format(opentype);
+  src: url(./fonts/FilsonProRegular.ttf) format(truetype);
   font-weight: normal;
 }
 body {
