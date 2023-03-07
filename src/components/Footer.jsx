@@ -76,7 +76,7 @@ const Footer = () => {
 }
 const Wrapper = styled.section`
   background: #000;
-  padding: 20px;
+  padding: 50px 30px;
   color: #fff;
   footer {
     display: flex;
@@ -92,6 +92,10 @@ const Wrapper = styled.section`
     flex-direction: column;
     padding: 0 40px;
     text-align: left;
+    p {
+      margin-top: 20px;
+      font-weight: 100;
+    }
     h1 {
       color: #4cc800;
       font-size: 19px;
@@ -114,7 +118,6 @@ const Wrapper = styled.section`
     margin: 0 auto;
     width: 95%;
   }
-
   h5 {
     color: #8a8a8a;
   }
@@ -124,11 +127,11 @@ const Wrapper = styled.section`
     background: #fff;
     width: 400px;
     padding-left: 14px;
-    height: 38px;
+    height: 40px;
     margin: 20px auto;
     input {
       width: 250px;
-      height: 37px;
+      height: 39px;
       border: none;
       outline: 0;
       font-family: inherit;
@@ -145,7 +148,7 @@ const Wrapper = styled.section`
       border-radius: 3px;
       font-size: 18px;
       width: 150px;
-      height: 38px;
+      height: 40px;
       font-family: inherit;
       cursor: pointer;
     }

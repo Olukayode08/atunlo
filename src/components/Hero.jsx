@@ -176,12 +176,12 @@ const Wrapper = styled.section`
       flex-direction: column;
     }
     h1 {
-      font-size: 40px;
-      line-height: 50px;
+      font-size: 35px;
+      line-height: 42px;
     }
     h4 {
-      font-size: 18px;
-      line-height: 25px;
+      font-size: 17px;
+      line-height: 26px;
     }
     .bg-text {
       top: 45%;

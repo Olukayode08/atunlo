@@ -115,7 +115,6 @@ const Wrapper = styled.section`
     background-color: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-
     .line {
       height: 2px;
       width: 190px;
@@ -130,12 +129,12 @@ const Wrapper = styled.section`
     img {
       width: 14%;
     }
-    .prop-text {
-      font-size: 15px;
-      text-align: left;
-      padding-left: 10px;
-      width: 400px;
-    }
+  }
+  .prop-text {
+    font-size: 15px;
+    text-align: left;
+    padding-left: 10px;
+    width: 400px;
   }
 
   @media screen and (max-width: 1200px) {
@@ -158,12 +157,18 @@ const Wrapper = styled.section`
       text-align: center;
       margin: 0 auto;
     }
+    .value-prop {
+      margin-top: 30px;
+    }
     .brief-desc {
       width: 100%;
       padding: 15px;
       .desc {
         text-align: center;
       }
+    }
+    .prop-text {
+      width: 320px;
     }
 
     .view-more {
@@ -191,6 +196,7 @@ const Wrapper = styled.section`
     .value-prop {
       width: 100%;
       padding: 10px 20px;
+      margin-top: 15px;
     }
   }
   @media screen and (max-width: 320px) {
@@ -214,6 +220,7 @@ const Wrapper = styled.section`
       width: 100%;
       padding: 5px 20px;
       margin: 0;
+      margin-top: 0;
     }
     .brief-desc {
       h3 {

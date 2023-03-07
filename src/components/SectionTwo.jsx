@@ -55,8 +55,8 @@ const Wrapper = styled.section`
   }
   h3 {
     color: #4cc800;
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 30px;
+    line-height: 36px;
     padding: 10px;
     font-weight: 700;
   }
@@ -77,6 +77,7 @@ const Wrapper = styled.section`
     padding: 10px;
     margin: 15px 14px;
     cursor: pointer;
+    border-radius: 5px;
     text-decoration: none;
     :hover {
       background: #4cc800;
@@ -112,6 +113,10 @@ const Wrapper = styled.section`
     h3,
     h5 {
       text-align: center;
+    }
+    h3 {
+      font-size: 25px;
+      line-height: 28px;
     }
   }
   @media screen and (max-width: 320px) {
