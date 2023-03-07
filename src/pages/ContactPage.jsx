@@ -63,12 +63,16 @@ const ContactPage = () => {
                   onChange={submitDetails}
                   required
                 />
-                <h5>
-                  <span>*</span>I agree that my data are stored and I can be
-                  called for information purposes or contacted by e-mail. The
-                  data will not be passed on to third parties. I agree with
-                  TERMS and CONDITIONS
-                </h5>
+                <div className='t-c'>
+                  <input type="checkbox" required className='agree'/>
+                  <h5>
+                    <span>*</span>I agree that my data are stored and I can be
+                    called for information purposes or contacted by e-mail. The
+                    data will not be passed on to third parties. I agree with
+                    TERMS and CONDITIONS
+                  </h5>
+                </div>
+
                 <button>Submit</button>
               </form>
             </div>
@@ -141,9 +145,20 @@ const ContactUs = styled.section`
   .comment {
     height: 250px;
   }
+  .t-c {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 430px;
+    margin: 15px 0;
+  }
+  .agree {
+    width: 50px;
+    margin: 0;
+  }
   h5 {
-    width: 400px;
     margin: 7px 0;
+    padding-left: 10px;
   }
   button {
     margin: 15px 0;
@@ -161,7 +176,6 @@ const ContactUs = styled.section`
   .direct-contact,
   .form {
     width: 100%;
-    /* border: 1px solid green; */
     padding: 0 20px;
   }
   .direct-contact {
@@ -196,7 +210,7 @@ const ContactUs = styled.section`
   p {
     text-align: right;
   }
-  iframe{
+  iframe {
     margin: 30px 0;
     width: 100%;
     height: 80vh;
@@ -218,7 +232,7 @@ const ContactUs = styled.section`
     section {
       width: 100%;
     }
-    h5,
+    .t-c,
     input {
       width: 350px;
     }
@@ -227,7 +241,7 @@ const ContactUs = styled.section`
     }
   }
   @media screen and (max-width: 300px) {
-    h5,
+    .t-c,
     input {
       width: 270px;
     }

@@ -29,22 +29,6 @@ const Hero = () => {
     <>
       <Wrapper>
         <main>
-          {/* <div className='bg-img'>
-            {pictures.map((slide, index) => {
-              return (
-                <div
-                  key={index}
-                  className={index === currentSlide ? 'slide current' : 'slide'}
-                >
-                  {index === currentSlide && (
-                    <div>
-                      <img src={slide.image} alt='Atunlo' />
-                    </div>
-                  )}
-                </div>
-              )
-            })}
-          </div> */}
           <div>
             {pictures.map((slide, slideIndex) => {
               const { id, image } = slide
@@ -101,56 +85,7 @@ const Wrapper = styled.section`
     height: 100vh;
     position: relative;
   }
-  .slide img {
-    width: 100%;
-    height: 100vh;
-  }
-  .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    opacity: 0;
-    transform: translateX(-50%);
-    transition: all 3s ease;
-  }
-
-  .current {
-    animation: fadeIn 0.1s;
-    opacity: 1;
-    transform: translateX(0);
-  }
-  @keyframes fadeIn {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes fadeOut {
-    0% {
-      transform: scale(1);
-    }
-    20% {
-      transform: scale(0.8);
-    }
-    40% {
-      transform: scale(0.6);
-    }
-    60% {
-      transform: scale(0.4);
-    }
-    80% {
-      transform: scale(0.2);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
   article {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
     position: absolute;
     top: 0;
     left: 0;
@@ -175,14 +110,20 @@ const Wrapper = styled.section`
     transform: translateX(100%);
   }
   .bg-text {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     z-index: 5;
-    width: 50%;
+    width: 100%;
+    height: 120%;
     text-align: center;
-    padding: 40px 0;
+    padding: 15px;
   }
   h1 {
     font-size: 45px;
@@ -235,11 +176,6 @@ const Wrapper = styled.section`
     }
     .bg-text {
       top: 45%;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .bg-text {
-      width: 90%;
     }
   }
   @media screen and (max-width: 320px) {

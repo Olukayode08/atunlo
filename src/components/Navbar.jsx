@@ -9,9 +9,7 @@ import Dropdown from './Dropdown'
 import DropdownAbout from './DropdownAbout'
 import { Link as Scroll } from 'react-scroll'
 
-
 const Navbar = () => {
-
   const { active, setActive, closeMobile } = useContext(Atunlo)
   const [dropdown, setDropdown] = useState(false)
   const [dropdownAbout, setDropdownAbout] = useState(false)
@@ -36,7 +34,7 @@ const Navbar = () => {
       setDropdownAbout(false)
     }
   }
-  
+
   return (
     <>
       <section>
@@ -114,7 +112,7 @@ const Navbar = () => {
                 <Link className='link-mobile' to='#'>
                   Services <img src={down} alt='Atunlo' />
                 </Link>
-                {dropdown && <Dropdown />}
+                {/* {dropdown && <Dropdown />} */}
               </li>
               <li
                 onMouseEnter={onMouseEnterAbout}
@@ -124,7 +122,7 @@ const Navbar = () => {
                 <Link className='link-mobile' to='#'>
                   About <img src={down} alt='Atunlo' />
                 </Link>
-                {dropdownAbout && <DropdownAbout />}
+                {/* {dropdownAbout && <DropdownAbout />} */}
               </li>
               <li className='mobile-links'>
                 <Link
@@ -156,7 +154,6 @@ const Wrapper = styled.section`
   }
   .logo {
     width: 20%;
-
     margin-top: 15px;
   }
   nav {

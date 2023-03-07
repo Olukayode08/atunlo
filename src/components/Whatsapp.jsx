@@ -22,6 +22,7 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
     position: absolute;
+    z-index: 10;
     top: -55px;
     padding: 7px;
     right: 0;

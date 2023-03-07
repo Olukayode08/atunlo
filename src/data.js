@@ -12,6 +12,8 @@ import bgThree from './assets/images-img-6.png'
 import bgFour from './assets/images-img-8.png'
 import bgSix from './assets/images-img-2.png'
 import bgFive from './assets/images-img-3.png'
+import bgSeven from './assets/images-img-5.png'
+
 import Anita from './assets/Anita.png'
 import Aunmi from './assets/Aunmi.png'
 import Mayaki from './assets/Mayaki.png'
@@ -39,7 +41,7 @@ She is currently the Operations Manager at Atunlo and oversees all daily activit
     about: `Mayaki has over 15 years experience managing global recycling companies. He currently serves as the General Manager for Sonnex Packaging, a subsidiary of Mohinani Group where he oversees the entire recycling value chain for PET bottles from collection to export of crushed and recycled PET to packaging companies.`,
   },
 ]
-
+// DROPDOWN SERVICES
 export const dropdownItems = [
   {
     id: 1,
@@ -57,6 +59,8 @@ export const dropdownItems = [
     path: '/corporate',
   },
 ]
+// DROPDOWN ABOUT
+
 export const dropdownAbout = [
   {
     id: 1,
@@ -69,6 +73,7 @@ export const dropdownAbout = [
     path: '/ourteam',
   },
 ]
+// BACKGROUND SLIDER
 export const bgslider = [
   {
     id: 1,
@@ -96,6 +101,10 @@ export const bgslider = [
   {
     id: 6,
     image: bgSix,
+  },
+  {
+    id: 7,
+    image: bgSeven,
   },
 ]
 // OUR VALUE PROPOSITIONS
