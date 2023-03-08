@@ -1,5 +1,5 @@
 import React from 'react'
-import { About, Whatsapp } from '../components'
+import { About, OurPartners, Whatsapp } from '../components'
 import waste from '../assets/corporate-img.png'
 import styled from 'styled-components'
 import { valueProposition } from '../data'
@@ -68,6 +68,7 @@ const StoryAbout = () => {
           </div>
         </main>
       </Story>
+      <OurPartners />
     </>
   )
 }

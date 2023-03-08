@@ -235,12 +235,15 @@ const Wrapper = styled.section`
   @media screen and (max-width: 500px) {
     .subscribe {
       width: 300px;
+      height: 40px;
       input {
         width: 200px;
+        height: 39px;
       }
       button {
         width: 100px;
         font-size: 15px;
+        height: 40px;
       }
     }
     h5 {

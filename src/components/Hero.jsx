@@ -29,7 +29,7 @@ const Hero = () => {
     <>
       <Wrapper>
         <main>
-          <div>
+          <div className='bg-img'>
             {pictures.map((slide, slideIndex) => {
               const { id, image } = slide
               let position = 'nextSlide'
@@ -167,34 +167,39 @@ const Wrapper = styled.section`
       color: #fff;
     }
   }
-  @media screen and (min-width: 600px) {
-    .slide img {
-      width: 100%;
-      height: 100vh;
-    }
-  }
   @media screen and (max-width: 900px) {
     .request {
       flex-direction: column;
     }
     h1 {
-      font-size: 35px;
-      line-height: 42px;
+      font-size: 33px;
+      line-height: 39px;
     }
     h4 {
       font-size: 17px;
-      line-height: 26px;
+      line-height: 24px;
     }
     .bg-text {
       top: 45%;
     }
+    .location {
+      padding: 10px;
+    }
   }
   @media screen and (max-width: 320px) {
+    main,
+    .article,
+    img {
+      height: 110vh;
+    }
+    .bg-text {
+      height: 130%;
+    }
     h1 {
-      font-size: 30px;
+      font-size: 25px;
     }
     h4 {
-      font-size: 15px;
+      font-size: 13px;
     }
     .location {
       margin: 7px 0;

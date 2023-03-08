@@ -38,6 +38,7 @@ const DropoffLocation = () => {
 }
 
 const Wrapper = styled.section`
+  margin-top: 60px;
   section {
     width: 85%;
     margin: 0 auto;
@@ -46,7 +47,8 @@ const Wrapper = styled.section`
   }
   h2 {
     text-align: left;
-    margin-left: 50px;
+    margin-left: 20px;
+    font-weight: 700;
   }
 
   main {
@@ -65,6 +67,7 @@ const Wrapper = styled.section`
     background: #4cc800;
     color: #fff;
     padding: 7px;
+    font-weight: lighter;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     text-align: center;
@@ -83,12 +86,15 @@ const Wrapper = styled.section`
     justify-content: left;
     background: #000;
     color: #fff;
-    padding: 7px;
+    padding: 20px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
   }
   .address {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
+  }
+  h4 {
+    font-weight: lighter;
   }
   @media screen and (max-width: 1350px) {
     h2 {

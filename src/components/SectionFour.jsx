@@ -45,7 +45,8 @@ const Wrapper = styled.section`
       font-weight: 700;
     }
     p {
-      font-weight: lighter;
+      font-weight: 100;
+      opacity: 0.87;
       font-size: 20px;
       line-height: 32px;
       margin-top: 15px;

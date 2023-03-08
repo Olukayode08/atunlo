@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Stats, Services, DropoffLocation, Whatsapp } from '../components'
+import { Stats, Services, DropoffLocation, Whatsapp, OurPartners } from '../components'
 import dropoff from '../assets/dropoff-icon.png'
 import waste from '../assets/IMG_20230129_153109_285 1.png'
 
@@ -21,20 +21,18 @@ const DropoffServices = () => {
                 <h3>Waste DropOff</h3>
               </div>
               <h5>
-                Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos. Curabitur tempus urna at turpis
-                condimentum lobortis. Ut commodo efficitur neque. Ut diam quam,
-                semper iaculis condimentum ac, vestibulum eu nisl.
+                Please call our drop-off locations to drop off your used PET
+                bottles. Can’t find your location? Drop us a message by filling
+                our contact form here.
               </h5>
-              <p>Find Dropoff Points</p>
+              {/* <p>Find Dropoff Points</p> */}
             </div>
           </div>
         </main>
       </WasteDropoff>
       <Stats />
       <DropoffLocation />
+      <OurPartners />
     </>
   )
 }
@@ -89,9 +87,10 @@ const WasteDropoff = styled.section`
     padding: 10px;
     font-size: 15px;
     line-height: 23px;
+    font-weight: lighter;
     text-align: justify;
   }
-  p {
+  /* p {
     border: 2px solid #4cc800;
     color: #4cc800;
     width: 170px;
@@ -99,7 +98,7 @@ const WasteDropoff = styled.section`
     padding: 10px;
     margin: 10px;
     cursor: pointer;
-  }
+  } */
 
   @media screen and (max-width: 1000px) {
     .sec-two {

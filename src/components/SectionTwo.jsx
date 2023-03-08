@@ -95,7 +95,9 @@ const Wrapper = styled.section`
     }
     .sec-two-r {
       text-align: center;
+      margin: 30px;
     }
+
     h3,
     h5 {
       text-align: center;
@@ -115,8 +117,14 @@ const Wrapper = styled.section`
       text-align: center;
     }
     h3 {
-      font-size: 25px;
-      line-height: 28px;
+      font-size: 23px;
+      line-height: 26px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .sec-two-r {
+      margin: 30px 0;
+      width: 330px;
     }
   }
   @media screen and (max-width: 320px) {
@@ -124,6 +132,10 @@ const Wrapper = styled.section`
       width: 270px;
       height: 300px;
       margin: 0px;
+    }
+    .sec-two-r {
+      margin: 30px 0;
+      width: 275px;
     }
   }
 `

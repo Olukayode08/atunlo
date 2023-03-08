@@ -8,7 +8,6 @@ import PickupServices from './pages/PickupServices'
 import DropoffServices from './pages/DropoffServices'
 import CorporateServices from './pages/CorporateServices'
 import ContactPage from './pages/ContactPage'
-import OurPartners from './components/OurPartners'
 import Reload from './hooks/Reload'
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
             <Route path='/ourteam' element={<TeamAbout />} />
             <Route path='/contact' element={<ContactPage />} />
           </Routes>
-          <OurPartners />
           <Footer />
         </Reload>
     </>

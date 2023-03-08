@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stats, Services, Whatsapp } from '../components'
+import { Stats, Services, Whatsapp, OurPartners } from '../components'
 import waste from '../assets/corporate-img.png'
 import styled from 'styled-components'
 import Pickup from '../assets/Pickup-icon.png'
@@ -36,6 +36,7 @@ const CorporateServices = () => {
         </main>
       </Corporate>
       <Stats />
+      <OurPartners />
     </>
   )
 }
@@ -88,6 +89,7 @@ const Corporate = styled.section`
     font-size: 15px;
     line-height: 23px;
     text-align: justify;
+    font-weight: lighter;
   }
   p {
     border: 2px solid #4cc800;

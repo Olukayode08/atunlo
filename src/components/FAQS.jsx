@@ -58,7 +58,7 @@ const Wrapper = styled.section`
     align-items: center;
   }
   .line {
-    width: 50px;
+    width: 120px;
     height: 2px;
     background: #4cc800;
   }
@@ -74,7 +74,7 @@ const Wrapper = styled.section`
     margin: 7px 0;
     background: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 20px;
     .title {
       display: flex;
       justify-content: space-between;
@@ -97,7 +97,8 @@ const Wrapper = styled.section`
 
     p {
       font-size: 15px;
-      font-weight: 300;
+      line-height: 27px;
+      font-weight: lighter;
       text-align: justify;
     }
     .content {
@@ -111,24 +112,41 @@ const Wrapper = styled.section`
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     .accordion {
-      width: 450px;
+      width: 500px;
+      padding: 10px;
+
       h2 {
         font-size: 17px;
       }
     }
     h1 {
-      font-size: 20px;
-      padding: 0 5px;
+      font-size: 22px;
+      padding: 20px 5px;
     }
     .line {
-      width: 30px;
+      width: 80px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 20px;
     }
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 550px) {
+    .accordion {
+      width: 370px;
+    }
+    .line {
+      width: 50px;
+    }
+  }
+  @media screen and (max-width: 430px) {
     .accordion {
       width: 350px;
+    }
+    .line {
+      width: 20px;
     }
   }
   @media screen and (max-width: 325px) {

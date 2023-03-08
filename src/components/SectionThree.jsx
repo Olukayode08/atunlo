@@ -91,10 +91,8 @@ const Wrapper = styled.section`
       padding: 14px 0;
       letter-spacing: 0.4px;
       width: 300px;
-      font-weight: normal;
+      font-weight: lighter;
       text-align: left;
-      font-family: 'FilsonProRegular';
-      src: url(./fonts/FilsonProRegular.ttf) format(truetype);
     }
     .view-more {
       background-color: #fff;
@@ -114,6 +112,7 @@ const Wrapper = styled.section`
     padding: 30px 25px;
     text-align: center;
     align-items: center;
+    justify-content: center;
     background-color: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -174,8 +173,14 @@ const Wrapper = styled.section`
       }
     }
     .brief-desc {
+      align-items: center;
+      justify-content: center;
       width: 100%;
       padding: 15px;
+      h3{
+        font-size: 29px;
+        line-height: 34px;
+      }
       .desc {
         text-align: center;
         margin: 0 auto;
@@ -209,15 +214,29 @@ const Wrapper = styled.section`
       width: 93%;
       .desc {
         width: 300px;
+        font-size: 17px;
+        line-height: 22px;
       }
     }
     .value-prop {
       width: 100%;
       padding: 10px 20px;
       margin-top: 15px;
+      h4{
+        font-size: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+    @media screen and (max-width: 420px) {
+    .bg-img{
+      height: 150vh;
     }
   }
   @media screen and (max-width: 320px) {
+    .bg-img{
+      height: 190vh;
+    }
     .bg-text,
     .brief-desc {
       width: 100%;
@@ -235,10 +254,13 @@ const Wrapper = styled.section`
       font-size: 20px;
     }
     .value-prop {
-      width: 100%;
-      padding: 5px 20px;
-      margin: 0;
-      margin-top: 0;
+      width: 98%;
+      padding: 15px 20px;
+      margin: 0 auto;
+      .prop-text{
+        width: 300px;
+      }
+
     }
     .brief-desc {
       h3 {

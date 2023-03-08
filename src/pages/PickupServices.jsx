@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stats, Services, PickupLocation, Whatsapp } from '../components'
+import { Stats, Services, PickupLocation, Whatsapp, OurPartners } from '../components'
 import waste from '../assets/IMG_20230129_153109_285 1.png'
 import styled from 'styled-components'
 import Pickup from '../assets/Pickup-icon.png'
@@ -34,6 +34,7 @@ const PickupServices = () => {
       </WastePickup>
       <Stats />
       <PickupLocation />
+      <OurPartners />
     </>
   )
 }
@@ -87,6 +88,7 @@ const WastePickup = styled.section`
     font-size: 15px;
     line-height: 23px;
     text-align: justify;
+    font-weight: lighter;
   }
   p {
     border: 2px solid #4cc800;
