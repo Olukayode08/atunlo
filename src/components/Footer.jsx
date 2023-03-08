@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import LogoBlack from '../assets/Atulo full logo (white+green).png'
 import Twitter from '../assets/Twitter Squared.png'
 import Instagram from '../assets/Instagram.png'
 import Linkedin from '../assets/LinkedIn.png'
 import Mail from '../assets/Mail.png'
+import notify from '../assets/mac-mail.png'
+
 import { Link} from 'react-router-dom'
 
 
 
 const Footer = () => {
+  const [modal, setModal] = useState(false)
+  const toggleModal = () =>{
+    setModal(!modal)
+  }
   return (
     <>
       <Wrapper>
@@ -60,11 +66,30 @@ const Footer = () => {
               *Subscribe to our newsletter to receive news and updates from
               Atunlo
             </h5>
-            <div className='subscribe'>
+            <form className='subscribe'>
               <input type='email' required placeholder='Your Email' />
-              <button>Subscribe</button>
-            </div>
+              <button onClick={toggleModal}>Subscribe</button>
+            </form>
           </div>
+          {modal && (
+            <div className='modal'>
+              <div className='overlay' onClick={toggleModal}></div>
+              <div className='modal-content'>
+                <div className='modal-heading'>
+                  <h2 className='congrats'>Congratulations!</h2>
+                  <div className='close-modal' onClick={toggleModal}>
+                    X
+                  </div>
+                </div>
+                <img className='notify' src={notify} alt='Atunlo' />
+                <p className='modal-text'>
+                  You have successfully subscribed to our Newsletter. Follow our
+                  social handles for weekly updates and giveaways.
+                </p>
+              </div>
+            </div>
+          )}
+
           <div className='treegar'>
             <h3>t </h3>
             <h6>
@@ -211,6 +236,78 @@ const Wrapper = styled.section`
       color: #8a8a8a;
       font-size: 13px;
     }
+  }
+  /* TOAST NOTIFICATION */
+  body.active-modal {
+    overflow-y: hidden;
+  }
+
+  .btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+  }
+
+  .modal,
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+
+  .overlay {
+    background: rgba(49, 49, 49, 0.8);
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 514px;
+    padding: 20px;
+    min-width: 300px;
+  }
+  .congrats{
+    font-size: 32px;
+    color: #4cc800;
+    padding: 10px 0;
+  }
+  .notify{
+    padding: 13px;
+  }
+  .modal-text{
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #000;
+  }
+  .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 7px;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .content {
+    padding: 12px 15px;
+    border: 1px solid #222;
+    max-width: 400px;
+    margin: 0 auto;
   }
   @media screen and (max-width: 900px) {
     footer,

@@ -130,14 +130,19 @@ const Wrapper = styled.section`
     font-weight: 700;
     line-height: 70px;
     margin-bottom: 25px;
-    letter-spacing: 2px;
+    letter-spacing: 1.4px;
+    @font-face {
+      font-family: 'FilsonProBlack';
+      src: url(./fonts/FilsonProBlack.ttf) format(truetype);
+      font-weight: 700;
+    }
   }
   h4 {
     max-width: 700px;
     padding: 10px;
     font-size: 22px;
     font-weight: lighter;
-    line-height: 45px;
+    line-height: 35px;
     /* letter-spacing: 1px; */
     padding: 6px 0;
     font-family: 'FilsonProRegular';
@@ -157,7 +162,7 @@ const Wrapper = styled.section`
     font-size: 17px;
     border-radius: 5px;
     text-align: center;
-    padding: 18px 10px;
+    padding: 14px 10px;
     margin: 20px 15px;
     cursor: pointer;
     text-decoration: none;
@@ -172,7 +177,7 @@ const Wrapper = styled.section`
       flex-direction: column;
     }
     h1 {
-      font-size: 33px;
+      font-size: 37px;
       line-height: 39px;
     }
     h4 {
@@ -196,7 +201,8 @@ const Wrapper = styled.section`
       height: 130%;
     }
     h1 {
-      font-size: 25px;
+      font-size: 26px;
+      line-height: 30px;
     }
     h4 {
       font-size: 13px;

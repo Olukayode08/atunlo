@@ -110,9 +110,14 @@ const Wrapper = styled.section`
     padding: 15px;
   }
   h1 {
-    font-size: 45px;
-    line-height: 50px;
+    font-size: 60px;
+    font-weight: 700;
     padding: 6px 0;
+  }
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 40px;
+    }
   }
 `
 export default Services

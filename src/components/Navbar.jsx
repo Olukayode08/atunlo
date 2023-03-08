@@ -134,9 +134,17 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className='mobile-links'>
-                <Link className='link-mobile' onClick={closeMobile} to='/'>
+                <Scroll
+                  onClick={closeMobile}
+                  className='link-mobile'
+                  to='faqs'
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                >
                   FAQ
-                </Link>
+                </Scroll>
               </li>
             </ul>
           </div>

@@ -11,7 +11,9 @@ const Whatsapp = () => {
       <Wrapper>
         <section>
           <main>
-            <img src={whatsapp} alt='Atunlo' />
+            <Link to='https://wa.link/wjjb8a'>
+              <img src={whatsapp} alt='Atunlo' />
+            </Link>
             <Link className='link-w' to='https://wa.link/wjjb8a'>
               Chat with us
             </Link>
@@ -25,7 +27,7 @@ const Wrapper = styled.section`
   position: relative;
 
   section {
-    width: 110px;
+    width: 95px;
     background: #fff;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -41,13 +43,13 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
     padding: 5px;
-    width: 100px;
+    width: 85px;
     background: #4cc800;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     cursor: pointer;
     img {
-      width: 55%;
+      width: 95%;
     }
     .link-w {
       text-decoration: none;
