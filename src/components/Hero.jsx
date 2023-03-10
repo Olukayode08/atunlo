@@ -97,6 +97,7 @@ const Wrapper = styled.section`
     object-fit: cover;
     width: 100%;
     height: 100vh;
+    filter: blur(1px);
   }
   article.activeSlide {
     opacity: 1;
@@ -110,7 +111,7 @@ const Wrapper = styled.section`
     transform: translateX(100%);
   }
   .bg-text {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
     position: absolute;
     top: 50%;
     left: 50%;
@@ -131,11 +132,6 @@ const Wrapper = styled.section`
     line-height: 70px;
     margin-bottom: 25px;
     letter-spacing: 1.4px;
-    @font-face {
-      font-family: 'FilsonProBlack';
-      src: url(./fonts/FilsonProBlack.ttf) format(truetype);
-      font-weight: 700;
-    }
   }
   h4 {
     max-width: 700px;
@@ -143,7 +139,6 @@ const Wrapper = styled.section`
     font-size: 22px;
     font-weight: lighter;
     line-height: 35px;
-    /* letter-spacing: 1px; */
     padding: 6px 0;
     font-family: 'FilsonProRegular';
     src: url(./fonts/FilsonProRegular.ttf) format(truetype);

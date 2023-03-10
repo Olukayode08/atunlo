@@ -31,12 +31,13 @@ const Wrapper = styled.section`
     background: #fff;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     z-index: 10;
-    top: -55px;
-    padding: 5px;
+    bottom: 0px;
     right: 0;
+    padding: 5px;
+
   }
   main {
     display: flex;

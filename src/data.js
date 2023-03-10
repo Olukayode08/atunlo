@@ -41,18 +41,18 @@ She is currently the Operations Manager at Atunlo and oversees all daily activit
 ]
 // DROPDOWN SERVICES
 export const dropdownItems = [
+  // {
+  //   id: 1,
+  //   text: 'Pickup',
+  //   path: '/pickup',
+  // },
   {
     id: 1,
-    text: 'Pickup',
-    path: '/pickup',
-  },
-  {
-    id: 2,
     text: 'Dropoff',
     path: '/dropoff',
   },
   {
-    id: 3,
+    id: 2,
     text: 'Corporate services',
     path: '/corporate',
   },

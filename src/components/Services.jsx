@@ -81,6 +81,7 @@ const Wrapper = styled.section`
     object-fit: cover;
     width: 100%;
     height: 100%;
+    filter: blur(1px);
   }
   article.activeSlide {
     opacity: 1;
@@ -94,9 +95,9 @@ const Wrapper = styled.section`
     transform: translateX(100%);
   }
   .bg-text {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
     position: absolute;
-    top: 45%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;

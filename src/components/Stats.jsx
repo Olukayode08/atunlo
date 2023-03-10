@@ -29,34 +29,35 @@ const Stats = () => {
 }
 const Wrapper = styled.section`
   width: 80%;
-  margin: 30px auto;
+  margin: 40px auto;
   section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 60%;
     margin: 40px auto;
     padding: 8px 0;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    background: #FFFFFF;
+    background: #ffffff;
     .stats {
       display: flex;
       flex-direction: column;
       text-align: center;
-      padding: 17px;
+      padding: 27px;
     }
     h4 {
-      font-size: 18px;
+      font-size: 25px;
       color: #4cc800;
+      font-weight: 700;
     }
     h2 {
-      font-size: 15px;
+      font-size: 17px;
       color: #000;
       font-weight: 400;
     }
     .line {
-      height: 30px;
+      height: 45px;
       width: 2px;
       background: #8a8a8a;
     }
@@ -65,12 +66,20 @@ const Wrapper = styled.section`
     section {
       display: flex;
       flex-direction: column;
+      width: 60%;
+
       .stats {
         padding: 25px;
       }
       .line {
         height: 2px;
         width: 40px;
+      }
+      h4 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 15px;
       }
     }
   }

@@ -19,20 +19,20 @@ const SectionThree = () => {
                 goals to ensure a better, more sustainable future for the
                 communities we serve.
               </p>
-              <p className='view-more'>View more</p>
             </div>
             <div className='value-prop'>
               <h4>Our Value Proposition</h4>
-              <div className='line'></div>
-              {valueProposition.map((data) => {
-                const { id, image, text } = data
-                return (
-                  <section className='propositions' key={id}>
-                    <img src={image} alt='Atunlo' />
-                    <p className='prop-text'>{text}</p>
-                  </section>
-                )
-              })}
+              <div className='line'>
+                {valueProposition.map((data) => {
+                  const { id, image, text } = data
+                  return (
+                    <section className='propositions' key={id}>
+                      <img src={image} alt='Atunlo' />
+                      <p className='prop-text'>{text}</p>
+                    </section>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </main>
@@ -89,7 +89,7 @@ const Wrapper = styled.section`
       font-size: 19px;
       line-height: 25px;
       padding: 14px 0;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
       width: 300px;
       font-weight: lighter;
       text-align: left;
@@ -108,8 +108,8 @@ const Wrapper = styled.section`
   .value-prop {
     display: flex;
     flex-direction: column;
-    width: 48%;
-    padding: 15px;
+    width: 60%;
+    padding: 20px 30px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -118,20 +118,17 @@ const Wrapper = styled.section`
     border-radius: 10px;
     h4 {
       font-size: 25px;
-      padding-bottom: 25px;
+      padding-bottom: 15px;
     }
     .line {
-      height: 2px;
-      width: 190px;
-      background-color: #fff;
-      margin: 0 auto;
+      border-top: 0.1px ridge #e6e2e2;
     }
     .propositions {
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 4px;
-      padding: 8px 0;
+      padding: 4px 0;
     }
     img {
       width: 11%;
@@ -141,7 +138,7 @@ const Wrapper = styled.section`
     font-size: 17px;
     text-align: left;
     padding-left: 15px;
-    width: 380px;
+    width: 500px;
     font-family: 'FilsonProRegular';
     src: url(./fonts/FilsonProRegular.ttf) format(truetype);
   }

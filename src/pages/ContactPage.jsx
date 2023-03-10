@@ -117,7 +117,7 @@ const ContactUs = styled.section`
     margin: 0 auto;
   }
   h1 {
-    margin: 25px 0;
+    margin: 25px 0 35px 0;
     font-size: 15px;
   }
   .form {
@@ -134,7 +134,7 @@ const ContactUs = styled.section`
   }
   input {
     height: 40px;
-    width: 450px;
+    width: 600px;
     margin: 7px 0;
     background: linear-gradient(0deg, #f7f7f7, #f7f7f7),
       linear-gradient(0deg, #8a8a8a, #8a8a8a);
@@ -159,6 +159,7 @@ const ContactUs = styled.section`
   h5 {
     margin: 7px 0;
     padding-left: 10px;
+    text-align: justify;
   }
   button {
     margin: 15px 0;
@@ -184,7 +185,7 @@ const ContactUs = styled.section`
     align-items: flex-end;
   }
   h3 {
-    margin-right: 40px;
+    margin: 25px 40px 20px 0;
     color: #4cc800;
   }
   .phone,
@@ -193,7 +194,7 @@ const ContactUs = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 7px 0;
+    margin: 10px 0;
   }
   a {
     text-decoration: none;

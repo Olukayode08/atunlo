@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Squash as Hamburger } from 'hamburger-react'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/Atunlo-logo.png'
 import down from '../assets/down-grey.png'
 import Dropdown from './Dropdown'
@@ -45,18 +45,28 @@ const Navbar = () => {
             </Link>
             <ul className='links'>
               <li className='desktop-links'>
-                <Link className='link' to='/'>
+                <NavLink
+                  to='/'
+                  className={({ isActive }) =>
+                    isActive ? 'active-link' : 'link'
+                  }
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 className='desktop-links'
               >
-                <Link className='link' to='#'>
+                <NavLink
+                  to='/dropoff'
+                  className={({ isActive }) =>
+                    isActive ? 'active-link' : 'link'
+                  }
+                >
                   Services <img src={down} alt='Atunlo' />
-                </Link>
+                </NavLink>
                 {dropdown && <Dropdown />}
               </li>
               <li
@@ -64,15 +74,25 @@ const Navbar = () => {
                 onMouseLeave={onMouseLeaveAbout}
                 className='desktop-links'
               >
-                <Link className='link'>
+                <NavLink
+                  to='/ourstory'
+                  className={({ isActive }) =>
+                    isActive ? 'active-link' : 'link'
+                  }
+                >
                   About <img src={down} alt='Atunlo' />
-                </Link>
+                </NavLink>
                 {dropdownAbout && <DropdownAbout />}
               </li>
               <li className='desktop-links'>
-                <Link className='link' to='/contact'>
+                <NavLink
+                  to='/contact'
+                  className={({ isActive }) =>
+                    isActive ? 'active-link' : 'link'
+                  }
+                >
                   Contact
-                </Link>
+                </NavLink>
               </li>
               <li className='desktop-links'>
                 <Scroll
@@ -129,6 +149,7 @@ const Navbar = () => {
                   className='link-mobile'
                   onClick={closeMobile}
                   to='/contact'
+                  Nav
                 >
                   Contact
                 </Link>
@@ -184,6 +205,15 @@ const Wrapper = styled.section`
     cursor: pointer;
     list-style: none;
   }
+  .active-link {
+    padding: 24px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    height: 100%;
+    font-weight: 300;
+    color: #fff;
+    background: #4cc800;
+  }
   .link {
     padding: 24px 20px;
     text-decoration: none;
@@ -191,11 +221,6 @@ const Wrapper = styled.section`
     font-size: 14px;
     height: 100%;
     font-weight: 300;
-    :hover {
-      color: #fff;
-      background: #4cc800;
-      transition: all 0.3s ease-in;
-    }
   }
   .link-mobile {
     padding: 24px 20px;

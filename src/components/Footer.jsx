@@ -7,13 +7,15 @@ import Linkedin from '../assets/LinkedIn.png'
 import Mail from '../assets/Mail.png'
 import notify from '../assets/mac-mail.png'
 
-import { Link} from 'react-router-dom'
-
-
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   const [modal, setModal] = useState(false)
-  const toggleModal = () =>{
+  const [email, setEmail] = useState('')
+  const submitForm = (e)=>{
+    e.preventDefault()
+  }
+  const toggleModal = () => {
     setModal(!modal)
   }
   return (
@@ -25,8 +27,8 @@ const Footer = () => {
             <p>“The art of recycling”</p>
           </div>
           <div className='footer'>
-            <main className='footer-content'>
-              <h1>Services</h1>
+            <main className='footer-content spacing'>
+              <h1>SERVICES</h1>
               <Link className='locations' to='/pickup'>
                 Pickup
               </Link>
@@ -37,8 +39,8 @@ const Footer = () => {
                 Corporate services
               </Link>
             </main>
-            <main className='footer-content'>
-              <h1>About Us</h1>
+            <main className='footer-content spacing'>
+              <h1>ABOUT</h1>
               <Link className='locations' to='/ourstory'>
                 Our Story
               </Link>
@@ -52,10 +54,10 @@ const Footer = () => {
                 Join Us
               </Link>
             </main>
-            <main className='footer-content'>
-              <h1>Contact</h1>
+            <main className='footer-content space'>
+              <h1>CONTACT</h1>
               <Link className='locations' to='/contact'>
-                Contact us
+                Contact Us
               </Link>
             </main>
           </div>
@@ -66,8 +68,15 @@ const Footer = () => {
               *Subscribe to our newsletter to receive news and updates from
               Atunlo
             </h5>
-            <form className='subscribe'>
-              <input type='email' required placeholder='Your Email' />
+            <form className='subscribe' onSubmit={submitForm}>
+              <input
+                type='email'
+                name='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder='Your Email'
+              />
               <button onClick={toggleModal}>Subscribe</button>
             </form>
           </div>
@@ -99,7 +108,7 @@ const Footer = () => {
         </section>
         <article>
           <div className='copyright'>
-            <h3>Copyright 2023 @ Atunlotech. All rights reserved.</h3>
+            <h3 className='copy'>Copyright 2023 @ Atunlotech. All rights reserved.</h3>
             <h3>Privacy Policy</h3>
             <h3>Terms of Service</h3>
             <h3>Cookies Setting</h3>
@@ -117,7 +126,7 @@ const Footer = () => {
 }
 const Wrapper = styled.section`
   background: #000;
-  padding: 90px 30px;
+  padding: 120px 30px 10px 30px;
   color: #fff;
   footer {
     display: flex;
@@ -128,16 +137,22 @@ const Wrapper = styled.section`
   }
   .footer {
     display: flex;
+    justify-content: space-between;
+  }
+  .spacing {
+    padding: 0 50px;
+  }
+  .space {
+    padding-left: 50px;
   }
   .footer-content {
     display: flex;
     flex-direction: column;
-    padding: 0 50px;
     text-align: left;
     p {
       margin-top: 30px;
       font-weight: 100;
-      color: #8a8a8a;
+      color: #fff;
     }
     h1 {
       color: #4cc800;
@@ -148,7 +163,7 @@ const Wrapper = styled.section`
       font-size: 15px;
       padding: 10px 0;
       text-decoration: none;
-      color: #8a8a8a;
+      color: #fff;
       :hover {
         color: #4cc800;
         transition: all 0.4s ease-in;
@@ -161,22 +176,22 @@ const Wrapper = styled.section`
     align-items: flex-end;
     margin: 0 auto;
     width: 90%;
-    padding: 90px 0 10px 0;
+    padding: 90px 0 20px 0;
   }
   h5 {
     color: #8a8a8a;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
   }
   .subscribe {
     display: flex;
     border-radius: 3px;
     background: #ffffff;
-    width: 530px;
+    width: 510px;
     padding-left: 14px;
     height: 53px;
     margin: 0 auto;
     input {
-      width: 345px;
+      width: 335px;
       height: 52px;
       border: none;
       outline: 0;
@@ -184,6 +199,7 @@ const Wrapper = styled.section`
       ::placeholder {
         font-size: 15px;
         font-family: inherit;
+        opacity: 0.6;
       }
     }
     button {
@@ -193,7 +209,7 @@ const Wrapper = styled.section`
       color: #fff;
       border-radius: 3px;
       font-size: 18px;
-      width: 195px;
+      width: 185px;
       height: 53px;
       font-family: inherit;
       cursor: pointer;
@@ -205,15 +221,16 @@ const Wrapper = styled.section`
     align-items: center;
     h3 {
       color: #4cc800;
-      font-size: 40px;
+      font-size: 44px;
+      font-weight: 700;
       padding-right: 5px;
     }
     h6 {
-      font-size: 10px;
+      font-size: 12px;
       color: #8a8a8a;
     }
     span {
-      font-size: 15px;
+      font-size: 17px;
     }
   }
 
@@ -235,6 +252,9 @@ const Wrapper = styled.section`
       padding: 10px;
       color: #8a8a8a;
       font-size: 13px;
+    }
+    .copy{
+      padding-left: 0;
     }
   }
   /* TOAST NOTIFICATION */
@@ -258,6 +278,7 @@ const Wrapper = styled.section`
     right: 0;
     bottom: 0;
     position: fixed;
+    z-index: 5;
   }
 
   .overlay {
@@ -279,16 +300,17 @@ const Wrapper = styled.section`
     max-width: 514px;
     padding: 20px;
     min-width: 300px;
+    z-index: 10;
   }
-  .congrats{
+  .congrats {
     font-size: 32px;
     color: #4cc800;
     padding: 10px 0;
   }
-  .notify{
+  .notify {
     padding: 13px;
   }
-  .modal-text{
+  .modal-text {
     font-size: 16px;
     line-height: 24px;
     text-align: center;
@@ -319,6 +341,10 @@ const Wrapper = styled.section`
     .footer-content {
       text-align: center;
     }
+    .space,
+    .spacing {
+      padding: 0 50px;
+    }
     article,
     section {
       flex-direction: column-reverse;
@@ -327,6 +353,26 @@ const Wrapper = styled.section`
     }
     .copyright {
       flex-wrap: wrap;
+    }
+    .congrats {
+      font-size: 22px;
+    }
+    .modal-text {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .subscribe {
+      width: 370px;
+      input {
+        width: 240px;
+      }
+      button {
+        width: 130px;
+      }
+    }
+    h5 {
+      text-align: center;
     }
   }
   @media screen and (max-width: 500px) {
@@ -342,9 +388,6 @@ const Wrapper = styled.section`
         font-size: 15px;
         height: 40px;
       }
-    }
-    h5 {
-      text-align: center;
     }
   }
   @media screen and (max-width: 290px) {

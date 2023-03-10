@@ -17,7 +17,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/pickup' element={<PickupServices />} />
+            {/* <Route path='/pickup' element={<PickupServices />} /> */}
             <Route path='/dropoff' element={<DropoffServices />} />
             <Route path='/corporate' element={<CorporateServices />} />
             <Route path='/ourstory' element={<StoryAbout />} />

@@ -58,29 +58,28 @@ const Wrapper = styled.section`
     align-items: center;
   }
   .line {
-    width: 120px;
+    width: 100px;
     height: 2px;
     background: #4cc800;
   }
   h1 {
     color: #4cc800;
     font-size: 29px;
-    padding: 25px 10px;
+    padding: 35px 10px;
     font-weight: 700;
   }
 
   .accordion {
     width: 650px;
-    margin: 7px 0;
+    margin: 10px 0;
     background: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 10px 0 15px 0;
     .title {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px;
-      border-bottom: 1px solid #8a8a8a;
+      padding: 15px 30px;
       cursor: pointer;
     }
     h2 {
@@ -97,8 +96,8 @@ const Wrapper = styled.section`
 
     p {
       font-size: 15px;
-      line-height: 27px;
-      font-weight: lighter;
+      line-height: 25px;
+      opacity: 0.75;
       text-align: justify;
     }
     .content {
@@ -107,8 +106,10 @@ const Wrapper = styled.section`
     }
     .content.show {
       height: auto;
-      padding: 15px;
+      margin: 0 30px;
+      padding: 15px 30px 12px 0;
       max-height: 9999px;
+      border-top: 0.1px ridge #e6e2e2;
     }
   }
 
@@ -132,10 +133,16 @@ const Wrapper = styled.section`
       font-size: 14px;
       line-height: 20px;
     }
+    .title {
+      padding: 15px;
+    }
+    .content.show {
+      margin: 0 15px;
+    }
   }
   @media screen and (max-width: 550px) {
     .accordion {
-      width: 370px;
+      width: 400px;
     }
     .line {
       width: 50px;

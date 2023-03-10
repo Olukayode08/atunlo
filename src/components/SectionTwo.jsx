@@ -31,7 +31,7 @@ const SectionTwo = () => {
 
 const Wrapper = styled.section`
   main {
-    margin: 30px auto;
+    margin: 50px auto;
     width: 80%;
   }
   .sec-two {
