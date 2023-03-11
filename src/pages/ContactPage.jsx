@@ -141,6 +141,7 @@ const ContactUs = styled.section`
     outline: 0;
     border: 1px solid #8a8a8a;
     font-family: inherit;
+    font-size: 18px;
   }
   .comment {
     height: 250px;
@@ -229,7 +230,7 @@ const ContactUs = styled.section`
       margin-right: 0;
     }
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     section {
       width: 100%;
     }

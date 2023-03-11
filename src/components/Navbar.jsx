@@ -149,7 +149,6 @@ const Navbar = () => {
                   className='link-mobile'
                   onClick={closeMobile}
                   to='/contact'
-                  Nav
                 >
                   Contact
                 </Link>

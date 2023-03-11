@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { dropdownItems } from '../data'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
@@ -20,13 +20,13 @@ const Dropdown = () => {
             const { id, text, path } = item
             return (
               <li key={id} onClick={closeMobile}>
-                <Link
+                <NavLink
                   className='dropdown-link'
                   to={path}
                   onClick={() => setClick(false)}
                 >
                   {text}
-                </Link>
+                </NavLink>
               </li>
             )
           })}

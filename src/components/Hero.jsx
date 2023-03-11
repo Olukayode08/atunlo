@@ -172,8 +172,8 @@ const Wrapper = styled.section`
       flex-direction: column;
     }
     h1 {
-      font-size: 37px;
-      line-height: 39px;
+      font-size: 45px;
+      line-height: 50px;
     }
     h4 {
       font-size: 17px;
@@ -184,6 +184,9 @@ const Wrapper = styled.section`
     }
     .location {
       padding: 10px;
+    }
+    br{
+      display: none;
     }
   }
   @media screen and (max-width: 320px) {

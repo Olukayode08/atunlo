@@ -98,7 +98,7 @@ const Wrapper = styled.section`
       font-size: 15px;
       line-height: 25px;
       opacity: 0.75;
-      text-align: justify;
+      text-align: left;
     }
     .content {
       max-height: 0;
@@ -116,7 +116,7 @@ const Wrapper = styled.section`
   @media screen and (max-width: 750px) {
     .accordion {
       width: 500px;
-      padding: 10px;
+      padding: 15px 10px;
 
       h2 {
         font-size: 17px;
@@ -142,7 +142,7 @@ const Wrapper = styled.section`
   }
   @media screen and (max-width: 550px) {
     .accordion {
-      width: 400px;
+      width: 450px;
     }
     .line {
       width: 50px;
@@ -150,13 +150,21 @@ const Wrapper = styled.section`
   }
   @media screen and (max-width: 430px) {
     .accordion {
-      width: 350px;
+      width: 340px;
+      padding: 15px 7px;
+
+      .content.show {
+        margin: 0 7px;
+      }
+      .title {
+        padding: 0 7px;
+      }
     }
     .line {
       width: 20px;
     }
   }
-  @media screen and (max-width: 325px) {
+  @media screen and (max-width: 350px) {
     .accordion {
       width: 280px;
     }

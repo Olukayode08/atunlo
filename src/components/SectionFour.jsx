@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { logistics } from '../data'
-    
-
 
 const SectionFour = () => {
   return (
@@ -59,6 +57,13 @@ const Wrapper = styled.section`
   @media screen and (max-width: 900px) {
     .three-rs {
       width: 90%;
+      h4{
+        font-size: 25px;
+        line-height: 28px;
+      }
+      p {
+        font-size: 18px;
+      }
     }
   }
 `
