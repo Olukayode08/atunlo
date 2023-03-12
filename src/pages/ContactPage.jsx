@@ -153,6 +153,9 @@ const ContactUs = styled.section`
     width: 430px;
     margin: 15px 0;
   }
+  .agree:checked:before, .checked:checked:before {
+    background: #4cc800;
+  }
   .agree {
     width: 50px;
     margin: 0;

@@ -12,14 +12,14 @@ const Stats = () => {
           </div>
           <div className='line'></div>
           <div className='stats'>
-            <h4>100</h4>
+            <h4>10,000</h4>
             <h2>Tonnes collected</h2>
           </div>
           <div className='line'></div>
           <div className='stats'>
-            <h4>100</h4>
+            <h4>10,000</h4>
             <h2>
-              Tonnes preordered by <br></br> 3 offtakers
+              Tonnes preordered by <br /> 3 offtakers
             </h2>
           </div>
         </section>
@@ -44,7 +44,7 @@ const Wrapper = styled.section`
       display: flex;
       flex-direction: column;
       text-align: center;
-      padding: 27px;
+      padding: 20px;
     }
     h4 {
       font-size: 25px;
@@ -55,6 +55,7 @@ const Wrapper = styled.section`
       font-size: 17px;
       color: #000;
       font-weight: 400;
+      height: 50px;
     }
     .line {
       height: 45px;
@@ -62,15 +63,17 @@ const Wrapper = styled.section`
       background: #8a8a8a;
     }
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1000px) {
+    section {
+      width: 70%;
+    }
+  }
+  @media screen and (max-width: 900px) {
     section {
       display: flex;
       flex-direction: column;
-      width: 60%;
+      width: 50%;
 
-      .stats {
-        padding: 25px;
-      }
       .line {
         height: 2px;
         width: 40px;
@@ -79,7 +82,11 @@ const Wrapper = styled.section`
         font-size: 20px;
       }
       h2 {
+        height: auto;
         font-size: 15px;
+      }
+      .stats {
+        padding: 25px 10px;
       }
     }
   }

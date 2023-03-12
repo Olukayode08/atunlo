@@ -37,7 +37,6 @@ const Wrapper = styled.section`
     bottom: 0px;
     right: 0;
     padding: 5px;
-
   }
   main {
     display: flex;
@@ -51,6 +50,21 @@ const Wrapper = styled.section`
     cursor: pointer;
     img {
       width: 95%;
+      animation: scale 1s linear infinite;
+    }
+    @keyframes scale {
+      0% {
+        transform: scale(0.8);
+      }
+      50% {
+        transform: scale(0.9);
+      }
+      70% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
     }
     .link-w {
       text-decoration: none;

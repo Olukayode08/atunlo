@@ -178,6 +178,7 @@ const Wrapper = styled.section`
     h4 {
       font-size: 17px;
       line-height: 24px;
+      max-width: 600px;
     }
     .bg-text {
       top: 45%;
@@ -185,7 +186,9 @@ const Wrapper = styled.section`
     .location {
       padding: 10px;
     }
-    br{
+  }
+  @media screen and (max-width: 600px) {
+    br {
       display: none;
     }
   }

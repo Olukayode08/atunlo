@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import waste from '../assets/IMG_20230129_153109_285 1.png'
-import bgwhite from '../assets/web-bg-white.png'
 import { Link } from 'react-router-dom'
 
 const SectionTwo = () => {
@@ -86,7 +85,17 @@ const Wrapper = styled.section`
     }
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1200px) {
+    img {
+      width: 400px;
+      margin: 20px;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    main {
+      margin: 30px auto;
+      width: 90%;
+    }
     .sec-two {
       display: flex;
       flex-direction: column-reverse;
@@ -95,7 +104,7 @@ const Wrapper = styled.section`
     }
     .sec-two-r {
       text-align: center;
-      margin: 30px;
+      width: 450px;
     }
 
     h3,
@@ -106,11 +115,18 @@ const Wrapper = styled.section`
       margin: 0 auto;
     }
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
+    main {
+      width: 80%;
+    }
     img {
       width: 350px;
       height: 350px;
       margin: 20px;
+    }
+    .sec-two-r {
+      margin: 30px 0;
+      width: 380px;
     }
     h3,
     h5 {

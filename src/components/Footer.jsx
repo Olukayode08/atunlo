@@ -1,35 +1,43 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import LogoBlack from '../assets/Atulo full logo (white+green).png'
+import LogoBlack from '../assets/logo-w.png'
 import Twitter from '../assets/Twitter Squared.png'
 import Instagram from '../assets/Instagram.png'
 import Linkedin from '../assets/LinkedIn.png'
 import Mail from '../assets/Mail.png'
 import notify from '../assets/mac-mail.png'
-
+import { FaTimes } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
   const [modal, setModal] = useState(false)
   const [email, setEmail] = useState('')
-  const submitForm = (e)=>{
+  const submitForm = (e) => {
     e.preventDefault()
   }
+
+  const emailValidation = (e) => {
+    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+    var emailValue = e.target.value
+    setEmail(emailValue)
+  }
   const toggleModal = () => {
-    setModal(!modal)
+    if (emailValidation && email) {
+      setModal(!modal)
+    }
   }
   return (
     <>
       <Wrapper>
         <footer>
           <div className='footer-content'>
-            <img src={LogoBlack} alt='Atunlo' />
+            <img className='logo' src={LogoBlack} alt='Atunlo' />
             <p>“The art of recycling”</p>
           </div>
           <div className='footer'>
             <main className='footer-content spacing'>
               <h1>SERVICES</h1>
-              <Link className='locations' to='/pickup'>
+              <Link className='locations' to='/'>
                 Pickup
               </Link>
               <Link className='locations' to='/dropoff'>
@@ -70,10 +78,12 @@ const Footer = () => {
             </h5>
             <form className='subscribe' onSubmit={submitForm}>
               <input
+                id='email'
                 type='email'
                 name='email'
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={emailValidation}
+                autoComplete='off'
                 required
                 placeholder='Your Email'
               />
@@ -87,7 +97,7 @@ const Footer = () => {
                 <div className='modal-heading'>
                   <h2 className='congrats'>Congratulations!</h2>
                   <div className='close-modal' onClick={toggleModal}>
-                    X
+                    <FaTimes />
                   </div>
                 </div>
                 <img className='notify' src={notify} alt='Atunlo' />
@@ -108,7 +118,9 @@ const Footer = () => {
         </section>
         <article>
           <div className='copyright'>
-            <h3 className='copy'>Copyright 2023 @ Atunlotech. All rights reserved.</h3>
+            <h3 className='copy'>
+              Copyright 2023 @ Atunlotech. All rights reserved.
+            </h3>
             <h3>Privacy Policy</h3>
             <h3>Terms of Service</h3>
             <h3>Cookies Setting</h3>
@@ -138,6 +150,10 @@ const Wrapper = styled.section`
   .footer {
     display: flex;
     justify-content: space-between;
+  }
+  .logo{
+    width: 23%;
+    margin: 12px 0 0 0;
   }
   .spacing {
     padding: 0 50px;
@@ -253,7 +269,7 @@ const Wrapper = styled.section`
       color: #8a8a8a;
       font-size: 13px;
     }
-    .copy{
+    .copy {
       padding-left: 0;
     }
   }
@@ -337,6 +353,10 @@ const Wrapper = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    .logo{
+      margin: 0 auto;
+      width: 40%;
     }
     .footer-content {
       text-align: center;

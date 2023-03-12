@@ -147,9 +147,14 @@ const Wrapper = styled.section`
 
   @media screen and (max-width: 1200px) {
     .bg-text,
-    .brief-desc,
-    .value-prop {
+    .brief-desc {
       width: 90%;
+    }
+    .value-prop {
+      width: 55%;
+    }
+    .prop-text {
+      width: 400px;
     }
   }
 
@@ -161,12 +166,14 @@ const Wrapper = styled.section`
     .brief-desc,
     .value-prop,
     .bg-text {
-      /* width: 87%; */
+      width: 87%;
       text-align: center;
       margin: 0 auto;
     }
     .value-prop {
       margin-top: 30px;
+      width: 80%;
+
       img {
         width: 14%;
       }
@@ -187,7 +194,7 @@ const Wrapper = styled.section`
       }
     }
     .prop-text {
-      width: 450px;
+      width: 400px;
     }
 
     .view-more {
@@ -199,6 +206,11 @@ const Wrapper = styled.section`
     .bg-text {
       display: flex;
       flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 810px) {
+    .bg-img {
+      height: 110vh;
     }
   }
   @media screen and (max-width: 600px) {

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { dropdownAbout } from '../data'
+import { NavLink } from 'react-router-dom'
+import { aboutDropdown } from '../data'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
 
@@ -16,17 +16,17 @@ const DropdownAbout = () => {
           onClick={handleClickAbout}
           className={clickAbout ? 'dropdown-menu clicked' : 'dropdown-menu'}
         >
-          {dropdownAbout.map((about) => {
-            const { id, text, path } = about
+          {aboutDropdown.map((about) => {
+            const {idx, text, path } = about
             return (
-              <li onClick={closeMobile} key={id}>
-                <Link
+              <li key={idx} onClick={closeMobile}>
+                <NavLink
                   className='dropdown-link'
                   to={path}
                   onClick={() => setClickAbout(false)}
                 >
                   {text}
-                </Link>
+                </NavLink>
               </li>
             )
           })}
@@ -39,15 +39,18 @@ const Wrapper = styled.section`
   .dropdown-menu {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    border-radius: 5px;
     width: 120px;
     position: absolute;
-    top: 26px;
+    top: 24px;
     list-style: none;
     text-align: center;
+    background: #fff;
+
     transition: all 0.2s ease-in;
   }
   .dropdown-menu li {
-    background: #fff;
     cursor: pointer;
   }
   li {

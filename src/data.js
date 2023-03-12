@@ -3,9 +3,6 @@ import GoalTwo from './assets/Group-30.png'
 import GoalThree from './assets/Group-28.png'
 import GoalFour from './assets/Group-27.png'
 import GoalFive from './assets/Group-26.png'
-import Pickup from './assets/logistics.png'
-import Dropoff from './assets/corporate.png'
-import Services from './assets/recycle-bin.png'
 import bgTwo from './assets/images-img-7.png'
 import bgThree from './assets/images-img-6.png'
 import bgFour from './assets/images-img-8.png'
@@ -33,13 +30,14 @@ She has a healthy track record of developing successful solutions to complex pro
 She is currently the Operations Manager at Atunlo and oversees all daily activities at our primary factory location while establishing partnerships with corporates for waste management. Funmi is also certified in Global Environmental Management, which enables her ensure our vision is accomplished in line with the SDG goals.`,
   },
   {
-    id: 1,
+    id: 3,
     image: Mayaki,
     name: 'Mayaki Emmanuel, Advisor',
     about: `Mayaki has over 15 years experience managing global recycling companies. He currently serves as the General Manager for Sonnex Packaging, a subsidiary of Mohinani Group where he oversees the entire recycling value chain for PET bottles from collection to export of crushed and recycled PET to packaging companies.`,
   },
 ]
 // DROPDOWN SERVICES
+
 export const dropdownItems = [
   // {
   //   id: 1,
@@ -47,26 +45,25 @@ export const dropdownItems = [
   //   path: '/pickup',
   // },
   {
-    id: 1,
+    id: 2,
     text: 'Dropoff',
     path: '/dropoff',
   },
   {
-    id: 2,
+    id: 3,
     text: 'Corporate services',
     path: '/corporate',
   },
 ]
 // DROPDOWN ABOUT
-
-export const dropdownAbout = [
+export const aboutDropdown = [
   {
-    id: 1,
+    idx: 1,
     text: 'Our Story',
     path: '/ourstory',
   },
   {
-    id: 2,
+    idx: 2,
     text: 'Our Team',
     path: '/ourteam',
   },
@@ -79,17 +76,14 @@ export const bgslider = [
   },
   {
     id: 2,
-
     image: bgTwo,
   },
   {
     id: 3,
-
     image: bgThree,
   },
   {
     id: 4,
-
     image: bgFour,
   },
   {
@@ -127,24 +121,6 @@ export const valueProposition = [
     id: 5,
     image: GoalFive,
     text: 'Reduce marine pollution',
-  },
-]
-// OUR SERVICES
-export const logistics = [
-  {
-    id: 1,
-    text: 'Pickup',
-    image: Pickup,
-  },
-  {
-    id: 2,
-    text: 'Dropoff',
-    image: Dropoff,
-  },
-  {
-    id: 3,
-    text: 'Corporate Services',
-    image: Services,
   },
 ]
 // FREQUENTLY ASKED QUESTIONS
@@ -263,7 +239,6 @@ export const dropoffs = [
   {
     id: 1,
     header: 'IBADAN Metropolitan, Los Angeles.',
-
     footer: 'Address: No 419, bulu bala street, Tinubu, Ibadan state.',
     contact: 'Contact: +234 812 345 6789',
   },

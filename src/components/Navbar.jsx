@@ -8,10 +8,21 @@ import down from '../assets/down-grey.png'
 import Dropdown from './Dropdown'
 import DropdownAbout from './DropdownAbout'
 import { Link as Scroll } from 'react-scroll'
+import { aboutDropdown, dropdownItems } from '../data'
 
 const Navbar = () => {
-  const { active, setActive, closeMobile } = useContext(Atunlo)
+  const {
+    active,
+    setActive,
+    color,
+    colorAbout,
+    closeMobile,
+    closeMobileServices,
+    closeMobileAbout,
+  } = useContext(Atunlo)
   const [dropdown, setDropdown] = useState(false)
+  const [subLinkOne, setSubLinkOne] = useState(false)
+  const [subLinkTwo, setSubLinkTwo] = useState(false)
   const [dropdownAbout, setDropdownAbout] = useState(false)
 
   const onMouseEnter = () => {
@@ -33,6 +44,16 @@ const Navbar = () => {
     } else {
       setDropdownAbout(false)
     }
+  }
+  // MOBILE
+
+  const toggleLinkOne = () => {
+    setSubLinkOne(!subLinkOne)
+    setSubLinkTwo(false)
+  }
+  const toggleLinkTwo = () => {
+    setSubLinkTwo(!subLinkTwo)
+    setSubLinkOne(false)
   }
 
   return (
@@ -120,38 +141,80 @@ const Navbar = () => {
           <div className={active ? 'open-links' : 'close-links'}>
             <ul className='mobile-link'>
               <li className='mobile-links'>
-                <Link className='link-mobile' to='/' onClick={closeMobile}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'active-link-mobile' : 'link-mobile'
+                  }
+                  to='/'
+                  onClick={closeMobile}
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
-              <li
-                className='mobile-links'
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-              >
-                <Link className='link-mobile' to='#'>
+              <li className={subLinkOne ? 'remove-m' : 'mobile-links'}>
+                <Link
+                  onClick={toggleLinkOne}
+                  className={color ? 'link-mobile c-color' : 'link-mobile'}
+                  to='#'
+                >
                   Services <img src={down} alt='Atunlo' />
                 </Link>
-                {/* {dropdown && <Dropdown />} */}
+                <div className={subLinkOne ? 'sublinks' : 'no-sublink'}>
+                  {dropdownItems.map((items) => {
+                    const { id, text, path } = items
+                    return (
+                      <div key={id} className='sub-link'>
+                        <NavLink
+                          className={({ isActive }) =>
+                            isActive ? 'active-link-mobile' : 'link-mobile'
+                          }
+                          to={path}
+                          onClick={closeMobileServices}
+                        >
+                          {text}
+                        </NavLink>
+                      </div>
+                    )
+                  })}
+                </div>
               </li>
-              <li
-                onMouseEnter={onMouseEnterAbout}
-                onMouseLeave={onMouseLeaveAbout}
-                className='mobile-links'
-              >
-                <Link className='link-mobile' to='#'>
+              <li className={subLinkTwo ? 'remove-m' : 'mobile-links'}>
+                <Link
+                  onClick={toggleLinkTwo}
+                  className={colorAbout ? 'link-mobile c-color' : 'link-mobile'}
+                  to='#'
+                >
                   About <img src={down} alt='Atunlo' />
                 </Link>
-                {/* {dropdownAbout && <DropdownAbout />} */}
+                <div className={subLinkTwo ? 'sublinks' : 'no-sublink'}>
+                  {aboutDropdown.map((abouts) => {
+                    const { idx, text, path } = abouts
+                    return (
+                      <div key={idx} className='sub-link'>
+                        <NavLink 
+                          className={({ isActive }) =>
+                            isActive ? 'active-link-mobile' : 'link-mobile'
+                          }
+                          to={path}
+                          onClick={closeMobileAbout}
+                        >
+                          {text}
+                        </NavLink>
+                      </div>
+                    )
+                  })}
+                </div>
               </li>
               <li className='mobile-links'>
-                <Link
-                  className='link-mobile'
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'active-link-mobile' : 'link-mobile'
+                  }
                   onClick={closeMobile}
                   to='/contact'
                 >
                   Contact
-                </Link>
+                </NavLink>
               </li>
               <li className='mobile-links'>
                 <Scroll
@@ -180,6 +243,7 @@ const Wrapper = styled.section`
   section {
     position: relative;
   }
+
   .logo {
     width: 20%;
     margin-top: 15px;
@@ -204,15 +268,8 @@ const Wrapper = styled.section`
     cursor: pointer;
     list-style: none;
   }
-  .active-link {
-    padding: 24px 20px;
-    text-decoration: none;
-    font-size: 14px;
-    height: 100%;
-    font-weight: 300;
-    color: #fff;
-    background: #4cc800;
-  }
+
+  .active-link,
   .link {
     padding: 24px 20px;
     text-decoration: none;
@@ -221,12 +278,19 @@ const Wrapper = styled.section`
     height: 100%;
     font-weight: 300;
   }
+  .active-link {
+    color: #fff;
+    background: #4cc800;
+  }
+  .active-link-mobile,
   .link-mobile {
-    padding: 24px 20px;
     text-decoration: none;
     color: #8a8a8a;
-    font-size: 15px;
+    font-size: 17px;
     height: 100%;
+  }
+  .active-link-mobile {
+    color: #4cc800;
   }
   .open-links {
     position: fixed;
@@ -258,17 +322,47 @@ const Wrapper = styled.section`
     list-style: none;
     font-size: 20px;
     font-weight: 500;
-    :hover {
-      color: rgb(76, 200, 0);
-      transition: all 0.3s ease-in;
-    }
   }
-
+  .remove-m {
+    margin: 0;
+    text-align: center;
+  }
+  .sublinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 6px 0;
+  }
+  .no-sublink {
+    position: absolute;
+    display: none;
+    top: -100%;
+    left: -100%;
+  }
+  .sub-link {
+    margin: 10px 0;
+  }
+  .sublink {
+    text-decoration: none;
+    color: #8a8a8a;
+  }
+  .c-color {
+    color: #4cc800;
+  }
   @media screen and (min-width: 1100px) {
     .open-links,
     .mobile,
     .desktop {
       display: none;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    .links {
+      width: 70%;
+      display: flex;
+      justify-content: flex-end;
     }
   }
   @media screen and (max-width: 1100px) {

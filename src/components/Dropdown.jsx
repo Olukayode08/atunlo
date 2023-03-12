@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { dropdownItems } from '../data'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
@@ -36,19 +36,19 @@ const Dropdown = () => {
   )
 }
 const Wrapper = styled.section`
-
   .dropdown-menu {
     display: flex;
     flex-direction: column;
-    width: 180px;
+    align-items: flex-start;
+    width: 160px;
     position: absolute;
-    top: 26px;
+    border-radius: 5px;
+    top: 24px;
     list-style: none;
-    text-align: left;
+    background: #fff;
     transition: all 0.2s ease-in;
   }
   .dropdown-menu li {
-    background: #fff;
     cursor: pointer;
   }
   li {

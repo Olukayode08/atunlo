@@ -5,17 +5,34 @@ const Atunlo = createContext()
 const Context = ({ children }) => {
   const [accordion, setAccordion] = useState(null)
   const [active, setActive] = useState(false)
+  const [color, setColor] = useState(false)
+  const [colorAbout, setColorAbout] = useState(false)
+
   const toggle = () => {
     setActive(!active)
   }
 
-  const toggleAccordion = (i) =>{
-    if(accordion === i){
+  const toggleAccordion = (i) => {
+    if (accordion === i) {
       return setAccordion(null)
     }
     setAccordion(i)
   }
-  const closeMobile = () => setActive(false)
+  const closeMobileAbout = () => {
+    setActive(false)
+    setColorAbout(true)
+    setColor(false)
+  }
+  const closeMobileServices = () => {
+    setActive(false)
+    setColorAbout(false)
+    setColor(true)
+  }
+  const closeMobile = () => {
+    setActive(false)
+    setColor(false)
+    setColorAbout(false)
+  }
   return (
     <>
       <Atunlo.Provider
@@ -25,7 +42,11 @@ const Context = ({ children }) => {
           accordion,
           setAccordion,
           toggleAccordion,
-          closeMobile
+          closeMobile,
+          colorAbout,
+          color,
+          closeMobileAbout,
+          closeMobileServices,
         }}
       >
         {children}
