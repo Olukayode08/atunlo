@@ -1,15 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
 import { FAQ } from '../data'
 import { Atunlo } from '../Context'
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
+import { useLocation } from 'react-router-dom'
 
 const FAQS = () => {
+  const {state} = useLocation()
+  const { targetId } = state || {}
   const { accordion, toggleAccordion } = useContext(Atunlo)
+  useEffect(()=>{
+    const el = document.getElementById(targetId)
+    if(el){
+      el.scrollIntoView()
+    }
+  }, [targetId])
   return (
     <>
       <Wrapper id='faqs'>
-        <main>
+        <main id='faq'>
           <div className='faqs-h'>
             <div className='line'></div>
             <h1>Frequently Asked Questions</h1>

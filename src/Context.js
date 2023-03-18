@@ -4,9 +4,15 @@ const Atunlo = createContext()
 
 const Context = ({ children }) => {
   const [accordion, setAccordion] = useState(null)
+  const [propAccordion, setPropAccordion] = useState(null)
+
   const [active, setActive] = useState(false)
   const [color, setColor] = useState(false)
   const [colorAbout, setColorAbout] = useState(false)
+    const [dropdown, setDropdown] = useState(false)
+    const [subLinkOne, setSubLinkOne] = useState(false)
+    const [subLinkTwo, setSubLinkTwo] = useState(false)
+    const [dropdownAbout, setDropdownAbout] = useState(false)
 
   const toggle = () => {
     setActive(!active)
@@ -18,6 +24,12 @@ const Context = ({ children }) => {
     }
     setAccordion(i)
   }
+    const togglePropAccordion = (i) => {
+      if (propAccordion === i) {
+        return setPropAccordion(null)
+      }
+      setPropAccordion(i)
+    }
   const closeMobileAbout = () => {
     setActive(false)
     setColorAbout(true)
@@ -44,9 +56,20 @@ const Context = ({ children }) => {
           toggleAccordion,
           closeMobile,
           colorAbout,
+          setColor,
           color,
           closeMobileAbout,
           closeMobileServices,
+          dropdown,
+          dropdownAbout,
+          setDropdown,
+          setDropdownAbout,
+          subLinkOne,
+          subLinkTwo,
+          setSubLinkOne,
+          setSubLinkTwo,
+          togglePropAccordion,
+          propAccordion,
         }}
       >
         {children}

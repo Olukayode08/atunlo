@@ -59,7 +59,7 @@ const Hero = () => {
               sites
             </h4>
             <div className='request'>
-              <Link className='location' to='/pickup'>
+              <Link className='location' to='#'>
                 Request pickup
               </Link>
               <Link className='location' to='/dropoff'>

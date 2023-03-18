@@ -5,10 +5,15 @@ import styled from 'styled-components'
 import { Atunlo } from '../Context'
 
 const Dropdown = () => {
-  const { closeMobile } = useContext(Atunlo)
+  const { closeMobile, closeMobileServices } = useContext(Atunlo)
 
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(click)
+
+  const clickColor = ()=>{
+    setClick(false)
+    closeMobileServices()
+  }
   return (
     <Wrapper>
       <div>
@@ -23,7 +28,7 @@ const Dropdown = () => {
                 <NavLink
                   className='dropdown-link'
                   to={path}
-                  onClick={() => setClick(false)}
+                  onClick={clickColor}
                 >
                   {text}
                 </NavLink>
@@ -40,11 +45,14 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 160px;
+    width: 100px;
+    padding: 10px;
     position: absolute;
     border-radius: 5px;
-    top: 24px;
+    top: 10px;
+    left: -13px;
     list-style: none;
+    cursor: pointer;
     background: #fff;
     transition: all 0.2s ease-in;
   }
@@ -53,6 +61,7 @@ const Wrapper = styled.section`
   }
   li {
     padding: 8px;
+
   }
   .dropdown-menu.clicked {
     display: none;

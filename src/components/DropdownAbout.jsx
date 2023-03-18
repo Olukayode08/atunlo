@@ -44,10 +44,12 @@ const Wrapper = styled.section`
     width: 120px;
     position: absolute;
     top: 24px;
+    left: -20px;
+
     list-style: none;
     text-align: center;
     background: #fff;
-
+    cursor: pointer;
     transition: all 0.2s ease-in;
   }
   .dropdown-menu li {

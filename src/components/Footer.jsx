@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import LogoBlack from '../assets/logo-w.png'
-import Twitter from '../assets/Twitter Squared.png'
+import Facebook from '../assets/Facebook.png'
 import Instagram from '../assets/Instagram.png'
 import Linkedin from '../assets/LinkedIn.png'
 import Mail from '../assets/Mail.png'
@@ -37,15 +37,11 @@ const Footer = () => {
           <div className='footer'>
             <main className='footer-content spacing'>
               <h1>SERVICES</h1>
-              <Link className='locations' to='/'>
-                Pickup
-              </Link>
-              <Link className='locations' to='/dropoff'>
+              <h6 className='locations'>Pickup</h6>
+              <h6 className='locations' to='/dropoff'>
                 Drop Off
-              </Link>
-              <Link className='locations' to='/corporate'>
-                Corporate services
-              </Link>
+              </h6>
+              <Link className='locations'>Corporate services</Link>
             </main>
             <main className='footer-content spacing'>
               <h1>ABOUT</h1>
@@ -126,10 +122,18 @@ const Footer = () => {
             <h3>Cookies Setting</h3>
           </div>
           <div>
-            <img src={Twitter} alt='Atunlo-Twitter' />
-            <img src={Instagram} alt='Atunlo-Instagram' />
-            <img src={Linkedin} alt='Atunlo-Linkedin' />
-            <img src={Mail} alt='Atunlo-Mail' />
+            <a href='https://www.facebook.com/atunlotech'>
+              <img src={Facebook} className='face-b' alt='Atunlo-Twitter' />
+            </a>
+            <a href='https://www.instagram.com/atunlotech/'>
+              <img src={Instagram} alt='Atunlo-Instagram' />
+            </a>
+            <a href='https://www.linkedin.com/company/atunlotech'>
+              <img src={Linkedin} alt='Atunlo-Linkedin' />
+            </a>
+            <a href='mailto:Operations@atunlotech.com'>
+              <img src={Mail} alt='Atunlo-Mail' />
+            </a>
           </div>
         </article>
       </Wrapper>
@@ -151,12 +155,12 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: space-between;
   }
-  .logo{
+  .logo {
     width: 23%;
     margin: 12px 0 0 0;
   }
   .spacing {
-    padding: 0 50px;
+    padding: 0 40px;
   }
   .space {
     padding-left: 50px;
@@ -175,11 +179,16 @@ const Wrapper = styled.section`
       font-size: 19px;
       padding: 10px 0;
     }
+    h6 {
+      font-weight: 100;
+      cursor: pointer;
+    }
     .locations {
       font-size: 15px;
       padding: 10px 0;
       text-decoration: none;
       color: #fff;
+      flex-shrink: 0;
       :hover {
         color: #4cc800;
         transition: all 0.4s ease-in;
@@ -258,6 +267,14 @@ const Wrapper = styled.section`
     padding: 5px 0 10px 0;
     border-top: 2px solid #8a8a8a;
     width: 90%;
+  }
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .face-b {
+    width: 18%;
+    border-radius: 15px;
   }
   img {
     padding: 0 5px;
@@ -354,7 +371,7 @@ const Wrapper = styled.section`
       flex-direction: column;
       align-items: center;
     }
-    .logo{
+    .logo {
       margin: 0 auto;
       width: 40%;
     }
@@ -372,7 +389,10 @@ const Wrapper = styled.section`
       align-items: center;
     }
     .copyright {
-      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .congrats {
       font-size: 22px;

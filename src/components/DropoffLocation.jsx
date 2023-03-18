@@ -11,18 +11,11 @@ const DropoffLocation = () => {
 
           <main>
             {dropoffs.map((dropoff) => {
-              const {
-                id,
-                header,
-                footer,
-                contact
-              } = dropoff
+              const { id, header, footer, contact } = dropoff
               return (
                 <article key={id}>
                   <h3>{header}</h3>
-                  <ul>
-
-                  </ul>
+                  <ul></ul>
                   <div className='contact-address'>
                     <h4 className='address'>{footer}</h4>
                     <h4>{contact}</h4>
@@ -44,6 +37,7 @@ const Wrapper = styled.section`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   }
   h2 {
     text-align: left;
@@ -52,13 +46,13 @@ const Wrapper = styled.section`
   }
 
   main {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
   }
   article {
-    width: 350px;
+    width: 320px;
     margin: 15px;
     background: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
@@ -96,11 +90,28 @@ const Wrapper = styled.section`
   h4 {
     font-weight: lighter;
   }
-  @media screen and (max-width: 1350px) {
+  @media screen and (max-width: 1200px) {
     h2 {
       margin-left: 0;
       text-align: center;
     }
+  }
+  @media screen and (max-width: 1200px) {
+    main {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    main {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  @media screen and (max-width: 320px) {
+  article {
+    width: 280px;
+    margin: 15px 0px;
+  }
   }
 `
 export default DropoffLocation

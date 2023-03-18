@@ -25,7 +25,6 @@ const DropoffServices = () => {
                 bottles. Can’t find your location? Drop us a message by filling
                 our contact form here.
               </h5>
-              {/* <p>Find Dropoff Points</p> */}
             </div>
           </div>
         </main>
@@ -90,15 +89,6 @@ const WasteDropoff = styled.section`
     font-weight: lighter;
     text-align: justify;
   }
-  /* p {
-    border: 2px solid #4cc800;
-    color: #4cc800;
-    width: 170px;
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
-  } */
 
   @media screen and (max-width: 1000px) {
     .sec-two {
@@ -130,15 +120,17 @@ const WasteDropoff = styled.section`
     }
     .sec-two-r {
       width: 350px;
+      margin: 25px 0;
     }
   }
-  @media screen and (max-width: 290px) {
+  @media screen and (max-width: 320px) {
     img {
       width: 280px;
       margin: 30px 0;
     }
     .sec-two-r {
       width: 280px;
+      margin: 30px 0;
     }
   }
 `

@@ -1,16 +1,19 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Squash as Hamburger } from 'hamburger-react'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import logo from '../assets/Atunlo-logo.png'
 import down from '../assets/down-grey.png'
+import up from '../assets/upnav.png'
+
 import Dropdown from './Dropdown'
 import DropdownAbout from './DropdownAbout'
 import { Link as Scroll } from 'react-scroll'
 import { aboutDropdown, dropdownItems } from '../data'
 
 const Navbar = () => {
+  const navigate = useNavigate()
   const {
     active,
     setActive,
@@ -19,32 +22,45 @@ const Navbar = () => {
     closeMobile,
     closeMobileServices,
     closeMobileAbout,
+    dropdown,
+    dropdownAbout,
+    setDropdown,
+    setDropdownAbout,
+    subLinkOne,
+    subLinkTwo,
+    setSubLinkOne,
+    setSubLinkTwo,
   } = useContext(Atunlo)
-  const [dropdown, setDropdown] = useState(false)
-  const [subLinkOne, setSubLinkOne] = useState(false)
-  const [subLinkTwo, setSubLinkTwo] = useState(false)
-  const [dropdownAbout, setDropdownAbout] = useState(false)
 
-  const onMouseEnter = () => {
-    setDropdown(true)
+  const closeFaq = () => {
+    navigate('/', { state: { targetId: 'faqs' } })
+    closeMobile()
   }
-  const onMouseLeave = () => {
+
+  const toggleDropdown = () => {
+    setDropdown(!dropdown)
+    setDropdownAbout(false)
+  }
+  const toggleAbout = () => {
     setDropdown(false)
+    setDropdownAbout(!dropdownAbout)
   }
-  const onMouseEnterAbout = () => {
-    if (window.innerWidth < 960) {
-      setDropdownAbout(false)
-    } else {
-      setDropdownAbout(true)
+
+  let menuRef = useRef()
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setDropdown(false)
+        setDropdownAbout(false)
+      }
     }
-  }
-  const onMouseLeaveAbout = () => {
-    if (window.innerWidth < 960) {
-      setDropdownAbout(false)
-    } else {
-      setDropdownAbout(false)
+    document.addEventListener('mousedown', handler)
+    return () => {
+      document.removeEventListener('mousedown', handler)
     }
-  }
+  })
+
   // MOBILE
 
   const toggleLinkOne = () => {
@@ -60,7 +76,7 @@ const Navbar = () => {
     <>
       <section>
         <Wrapper>
-          <nav>
+          <nav ref={menuRef}>
             <Link to='/' className='navbar-logo'>
               <img className='logo' src={logo} alt='Atunlo' />
             </Link>
@@ -76,33 +92,30 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                className='desktop-links'
+                onClick={toggleDropdown}
+                className={color ? 'd-color desktop-links' : 'desktop-links'}
               >
-                <NavLink
-                  to='/dropoff'
-                  className={({ isActive }) =>
-                    isActive ? 'active-link' : 'link'
-                  }
-                >
-                  Services <img src={down} alt='Atunlo' />
-                </NavLink>
+                {dropdown ? (
+                  <div>
+                    Services <img src={up} alt='Atunlo' />
+                  </div>
+                ) : (
+                  <div>
+                    Services <img src={down} alt='Atunlo' />
+                  </div>
+                )}
                 {dropdown && <Dropdown />}
               </li>
-              <li
-                onMouseEnter={onMouseEnterAbout}
-                onMouseLeave={onMouseLeaveAbout}
-                className='desktop-links'
-              >
-                <NavLink
-                  to='/ourstory'
-                  className={({ isActive }) =>
-                    isActive ? 'active-link' : 'link'
-                  }
-                >
-                  About <img src={down} alt='Atunlo' />
-                </NavLink>
+              <li onClick={toggleAbout} className='desktop-links'>
+                {dropdownAbout ? (
+                  <div>
+                    About <img src={up} alt='Atunlo' />
+                  </div>
+                ) : (
+                  <div>
+                    About <img src={down} alt='Atunlo' />
+                  </div>
+                )}
                 {dropdownAbout && <DropdownAbout />}
               </li>
               <li className='desktop-links'>
@@ -117,8 +130,10 @@ const Navbar = () => {
               </li>
               <li className='desktop-links'>
                 <Scroll
-                  className='link'
-                  to='faqs'
+                  onClick={() => {
+                    navigate('/', { state: { targetId: 'faqs' } })
+                  }}
+                  to='faq'
                   spy={true}
                   smooth={true}
                   offset={-100}
@@ -143,7 +158,9 @@ const Navbar = () => {
               <li className='mobile-links'>
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? 'active-link-mobile' : 'link-mobile'
+                    isActive
+                      ? 'active-link-mobile mobile-links'
+                      : 'link-mobile mobile-links'
                   }
                   to='/'
                   onClick={closeMobile}
@@ -151,14 +168,27 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <li className={subLinkOne ? 'remove-m' : 'mobile-links'}>
-                <Link
+
+              <li
+                className={
+                  subLinkOne ? 'remove-m border' : 'mobile-links border'
+                }
+              >
+                <div
                   onClick={toggleLinkOne}
                   className={color ? 'link-mobile c-color' : 'link-mobile'}
-                  to='#'
                 >
-                  Services <img src={down} alt='Atunlo' />
-                </Link>
+                  {subLinkOne ? (
+                    <div>
+                      Services <img src={up} alt='Atunlo' />
+                    </div>
+                  ) : (
+                    <div>
+                      Services <img src={down} alt='Atunlo' />
+                    </div>
+                  )}
+                </div>
+
                 <div className={subLinkOne ? 'sublinks' : 'no-sublink'}>
                   {dropdownItems.map((items) => {
                     const { id, text, path } = items
@@ -178,20 +208,32 @@ const Navbar = () => {
                   })}
                 </div>
               </li>
-              <li className={subLinkTwo ? 'remove-m' : 'mobile-links'}>
-                <Link
+              <li
+                className={
+                  subLinkTwo ? 'remove-m border' : 'mobile-links border'
+                }
+              >
+                <div
                   onClick={toggleLinkTwo}
                   className={colorAbout ? 'link-mobile c-color' : 'link-mobile'}
-                  to='#'
                 >
-                  About <img src={down} alt='Atunlo' />
-                </Link>
+                  {subLinkTwo ? (
+                    <div>
+                      About <img src={up} alt='Atunlo' />
+                    </div>
+                  ) : (
+                    <div>
+                      About <img src={down} alt='Atunlo' />
+                    </div>
+                  )}
+                </div>
+
                 <div className={subLinkTwo ? 'sublinks' : 'no-sublink'}>
                   {aboutDropdown.map((abouts) => {
                     const { idx, text, path } = abouts
                     return (
                       <div key={idx} className='sub-link'>
-                        <NavLink 
+                        <NavLink
                           className={({ isActive }) =>
                             isActive ? 'active-link-mobile' : 'link-mobile'
                           }
@@ -208,7 +250,9 @@ const Navbar = () => {
               <li className='mobile-links'>
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? 'active-link-mobile' : 'link-mobile'
+                    isActive
+                      ? 'active-link-mobile mobile-links'
+                      : 'link-mobile mobile-links'
                   }
                   onClick={closeMobile}
                   to='/contact'
@@ -218,9 +262,8 @@ const Navbar = () => {
               </li>
               <li className='mobile-links'>
                 <Scroll
-                  onClick={closeMobile}
-                  className='link-mobile'
-                  to='faqs'
+                  onClick={closeFaq}
+                  to='faq'
                   spy={true}
                   smooth={true}
                   offset={-100}
@@ -268,15 +311,23 @@ const Wrapper = styled.section`
     cursor: pointer;
     list-style: none;
   }
-
+  .desktop-links {
+    font-size: 14px;
+    padding: 24px 20px;
+    color: #8a8a8a;
+  }
   .active-link,
   .link {
     padding: 24px 20px;
-    text-decoration: none;
     color: #8a8a8a;
+    text-decoration: none;
     font-size: 14px;
     height: 100%;
     font-weight: 300;
+  }
+  .d-color {
+    color: #fff;
+    background: #4cc800;
   }
   .active-link {
     color: #fff;
@@ -286,8 +337,7 @@ const Wrapper = styled.section`
   .link-mobile {
     text-decoration: none;
     color: #8a8a8a;
-    font-size: 17px;
-    height: 100%;
+    font-size: 20px;
   }
   .active-link-mobile {
     color: #4cc800;
@@ -365,7 +415,12 @@ const Wrapper = styled.section`
       justify-content: flex-end;
     }
   }
-  @media screen and (max-width: 1100px) {
+  .desktop-links,
+  .active-link,
+  .link {
+    padding: 24px 15px;
+  }
+  @media screen and (max-width: 1150px) {
     .links {
       display: none;
     }

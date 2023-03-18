@@ -2,8 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { valueProposition } from '../data'
 import bgchildren from '../assets/childbg.png'
+import { Link as Scroll } from 'react-scroll'
+import { useNavigate } from 'react-router-dom'
 
 const SectionThree = () => {
+  const navigate = useNavigate()
+
   return (
     <>
       <Wrapper>
@@ -32,6 +36,19 @@ const SectionThree = () => {
                     </section>
                   )
                 })}
+                <Scroll
+                  onClick={() => {
+                    navigate('/ourstory', { state: { targetId: 'values' } })
+                  }}
+                  to='value'
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className='read-more'
+                >
+                  Read more
+                </Scroll>
               </div>
             </div>
           </div>
@@ -83,15 +100,16 @@ const Wrapper = styled.section`
       line-height: 38px;
       font-weight: 700;
       margin-bottom: 10px;
+      letter-spacing: 0.8px;
     }
     .desc {
       color: #fff;
-      font-size: 19px;
+      font-size: 16px;
       line-height: 25px;
       padding: 14px 0;
       letter-spacing: 0.3px;
-      width: 300px;
-      font-weight: lighter;
+      width: 350px;
+      font-weight: 100;
       text-align: left;
     }
     .view-more {
@@ -127,20 +145,27 @@ const Wrapper = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 4px;
-      padding: 4px 0;
+      margin: 10px 0;
+      padding: 10px 0 4px 0;
     }
     img {
       width: 11%;
     }
   }
-  .prop-text {
+  .read-more {
     font-size: 17px;
+    color: #4cc800;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .prop-text {
+    font-size: 15px;
     text-align: left;
     padding-left: 15px;
-    width: 550px;
+    width: 430px;
     opacity: 0.87;
-
     font-family: 'FilsonProRegular';
     src: url(./fonts/FilsonProRegular.ttf) format(truetype);
   }
@@ -156,9 +181,14 @@ const Wrapper = styled.section`
     .prop-text {
       width: 400px;
     }
+    .propositions {
+      img {
+        width: 14%;
+      }
+    }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1000px) {
     main {
       display: flex;
       flex-direction: column;
@@ -172,7 +202,7 @@ const Wrapper = styled.section`
     }
     .value-prop {
       margin-top: 30px;
-      width: 80%;
+      width: 65%;
 
       img {
         width: 14%;
@@ -186,6 +216,7 @@ const Wrapper = styled.section`
       h3 {
         font-size: 29px;
         line-height: 34px;
+        letter-spacing: 0.2px;
       }
       .desc {
         text-align: center;
@@ -208,9 +239,9 @@ const Wrapper = styled.section`
       flex-direction: column;
     }
   }
-  @media screen and (max-width: 810px) {
-    .bg-img {
-      height: 110vh;
+  @media screen and (max-width: 750px) {
+    .value-prop {
+      width: 84%;
     }
   }
   @media screen and (max-width: 600px) {
@@ -271,11 +302,11 @@ const Wrapper = styled.section`
       font-size: 20px;
     }
     .value-prop {
-      width: 98%;
+      width: 97%;
       padding: 15px 20px;
       margin: 0 auto;
       .prop-text {
-        width: 300px;
+        width: 250px;
       }
     }
     .brief-desc {
@@ -290,6 +321,9 @@ const Wrapper = styled.section`
       }
       .view-more {
         font-size: 12px;
+      }
+      .desc {
+        width: 250px;
       }
     }
   }

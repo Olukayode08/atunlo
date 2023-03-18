@@ -49,11 +49,6 @@ export const dropdownItems = [
     text: 'Dropoff',
     path: '/dropoff',
   },
-  {
-    id: 3,
-    text: 'Corporate services',
-    path: '/corporate',
-  },
 ]
 // DROPDOWN ABOUT
 export const aboutDropdown = [
@@ -99,28 +94,57 @@ export const bgslider = [
 export const valueProposition = [
   {
     id: 1,
-    image: GoalOne,
-    text: 'Job creation for local communities',
+    image: GoalThree,
+    text: ' End poverty in all its forms everywhere.',
   },
   {
     id: 2,
-    image: GoalTwo,
-    text: 'Back2School initiative (Sponsor 1 kid for every 20 tonnes baled)',
-  },
-  {
-    id: 3,
-    image: GoalThree,
-    text: 'Build public baths, toilets, sinks, boreholes and drainages for communities',
+    image: GoalOne,
+    text: 'Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.',
   },
   {
     id: 4,
-    image: GoalFour,
-    text: 'Waste management, partnership with companies to adopt sustainability practices,  educational outreach on sustainability (radio program, waste recycling clubs).',
+    image: GoalTwo,
+    text: 'Ensure sustainable consumption and production patterns.',
   },
   {
     id: 5,
     image: GoalFive,
-    text: 'Reduce marine pollution',
+    text: 'Conserve and sustainably use the oceans, seas and marine resources for sustainable development.',
+  },
+]
+export const propositionFaq = [
+  {
+    id: 1,
+    image: GoalThree,
+    text: ' End poverty in all its forms everywhere.',
+    one: 'Job creation for local communities',
+    two: '$5 per day wages for workers',
+    three: 'Ability to trade waste for cash (waste to wealth)',
+    four: 'Apprenticeship programs for 10,000 university students',
+  },
+  {
+    id: 2,
+    image: GoalOne,
+    text: 'Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.',
+    one: 'Ability to trade waste for school materials',
+    two: '“Catch Them Young” initiative for kids (Vocational activities)',
+    three: 'Waste recycling clubs',
+    four: 'Vocational trainings at our factory',
+  },
+  {
+    id: 3,
+    image: GoalTwo,
+    text: 'Ensure sustainable consumption and production patterns.',
+    one: 'Effective waste management',
+    two: 'Educational outreach programs to local communities',
+    three: 'Sustainability training for over 10,000 kids within 2 years',
+  },
+  {
+    id: 4,
+    image: GoalFive,
+    text: 'Conserve and sustainably use the oceans, seas and marine resources for sustainable development.',
+    one: 'Reduce marine pollution by increasing collection capacity from 12,000 tonnes in Year 1 to 60,000 tonnes by Year 5',
   },
 ]
 // FREQUENTLY ASKED QUESTIONS

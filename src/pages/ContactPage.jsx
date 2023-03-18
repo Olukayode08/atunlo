@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Contact, Whatsapp } from '../components'
 import styled from 'styled-components'
 import envelope from '../assets/envelope.png'
@@ -6,19 +6,19 @@ import location from '../assets/location.png'
 import ringer from '../assets/ringer.png'
 
 const ContactPage = () => {
-    const [details, setdetails] = useState({
-      username: '',
-      email: '',
-      password: '',
-      phone: '',
-      country: '',
-    })
+  const [details, setdetails] = useState({
+    username: '',
+    email: '',
+    password: '',
+    phone: '',
+    country: '',
+  })
 
-    const submitDetails = (e) => {
-      const name = e.target.name
-      const value = e.target.value
-      setdetails({ ...details, [name]: value })
-    }
+  const submitDetails = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setdetails({ ...details, [name]: value })
+  }
   return (
     <>
       <>
@@ -36,6 +36,7 @@ const ContactPage = () => {
                   <span>*</span>Your Name:
                 </h2>
                 <input
+                  className='box-s'
                   type='name'
                   required
                   name='name'
@@ -46,6 +47,7 @@ const ContactPage = () => {
                   <span>*</span>Your Email:
                 </h2>
                 <input
+                  className='box-s'
                   type='email'
                   name='email'
                   value={details.email}
@@ -55,16 +57,20 @@ const ContactPage = () => {
                 <h2>
                   <span>*</span>Comments and Questions
                 </h2>
-                <input
-                  className='comment'
-                  type='text'
+
+                <textarea
+                  className='comment box-s'
+                  required
                   name='text'
+                  type='text'
                   value={details.comment}
                   onChange={submitDetails}
-                  required
-                />
+                  id=''
+                  cols='30'
+                  rows='10'
+                ></textarea>
                 <div className='t-c'>
-                  <input type="checkbox" required className='agree'/>
+                  <input type='checkbox' required className='agree' />
                   <h5>
                     <span>*</span>I agree that my data are stored and I can be
                     called for information purposes or contacted by e-mail. The
@@ -72,7 +78,6 @@ const ContactPage = () => {
                     TERMS and CONDITIONS
                   </h5>
                 </div>
-
                 <button>Submit</button>
               </form>
             </div>
@@ -117,7 +122,7 @@ const ContactUs = styled.section`
     margin: 0 auto;
   }
   h1 {
-    margin: 25px 0 35px 0;
+    margin: 25px 0 55px 0;
     font-size: 15px;
   }
   .form {
@@ -132,29 +137,37 @@ const ContactUs = styled.section`
   span {
     color: #ff0000;
   }
+  textarea,
   input {
     height: 40px;
-    width: 600px;
+    width: 550px;
     margin: 7px 0;
     background: linear-gradient(0deg, #f7f7f7, #f7f7f7),
       linear-gradient(0deg, #8a8a8a, #8a8a8a);
     outline: 0;
+    padding: 0 10px;
+
     border: 1px solid #8a8a8a;
     font-family: inherit;
-    font-size: 18px;
+    font-size: 15px;
   }
-  .comment {
+  textarea {
+    resize: none;
+    padding: 10px;
+    font-size: 15px;
     height: 250px;
   }
+  .box-s {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
   .t-c {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     width: 430px;
-    margin: 15px 0;
-  }
-  .agree:checked:before, .checked:checked:before {
-    background: #4cc800;
+    margin: 25px 0 15px 0;
   }
   .agree {
     width: 50px;
@@ -164,14 +177,16 @@ const ContactUs = styled.section`
     margin: 7px 0;
     padding-left: 10px;
     text-align: justify;
+    font-weight: 400;
   }
   button {
     margin: 15px 0;
     text-align: center;
-    padding: 9px 39px;
+    padding: 9px 42px;
     border: 2px solid #4cc800;
     color: #4cc800;
     background: #fff;
+    cursor: pointer;
     :hover {
       background: #4cc800;
       color: #fff;
@@ -245,7 +260,7 @@ const ContactUs = styled.section`
       width: 6%;
     }
   }
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: 320px) {
     .t-c,
     input {
       width: 270px;
