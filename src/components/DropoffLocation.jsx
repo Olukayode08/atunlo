@@ -103,15 +103,21 @@ const Wrapper = styled.section`
     }
   }
   @media screen and (max-width: 800px) {
+    section {
+      width: 100%;
+    }
     main {
       grid-template-columns: repeat(1, 1fr);
     }
+    article {
+      margin: 15px 0px;
+    }
   }
   @media screen and (max-width: 320px) {
-  article {
-    width: 280px;
-    margin: 15px 0px;
-  }
+    article {
+      width: 280px;
+      margin: 15px 0px;
+    }
   }
 `
 export default DropoffLocation

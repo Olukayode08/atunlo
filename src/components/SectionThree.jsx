@@ -1,21 +1,12 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { valueProposition } from '../data'
+import { propositionFaq } from '../data'
 import bgchildren from '../assets/childbg.png'
-import { Link as Scroll } from 'react-scroll'
-import { useNavigate } from 'react-router-dom'
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
 import { Atunlo } from '../Context'
 
 const SectionThree = () => {
-  const { setColor, setColorAbout } = useContext(Atunlo)
-
-  const navigate = useNavigate()
-
-  const aboutTeam = () => {
-    setColor(false)
-    setColorAbout(true)
-    navigate('/ourstory', { state: { targetId: 'values' } })
-  }
+  const { propAccordion, togglePropAccordion } = useContext(Atunlo)
 
   return (
     <>
@@ -36,26 +27,50 @@ const SectionThree = () => {
             <div className='value-prop'>
               <h4>Our Value Proposition</h4>
               <div className='line'>
-                {valueProposition.map((data) => {
-                  const { id, image, text } = data
+                {propositionFaq.map((propositions, i) => {
+                  const {
+                    id,
+                    hasTwo,
+                    hasThree,
+                    hasFour,
+                    image,
+                    text,
+                    one,
+                    two,
+                    three,
+                    four,
+                  } = propositions
                   return (
                     <section className='propositions' key={id}>
-                      <img src={image} alt='Atunlo' />
-                      <p className='prop-text'>{text}</p>
+                      <div
+                        className='accordion'
+                        onClick={() => togglePropAccordion(i)}
+                      >
+                        <div className='title'>
+                          <img src={image} className='prop-img' alt='Atunlo' />
+                          <h2 className='prop-text'>{text}</h2>
+                        </div>
+                        <span>
+                          {propAccordion === i ? (
+                            <MdKeyboardArrowUp />
+                          ) : (
+                            <MdKeyboardArrowDown />
+                          )}
+                        </span>
+                      </div>
+                      <ul
+                        className={
+                          propAccordion === i ? 'content show' : 'content'
+                        }
+                      >
+                        <li>{one}</li>
+                        {hasTwo && <li>{two}</li>}
+                        {hasThree && <li>{three}</li>}
+                        {hasFour && <li>{four}</li>}
+                      </ul>
                     </section>
                   )
                 })}
-                <Scroll
-                  onClick={aboutTeam}
-                  to='value'
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  className='read-more'
-                >
-                  Read more
-                </Scroll>
               </div>
             </div>
           </div>
@@ -78,7 +93,7 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     margin: 0 auto;
   }
@@ -99,7 +114,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 47%;
+    width: 100%;
     text-align: left;
     h3 {
       color: #4cc800;
@@ -119,62 +134,84 @@ const Wrapper = styled.section`
       font-weight: 100;
       text-align: left;
     }
-    .view-more {
-      background-color: #fff;
-      color: #4cc800;
-      width: 150px;
-      font-size: 15px;
-      text-align: center;
-      border-radius: 4px;
-      padding: 15px 5px;
-      margin-top: 15px;
-    }
   }
   .value-prop {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    padding: 20px 30px;
+    width: 100%;
+    padding: 20px 15px;
     text-align: center;
     align-items: center;
     justify-content: center;
     background-color: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    h4 {
-      font-size: 25px;
-      padding-bottom: 15px;
-    }
-    .line {
-      border-top: 0.1px ridge #e6e2e2;
-    }
-    .propositions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 10px 0;
-      padding: 10px 0 4px 0;
-    }
-    img {
-      width: 11%;
-    }
   }
-  .read-more {
-    font-size: 17px;
-    color: #4cc800;
-    cursor: pointer;
+  h4 {
+    font-size: 25px;
+    padding-bottom: 15px;
+  }
+  .line {
+    border-top: 0.1px ridge #e6e2e2;
+  }
+  .propositions {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    background: #fff;
+    margin: 15px 0;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  .accordion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 20px;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+  }
+  span {
+    color: #4cc800;
+    font-size: 25px;
+    text-align: left;
+    cursor: pointer;
+  }
+  .prop-img {
+    width: 14%;
   }
   .prop-text {
-    font-size: 15px;
-    text-align: left;
-    padding-left: 15px;
-    width: 430px;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
     opacity: 0.87;
-    font-family: 'FilsonProRegular';
-    src: url(./fonts/FilsonProRegular.ttf) format(truetype);
+    color: #000;
+    text-align: left;
+  }
+  .content {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .content.show {
+    height: auto;
+    max-height: 9999px;
+    width: 100%;
+    padding: 5px 30px;
+    border-top: 0.1px ridge #e6e2e2;
+  }
+  li {
+    font-size: 15px;
+    line-height: 25px;
+    opacity: 0.87;
+    margin: 6px 0;
+    text-align: left;
+    margin-left: 10px;
   }
 
   @media screen and (max-width: 1200px) {
@@ -183,10 +220,7 @@ const Wrapper = styled.section`
       width: 90%;
     }
     .value-prop {
-      width: 55%;
-    }
-    .prop-text {
-      width: 400px;
+      width: 90%;
     }
     .propositions {
       img {
@@ -209,9 +243,8 @@ const Wrapper = styled.section`
     }
     .value-prop {
       margin-top: 30px;
-      width: 65%;
-
-      img {
+      width: 75%;
+      .prop-img {
         width: 14%;
       }
     }
@@ -231,13 +264,6 @@ const Wrapper = styled.section`
         width: 400px;
       }
     }
-    .prop-text {
-      width: 400px;
-    }
-
-    .view-more {
-      margin: 0 auto;
-    }
     .bg-img {
       height: 140vh;
     }
@@ -248,13 +274,16 @@ const Wrapper = styled.section`
   }
   @media screen and (max-width: 750px) {
     .value-prop {
-      width: 84%;
+      width: 90%;
     }
   }
   @media screen and (max-width: 600px) {
     .propositions {
       display: flex;
       align-items: center;
+    }
+    .bg-img {
+      height: 160vh;
     }
     .bg-text {
       width: 94%;
@@ -268,29 +297,46 @@ const Wrapper = styled.section`
       }
     }
     .prop-text {
-      width: 350px;
+      font-size: 17px;
     }
     .value-prop {
       width: 100%;
-      padding: 10px 20px;
       margin-top: 15px;
+      padding: 20px 30px;
       h4 {
         font-size: 20px;
         padding-bottom: 20px;
       }
     }
+    .propositions {
+      width: 100%;
+      .prop-img {
+        width: 19%;
+      }
+    }
+    .title {
+      width: 100%;
+    }
+    span {
+      width: 20%;
+    }
   }
   @media screen and (max-width: 420px) {
     .bg-img {
-      height: 120vh;
+      height: 140vh;
     }
-    .prop-text {
-      width: 300px;
+    .value-prop {
+      padding: 20px 10px;
+    }
+  }
+  @media screen and (max-width: 370px) {
+    .bg-img {
+      height: 160vh;
     }
   }
   @media screen and (max-width: 320px) {
     .bg-img {
-      height: 190vh;
+      height: 280vh;
     }
     .bg-text,
     .brief-desc {
@@ -312,9 +358,6 @@ const Wrapper = styled.section`
       width: 97%;
       padding: 15px 20px;
       margin: 0 auto;
-      .prop-text {
-        width: 250px;
-      }
     }
     .brief-desc {
       h3 {

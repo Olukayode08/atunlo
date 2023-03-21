@@ -1,22 +1,14 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext,} from 'react'
 import { About, OurPartners, Whatsapp } from '../components'
 import waste from '../assets/corporate-img.png'
 import styled from 'styled-components'
 import { propositionFaq } from '../data'
-import { useLocation } from 'react-router-dom'
 import { Atunlo } from '../Context'
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
 
 const StoryAbout = () => {
   const { propAccordion, togglePropAccordion } = useContext(Atunlo)
-  const { state } = useLocation()
-  const { targetId } = state || {}
-  useEffect(() => {
-    const el = document.getElementById(targetId)
-    if (el) {
-      el.scrollIntoView()
-    }
-  }, [targetId])
+
   return (
     <>
       <About />
@@ -59,7 +51,7 @@ const StoryAbout = () => {
                 and production, Clean water and sanitation as well as Reduction
                 in marine pollution’.
               </h5>
-              <h5 id='values'>
+              <h5>
                 By taking waste off the street and letting our communities
                 understand the value of recycling, we will ensure over 50,000
                 households are impacted within 5 years, where each household
@@ -227,14 +219,14 @@ const Story = styled.section`
     height: auto;
     max-height: 9999px;
     width: 100%;
-    padding: 5px 30px;
+    padding: 5px 20px;
     border-top: 0.1px ridge #e6e2e2;
   }
   li {
     font-size: 15px;
     line-height: 25px;
     opacity: 0.75;
-    margin: 8px 0;
+    margin: 8px 25px;
   }
   @media screen and (max-width: 1200px) {
     main {
@@ -318,7 +310,6 @@ const Story = styled.section`
     h2 {
       font-size: 15px;
       font-weight: 500;
-      padding: 0;
     }
     .sec-two-r {
       width: 350px;

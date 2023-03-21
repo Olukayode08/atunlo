@@ -412,7 +412,7 @@ const Wrapper = styled.section`
   .c-color {
     color: #4cc800;
   }
-  @media screen and (min-width: 1100px) {
+  @media screen and (min-width: 1150px) {
     .open-links,
     .mobile,
     .desktop {
