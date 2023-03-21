@@ -121,6 +121,9 @@ export const propositionFaq = [
     two: '$5 per day wages for workers',
     three: 'Ability to trade waste for cash (waste to wealth)',
     four: 'Apprenticeship programs for 10,000 university students',
+    hasTwo: true,
+    hasThree: true,
+    hasFour: true,
   },
   {
     id: 2,
@@ -130,6 +133,9 @@ export const propositionFaq = [
     two: '“Catch Them Young” initiative for kids (Vocational activities)',
     three: 'Waste recycling clubs',
     four: 'Vocational trainings at our factory',
+    hasTwo: true,
+    hasThree: true,
+    hasFour: true,
   },
   {
     id: 3,
@@ -138,6 +144,8 @@ export const propositionFaq = [
     one: 'Effective waste management',
     two: 'Educational outreach programs to local communities',
     three: 'Sustainability training for over 10,000 kids within 2 years',
+      hasTwo: true,
+    hasThree: true,
   },
   {
     id: 4,

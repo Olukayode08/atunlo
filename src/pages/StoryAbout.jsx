@@ -70,7 +70,18 @@ const StoryAbout = () => {
           <div className='value-prop'>
             <h4>Value Propositions</h4>
             {propositionFaq.map((propositions, i) => {
-              const { id, image, text, one, two, three, four } = propositions
+              const {
+                id,
+                hasTwo,
+                hasThree,
+                hasFour,
+                image,
+                text,
+                one,
+                two,
+                three,
+                four,
+              } = propositions
               return (
                 <div key={id} className='propositions'>
                   <div
@@ -93,9 +104,9 @@ const StoryAbout = () => {
                     className={propAccordion === i ? 'content show' : 'content'}
                   >
                     <li>{one}</li>
-                    <li>{two}</li>
-                    <li>{three}</li>
-                    <li>{four}</li>
+                    {hasTwo && <li>{two}</li>}
+                    {hasThree && <li>{three}</li>}
+                    {hasFour && <li>{four}</li>}
                   </ul>
                 </div>
               )
@@ -223,7 +234,7 @@ const Story = styled.section`
     font-size: 15px;
     line-height: 25px;
     opacity: 0.75;
-    list-style: none;
+    /* list-style: none; */
     margin: 8px 0;
   }
   @media screen and (max-width: 1200px) {

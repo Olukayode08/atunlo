@@ -14,6 +14,7 @@ const SectionThree = () => {
   const aboutTeam = () => {
     setColor(false)
     setColorAbout(true)
+    console.log('production')
     navigate('/ourstory', { state: { targetId: 'values' } })
   }
 

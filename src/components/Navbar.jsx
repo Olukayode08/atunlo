@@ -34,7 +34,7 @@ const Navbar = () => {
     setSubLinkTwo,
   } = useContext(Atunlo)
 
-  const aboutService = ()=>{
+  const aboutService = () => {
     setColor(false)
     setColorAbout(false)
   }
