@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import LogoBlack from '../assets/logo-w.png'
 import Facebook from '../assets/Facebook.png'
@@ -8,13 +8,27 @@ import Mail from '../assets/Mail.png'
 import notify from '../assets/mac-mail.png'
 import { FaTimes } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { Atunlo } from '../Context'
 
 const Footer = () => {
+  const { setColor, setColorAbout} = useContext(Atunlo)
   const [modal, setModal] = useState(false)
   const [email, setEmail] = useState('')
   const submitForm = (e) => {
     e.preventDefault()
   }
+    const aboutService = () => {
+      setColor(false)
+      setColorAbout(false)
+    }
+       const aboutTeam = () => {
+         setColor(false)
+         setColorAbout(true)
+       }
+        const aboutLocate = () => {
+          setColor(true)
+          setColorAbout(false)
+        }
 
   const emailValidation = (e) => {
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
@@ -38,29 +52,29 @@ const Footer = () => {
             <main className='footer-content spacing'>
               <h1>SERVICES</h1>
               <h6 className='locations'>Pickup</h6>
-              <h6 className='locations' to='/dropoff'>
+              <Link className='locations' onClick={aboutLocate} to='/dropoff'>
                 Drop Off
-              </h6>
-              <Link className='locations'>Corporate services</Link>
+              </Link>
+              <h6 className='locations'>Corporate services</h6>
             </main>
             <main className='footer-content spacing'>
               <h1>ABOUT</h1>
-              <Link className='locations' to='/ourstory'>
+              <Link className='locations' onClick={aboutTeam} to='/ourstory'>
                 Our Story
               </Link>
-              <Link className='locations' to='/'>
+              <h6 className='locations' onClick={aboutTeam}>
                 Our Partners
-              </Link>
-              <Link className='locations' to='/ourteam'>
+              </h6>
+              <Link className='locations' onClick={aboutTeam} to='/ourteam'>
                 Our Team
               </Link>
-              <Link className='locations' to='/contact'>
+              <Link className='locations' onClick={aboutService} to='/contact'>
                 Join Us
               </Link>
             </main>
             <main className='footer-content space'>
               <h1>CONTACT</h1>
-              <Link className='locations' to='/contact'>
+              <Link className='locations' onClick={aboutService} to='/contact'>
                 Contact Us
               </Link>
             </main>

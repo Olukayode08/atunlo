@@ -252,6 +252,7 @@ const ContactUs = styled.section`
     section {
       width: 100%;
     }
+    textarea,
     .t-c,
     input {
       width: 350px;

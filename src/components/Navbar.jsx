@@ -17,7 +17,9 @@ const Navbar = () => {
   const {
     active,
     setActive,
+    setColor,
     color,
+    setColorAbout,
     colorAbout,
     closeMobile,
     closeMobileServices,
@@ -32,9 +34,16 @@ const Navbar = () => {
     setSubLinkTwo,
   } = useContext(Atunlo)
 
+  const aboutService = ()=>{
+    setColor(false)
+    setColorAbout(false)
+  }
+
   const closeFaq = () => {
     navigate('/', { state: { targetId: 'faqs' } })
     closeMobile()
+    setColor(false)
+    setColorAbout(false)
   }
 
   const toggleDropdown = () => {
@@ -81,7 +90,7 @@ const Navbar = () => {
               <img className='logo' src={logo} alt='Atunlo' />
             </Link>
             <ul className='links'>
-              <li className='desktop-links'>
+              <li className='desktop-links' onClick={aboutService}>
                 <NavLink
                   to='/'
                   className={({ isActive }) =>
@@ -106,7 +115,12 @@ const Navbar = () => {
                 )}
                 {dropdown && <Dropdown />}
               </li>
-              <li onClick={toggleAbout} className='desktop-links'>
+              <li
+                onClick={toggleAbout}
+                className={
+                  colorAbout ? 'd-color desktop-links' : 'desktop-links'
+                }
+              >
                 {dropdownAbout ? (
                   <div>
                     About <img src={up} alt='Atunlo' />
@@ -118,7 +132,7 @@ const Navbar = () => {
                 )}
                 {dropdownAbout && <DropdownAbout />}
               </li>
-              <li className='desktop-links'>
+              <li className='desktop-links' onClick={aboutService}>
                 <NavLink
                   to='/contact'
                   className={({ isActive }) =>
@@ -128,11 +142,9 @@ const Navbar = () => {
                   Contact
                 </NavLink>
               </li>
-              <li className='desktop-links'>
+              <li className='desktop-links' onClick={aboutService}>
                 <Scroll
-                  onClick={() => {
-                    navigate('/', { state: { targetId: 'faqs' } })
-                  }}
+                  onClick={closeFaq}
                   to='faq'
                   spy={true}
                   smooth={true}
@@ -188,7 +200,6 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-
                 <div className={subLinkOne ? 'sublinks' : 'no-sublink'}>
                   {dropdownItems.map((items) => {
                     const { id, text, path } = items

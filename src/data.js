@@ -1,7 +1,6 @@
 import GoalOne from './assets/Group-31.png'
 import GoalTwo from './assets/Group-30.png'
 import GoalThree from './assets/Group-28.png'
-import GoalFour from './assets/Group-27.png'
 import GoalFive from './assets/Group-26.png'
 import bgTwo from './assets/images-img-7.png'
 import bgThree from './assets/images-img-6.png'

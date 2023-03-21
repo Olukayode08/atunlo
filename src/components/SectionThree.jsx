@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { valueProposition } from '../data'
 import bgchildren from '../assets/childbg.png'
 import { Link as Scroll } from 'react-scroll'
 import { useNavigate } from 'react-router-dom'
+import { Atunlo } from '../Context'
 
 const SectionThree = () => {
+  const { setColor, setColorAbout } = useContext(Atunlo)
+
   const navigate = useNavigate()
+
+  const aboutTeam = () => {
+    setColor(false)
+    setColorAbout(true)
+    navigate('/ourstory', { state: { targetId: 'values' } })
+  }
 
   return (
     <>
@@ -37,9 +46,7 @@ const SectionThree = () => {
                   )
                 })}
                 <Scroll
-                  onClick={() => {
-                    navigate('/ourstory', { state: { targetId: 'values' } })
-                  }}
+                  onClick={aboutTeam}
                   to='value'
                   spy={true}
                   smooth={true}

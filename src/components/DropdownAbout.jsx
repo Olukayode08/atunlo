@@ -5,10 +5,16 @@ import styled from 'styled-components'
 import { Atunlo } from '../Context'
 
 const DropdownAbout = () => {
-  const { closeMobile } = useContext(Atunlo)
+  const { setColorAbout, setColor } = useContext(Atunlo)
 
   const [clickAbout, setClickAbout] = useState(false)
   const handleClickAbout = () => setClickAbout(clickAbout)
+  
+  const clickColorAbout = ()=>{
+    setClickAbout(false)
+    setColorAbout(true)
+    setColor(false)
+  }
   return (
     <Wrapper>
       <div>
@@ -19,11 +25,11 @@ const DropdownAbout = () => {
           {aboutDropdown.map((about) => {
             const {idx, text, path } = about
             return (
-              <li key={idx} onClick={closeMobile}>
+              <li key={idx}>
                 <NavLink
                   className='dropdown-link'
                   to={path}
-                  onClick={() => setClickAbout(false)}
+                  onClick={clickColorAbout}
                 >
                   {text}
                 </NavLink>

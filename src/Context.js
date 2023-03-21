@@ -42,8 +42,9 @@ const Context = ({ children }) => {
   }
   const closeMobile = () => {
     setActive(false)
-    setColor(false)
     setColorAbout(false)
+    setColor(false)
+
   }
   return (
     <>
@@ -56,6 +57,7 @@ const Context = ({ children }) => {
           toggleAccordion,
           closeMobile,
           colorAbout,
+          setColorAbout,
           setColor,
           color,
           closeMobileAbout,

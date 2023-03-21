@@ -99,7 +99,8 @@ const Wrapper = styled.section`
     span {
       color: #4cc800;
       font-size: 25px;
-      text-align: right;
+      width: 50px;
+      text-align: center;
       cursor: pointer;
     }
 

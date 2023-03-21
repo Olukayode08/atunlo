@@ -68,7 +68,7 @@ const StoryAbout = () => {
             </div>
           </div>
           <div className='value-prop'>
-            <h2>Value Propositions</h2>
+            <h4>Value Propositions</h4>
             {propositionFaq.map((propositions, i) => {
               const { id, image, text, one, two, three, four } = propositions
               return (
@@ -79,9 +79,9 @@ const StoryAbout = () => {
                   >
                     <div className='title'>
                       <img src={image} className='prop-img' alt='Atunlo' />
-                      <p>{text}</p>
+                      <h2>{text}</h2>
                     </div>
-                    <span onClick={() => togglePropAccordion(i)}>
+                    <span>
                       {propAccordion === i ? (
                         <MdKeyboardArrowUp />
                       ) : (
@@ -89,7 +89,6 @@ const StoryAbout = () => {
                       )}
                     </span>
                   </div>
-
                   <ul
                     className={propAccordion === i ? 'content show' : 'content'}
                   >
@@ -166,7 +165,7 @@ const Story = styled.section`
     width: 650px;
     margin: 30px auto;
   }
-  h2 {
+  h4 {
     font-size: 30px;
     color: #4cc800;
   }
@@ -175,6 +174,7 @@ const Story = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 98%;
     margin: 15px auto;
     background: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
@@ -192,17 +192,20 @@ const Story = styled.section`
     cursor: pointer;
   }
   span {
-    font-size: 25px;
     color: #4cc800;
+    font-size: 25px;
+    text-align: left;
     cursor: pointer;
   }
   .prop-img {
-    width: 8%;
+    width: 10%;
   }
-  p {
+  h2 {
     padding-left: 20px;
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 500;
+    opacity: 0.87;
+    color: #000;
     text-align: left;
   }
   .content {
@@ -217,8 +220,11 @@ const Story = styled.section`
     border-top: 0.1px ridge #e6e2e2;
   }
   li {
-    margin: 8px 0;
+    font-size: 15px;
+    line-height: 25px;
+    opacity: 0.75;
     list-style: none;
+    margin: 8px 0;
   }
   @media screen and (max-width: 1200px) {
     main {
@@ -260,7 +266,7 @@ const Story = styled.section`
     .sec-two {
       width: 95%;
     }
-    h2 {
+    h4 {
       text-align: center;
     }
     .waste-img {
@@ -268,6 +274,12 @@ const Story = styled.section`
     }
     .value-prop {
       width: 600px;
+    }
+    .content.show {
+      padding: 5px 20px;
+    }
+    .accordion {
+      padding: 20px;
     }
   }
   @media screen and (max-width: 700px) {
@@ -284,14 +296,17 @@ const Story = styled.section`
       height: 450px;
       margin: 30px;
     }
-    .prop-img {
-      display: none;
+    .title {
+      width: 85%;
     }
-    h2 {
+    span {
+      width: 15%;
+    }
+    h4 {
       font-size: 24px;
     }
-    p {
-      font-size: 17px;
+    h2 {
+      font-size: 15px;
       font-weight: 500;
       padding: 0;
     }
@@ -340,7 +355,7 @@ const Story = styled.section`
     .value-prop {
       width: 270px;
     }
-    p {
+    h2 {
       font-size: 17px;
     }
     li {
