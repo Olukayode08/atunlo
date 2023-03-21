@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import styled from 'styled-components'
 import { bgslider } from '../data'
 import { Link } from 'react-router-dom'
+import { Atunlo } from '../Context'
+
 
 const Hero = () => {
+  const { setColor, setColorAbout } = useContext(Atunlo)
+
   const [pictures, setPictures] = useState(bgslider)
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideLength = bgslider.length
@@ -25,6 +29,11 @@ const Hero = () => {
     }
     return () => clearInterval(slideInterval)
   }, [currentSlide])
+
+          const aboutLocate = () => {
+          setColor(true)
+          setColorAbout(false)
+        }
   return (
     <>
       <Wrapper>
@@ -62,7 +71,7 @@ const Hero = () => {
               <Link className='location' to='#'>
                 Request pickup
               </Link>
-              <Link className='location' to='/dropoff'>
+              <Link onClick={aboutLocate} className='location' to='/dropoff'>
                 Find drop off points
               </Link>
             </div>

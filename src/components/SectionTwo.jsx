@@ -17,7 +17,7 @@ const SectionTwo = () => {
                 waste generators, as well as municipal waste collectors whom we
                 pay to collect used PET bottles for sale to offtakers.
               </h5>
-              <Link className='location' to='/pickup'>
+              <Link className='location' to='#'>
                 Request pickup
               </Link>
             </div>
