@@ -234,7 +234,6 @@ const Story = styled.section`
     font-size: 15px;
     line-height: 25px;
     opacity: 0.75;
-    /* list-style: none; */
     margin: 8px 0;
   }
   @media screen and (max-width: 1200px) {

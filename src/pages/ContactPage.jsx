@@ -108,7 +108,7 @@ const ContactPage = () => {
           </section>
           <iframe
             id='gmap_canvas'
-            src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Temidire%20Market,%20Phase%202,%20Eleyele%20Waterworks,%20Eleyele,%20Ibadan%20Ibadan+(Atunlo)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+            src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Temidire%20Market,%20Phase%202,%20Eleyele%20Waterworks,%20Eleyele,%20Ibadan%20Nigeria%20Ibadan+(Atunlo)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
           ></iframe>
         </ContactUs>
       </>
