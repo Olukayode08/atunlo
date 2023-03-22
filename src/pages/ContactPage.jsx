@@ -291,7 +291,7 @@ const ContactUs = styled.section`
       width: 6%;
     }
     .bg-img {
-      height: 180vh;
+      height: 165vh;
     }
   }
   @media screen and (max-width: 320px) {

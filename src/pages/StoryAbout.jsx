@@ -289,7 +289,7 @@ const Story = styled.section`
       margin: 0 auto;
     }
     .bg-img {
-      height: 330vh;
+      height: 230vh;
     }
   }
   @media screen and (max-width: 930px) {
