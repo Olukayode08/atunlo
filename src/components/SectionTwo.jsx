@@ -2,25 +2,32 @@ import React from 'react'
 import styled from 'styled-components'
 import waste from '../assets/IMG_20230129_153109_285 1.png'
 import { Link } from 'react-router-dom'
+import Stats from './Stats'
+import watermark from '../assets/watermark.png'
+
 
 const SectionTwo = () => {
   return (
     <>
       <Wrapper>
         <main>
-          <div className='sec-two'>
-            <img src={waste} alt='Atunlo' />
-            <div className='sec-two-r'>
-              <h3>We have built a system that works out for all</h3>
-              <h5>
-                Atunlo partners with residential, commercial and institutional
-                waste generators, as well as municipal waste collectors whom we
-                pay to collect used PET bottles for sale to offtakers.
-              </h5>
-              <Link className='location' to='#'>
-                Request pickup
-              </Link>
+          <div className='bg-img'></div>
+          <div className='bg-text'>
+            <div className='sec-two'>
+              <img src={waste} alt='Atunlo' />
+              <div className='sec-two-r'>
+                <h3>We have built a system that works out for all</h3>
+                <h5>
+                  Atunlo partners with residential, commercial and institutional
+                  waste generators, as well as municipal waste collectors whom
+                  we pay to collect used PET bottles for sale to offtakers.
+                </h5>
+                <Link className='location' to='#'>
+                  Request pickup
+                </Link>
+              </div>
             </div>
+            <Stats />
           </div>
         </main>
       </Wrapper>
@@ -30,8 +37,28 @@ const SectionTwo = () => {
 
 const Wrapper = styled.section`
   main {
-    margin: 50px auto;
-    width: 80%;
+    width: 100%;
+    position: relative;
+  }
+  .bg-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+      url(${watermark});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 110vh;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.05;
+  }
+  .bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
+    margin: 0 auto;
   }
   .sec-two {
     display: flex;
@@ -92,10 +119,6 @@ const Wrapper = styled.section`
     }
   }
   @media screen and (max-width: 1100px) {
-    main {
-      margin: 30px auto;
-      width: 90%;
-    }
     .sec-two {
       display: flex;
       flex-direction: column-reverse;
@@ -114,11 +137,11 @@ const Wrapper = styled.section`
     .location {
       margin: 0 auto;
     }
+    .bg-img {
+      height: 170vh;
+    }
   }
   @media screen and (max-width: 600px) {
-    main {
-      width: 80%;
-    }
     img {
       width: 350px;
       height: 350px;
@@ -152,6 +175,9 @@ const Wrapper = styled.section`
     .sec-two-r {
       margin: 30px 0;
       width: 275px;
+    }
+    .bg-img {
+      height: 220vh;
     }
   }
 `

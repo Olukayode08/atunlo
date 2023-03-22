@@ -85,7 +85,7 @@ const Wrapper = styled.section`
     position: relative;
     justify-content: space-between;
     align-items: center;
-    margin: 70px 0;
+    margin: 0;
   }
   .bg-img {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),

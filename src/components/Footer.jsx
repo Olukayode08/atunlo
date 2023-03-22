@@ -301,6 +301,7 @@ const Wrapper = styled.section`
       font-size: 13px;
     }
     .copy {
+      text-align: center;
       padding-left: 0;
     }
   }
@@ -387,7 +388,7 @@ const Wrapper = styled.section`
     }
     .logo {
       margin: 0 auto;
-      width: 40%;
+      width: 30%;
     }
     .footer-content {
       text-align: center;

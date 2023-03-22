@@ -33,8 +33,8 @@ const Wrapper = styled.section`
     border-bottom-left-radius: 10px;
     position: fixed;
     cursor: pointer;
-    z-index: 10;
-    bottom: 0px;
+    z-index: 999;
+    bottom: 10px;
     right: 0;
     padding: 5px;
   }

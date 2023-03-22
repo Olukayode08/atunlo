@@ -265,43 +265,5 @@ export const pickups = [
     footer: 'For inquiries: +234 810 234 5678',
   },
 ]
-// DROPOFF LOCATIONS
-export const dropoffs = [
-  {
-    id: 1,
-    header: 'IBADAN Metropolitan, Los Angeles.',
-    footer: 'Address: No 419, bulu bala street, Tinubu, Ibadan state.',
-    contact: 'Contact: +234 812 345 6789',
-  },
-  {
-    id: 2,
-    header: 'IBADAN Metropolitan, Los Angeles.',
 
-    footer: 'Address: No 419, bulu bala street, Tinubu, Ibadan state.',
-    contact: 'Contact: +234 812 345 6789',
-  },
-  {
-    id: 3,
-    header: 'IBADAN Metropolitan, Los Angeles.',
-    footer: 'Address: No 419, bulu bala street, Tinubu, Ibadan state.',
-    contact: 'Contact: +234 812 345 6789',
-  },
-  {
-    id: 4,
-    header: 'IBADAN Metropolitan, Los Angeles.',
-    footer: 'Address: No 419, bulu bala street, Tinubu, Ibadan state.',
-    contact: 'Contact: +234 812 345 6789',
-  },
-  {
-    id: 5,
-    header: 'IBADAN Metropolitan, Los Angeles.',
-    footer: 'Address: No 419, bulu bala street, Tinubu, Ibadan state.',
-    contact: 'Contact: +234 812 345 6789',
-  },
-  {
-    id: 6,
-    header: 'IBADAN Metropolitan, Los Angeles.',
-    footer: 'Address: No 419, bulu bala street, Tinubu, Ibadan state.',
-    contact: 'Contact: +234 812 345 6789',
-  },
-]
+

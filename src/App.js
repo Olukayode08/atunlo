@@ -9,6 +9,8 @@ import DropoffServices from './pages/DropoffServices'
 import CorporateServices from './pages/CorporateServices'
 import ContactPage from './pages/ContactPage'
 import Reload from './hooks/Reload'
+import './index.css'
+
 
 function App() {
   return (

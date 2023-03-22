@@ -10,19 +10,42 @@ const DropoffLocation = () => {
           <h2>Dropoff Locations</h2>
 
           <main>
-            {dropoffs.map((dropoff) => {
-              const { id, header, footer, contact } = dropoff
-              return (
-                <article key={id}>
-                  <h3>{header}</h3>
-                  <ul></ul>
-                  <div className='contact-address'>
-                    <h4 className='address'>{footer}</h4>
-                    <h4>{contact}</h4>
-                  </div>
-                </article>
-              )
-            })}
+            <article>
+              <h3>ELEYELE, IBADAN</h3>
+              <div className='map'>
+                <iframe
+                  id='gmap_canvas'
+                  src='https://maps.google.com/maps?width=400&amp;height=200&amp;hl=en&amp;q=Temidire%20Market,%20Phase%202,%20Eleyele%20Waterworks,%20Eleyele,%20Ibadan%20Nigeria.%20Ibadan+(Atunlo%20Dropoff%20Location)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+                ></iframe>
+              </div>
+              <div className='contact-address'>
+                <h4 className='address'>
+                  <span>Address:</span> Temidire Market, Phase 2, Eleyele
+                  Waterworks, Eleyele, Ibadan.
+                </h4>
+                <h4>
+                  <span>Contact:</span> +234 916 608 9980
+                </h4>
+              </div>
+            </article>
+            <article>
+              <h3>APETE, IBADAN</h3>
+              <div className='map'>
+                <iframe
+                  id='gmap_canvas'
+                  src='https://maps.google.com/maps?width=400&amp;height=200&amp;hl=en&amp;q=Life%20Forte%20Int.%20School%20road,%20Awotan.%20Apete%20Ibadan%20Nigeria%20+(Atunlo%20Dropoff%20Location)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+                ></iframe>
+              </div>
+              <div className='contact-address'>
+                <h4 className='address'>
+                  <span>Address:</span> 3rd site after civil defence office,
+                  Life Forte Int. School road, Awotan. Apete Ibadan.
+                </h4>
+                <h4>
+                  <span>Contact:</span> +234 816 760 3650
+                </h4>
+              </div>
+            </article>
           </main>
         </section>
       </Wrapper>
@@ -40,20 +63,20 @@ const Wrapper = styled.section`
     margin: 0 auto;
   }
   h2 {
-    text-align: left;
-    margin-left: 20px;
+    text-align: center;
+
     font-weight: 700;
   }
 
   main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
   }
   article {
-    width: 320px;
-    margin: 15px;
+    width: 400px;
+    margin: 25px;
     background: #fff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   }
@@ -66,13 +89,9 @@ const Wrapper = styled.section`
     border-top-right-radius: 8px;
     text-align: center;
   }
-  ul {
-    margin-left: 40px;
-    padding: 15px 0;
-    height: 140px;
-    li {
-      margin: 5px 0;
-    }
+  iframe {
+    height: 200px;
+    width: 100%;
   }
   .contact-address {
     display: flex;
@@ -87,8 +106,13 @@ const Wrapper = styled.section`
   .address {
     margin-bottom: 28px;
   }
+  span{
+    font-size: 15px;
+    opacity: 0.78;
+    font-weight: 100;
+  }
   h4 {
-    font-weight: lighter;
+    font-weight: 400;
   }
   @media screen and (max-width: 1200px) {
     h2 {
@@ -98,7 +122,6 @@ const Wrapper = styled.section`
   }
   @media screen and (max-width: 1200px) {
     main {
-      grid-template-columns: repeat(2, 1fr);
       margin: 0 auto;
     }
   }
@@ -106,11 +129,9 @@ const Wrapper = styled.section`
     section {
       width: 100%;
     }
-    main {
-      grid-template-columns: repeat(1, 1fr);
-    }
+
     article {
-      margin: 15px 0px;
+      margin: 20px 0px;
     }
   }
   @media screen and (max-width: 320px) {

@@ -6,7 +6,6 @@ const Home = () => {
     <Hero />
     <Whatsapp />
     <SectionTwo />
-    <Stats />
     <SectionThree />
     <SectionFour /> 
     <FAQS />

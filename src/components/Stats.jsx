@@ -12,7 +12,7 @@ const Stats = () => {
           </div>
           <div className='line'></div>
           <div className='stats'>
-            <h4>10,000</h4>
+            <h4>10</h4>
             <h2>Tonnes collected</h2>
           </div>
           <div className='line'></div>

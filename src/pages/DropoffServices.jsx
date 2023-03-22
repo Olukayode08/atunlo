@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Stats, Services, DropoffLocation, Whatsapp, OurPartners } from '../components'
 import dropoff from '../assets/dropoff-icon.png'
 import waste from '../assets/IMG_20230129_153109_285 1.png'
+import watermark from '../assets/watermark.png'
 
 
 const DropoffServices = () => {
@@ -13,24 +14,27 @@ const DropoffServices = () => {
 
       <WasteDropoff>
         <main>
-          <div className='sec-two'>
-            <img src={waste} alt='Atunlo' />
-            <div className='sec-two-r'>
-              <div className='waste-pick-up'>
-                <img src={dropoff} alt='Atunlo' className='pickup-icon' />
-                <h3>Waste DropOff</h3>
+          <div className='bg-img'></div>
+          <div className='bg-text'>
+            <div className='sec-two'>
+              <img src={waste} alt='Atunlo' />
+              <div className='sec-two-r'>
+                <div className='waste-pick-up'>
+                  <img src={dropoff} alt='Atunlo' className='pickup-icon' />
+                  <h3>Waste DropOff</h3>
+                </div>
+                <h5>
+                  Please call our drop-off locations to drop off your used PET
+                  bottles. Can’t find your location? Drop us a message by
+                  filling our contact form here.
+                </h5>
               </div>
-              <h5>
-                Please call our drop-off locations to drop off your used PET
-                bottles. Can’t find your location? Drop us a message by filling
-                our contact form here.
-              </h5>
             </div>
+            <Stats />
+            <DropoffLocation />
           </div>
         </main>
       </WasteDropoff>
-      <Stats />
-      <DropoffLocation />
       <OurPartners />
     </>
   )
@@ -39,10 +43,30 @@ const DropoffServices = () => {
 
 const WasteDropoff = styled.section`
   main {
+    width: 100%;
     margin: 0 auto;
-    width: 90%;
+    position: relative;
   }
-
+  .bg-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+      url(${watermark});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 200vh;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.05;
+  }
+  .bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
+    margin: 0 auto;
+  }
   .sec-two {
     display: flex;
     flex-direction: row-reverse;
@@ -111,6 +135,9 @@ const WasteDropoff = styled.section`
     h5 {
       text-align: center;
     }
+    .bg-img {
+      height: 250vh;
+    }
   }
   @media screen and (max-width: 500px) {
     img {
@@ -131,6 +158,9 @@ const WasteDropoff = styled.section`
     .sec-two-r {
       width: 280px;
       margin: 30px 0;
+    }
+    .bg-img {
+      height: 430vh;
     }
   }
 `

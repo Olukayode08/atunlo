@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import envelope from '../assets/envelope.png'
 import location from '../assets/location.png'
 import ringer from '../assets/ringer.png'
+import watermark from '../assets/watermark.png'
+
 
 const ContactPage = () => {
   const [details, setdetails] = useState({
@@ -26,83 +28,86 @@ const ContactPage = () => {
         <Whatsapp />
         <ContactUs>
           <section>
-            <div className='form'>
-              <h1>
-                Make sure you enter the (<span>*</span>) required information
-                where indicated.
-              </h1>
-              <form onSubmit={submitDetails}>
-                <h2>
-                  <span>*</span>Your Name:
-                </h2>
-                <input
-                  className='box-s'
-                  type='name'
-                  required
-                  name='name'
-                  value={details.name}
-                  onChange={submitDetails}
-                />
-                <h2>
-                  <span>*</span>Your Email:
-                </h2>
-                <input
-                  className='box-s'
-                  type='email'
-                  name='email'
-                  value={details.email}
-                  onChange={submitDetails}
-                  required
-                />
-                <h2>
-                  <span>*</span>Comments and Questions
-                </h2>
+            <div className='bg-img'></div>
+            <div className='bg-text'>
+              <div className='form'>
+                <h1>
+                  Make sure you enter the (<span>*</span>) required information
+                  where indicated.
+                </h1>
+                <form onSubmit={submitDetails}>
+                  <h2>
+                    <span>*</span>Your Name:
+                  </h2>
+                  <input
+                    className='box-s'
+                    type='name'
+                    required
+                    name='name'
+                    value={details.name}
+                    onChange={submitDetails}
+                  />
+                  <h2>
+                    <span>*</span>Your Email:
+                  </h2>
+                  <input
+                    className='box-s'
+                    type='email'
+                    name='email'
+                    value={details.email}
+                    onChange={submitDetails}
+                    required
+                  />
+                  <h2>
+                    <span>*</span>Comments and Questions
+                  </h2>
 
-                <textarea
-                  className='comment box-s'
-                  required
-                  name='text'
-                  type='text'
-                  value={details.comment}
-                  onChange={submitDetails}
-                  id=''
-                  cols='30'
-                  rows='10'
-                ></textarea>
-                <div className='t-c'>
-                  <input type='checkbox' required className='agree' />
-                  <h5>
-                    <span>*</span>I agree that my data are stored and I can be
-                    called for information purposes or contacted by e-mail. The
-                    data will not be passed on to third parties. I agree with
-                    TERMS and CONDITIONS
-                  </h5>
-                </div>
-                <button>Submit</button>
-              </form>
-            </div>
-            <div className='direct-contact'>
-              <h3>Direct Contact:</h3>
-              <div className='phone'>
-                <div className='phone-number'>
-                  <a href='tel:+2349166089980'>+234 916 608 9980</a>
-                  <a href='tel:+2348182440889'>+234 818 244 0889</a>
-                </div>
-                <img src={ringer} alt='Atunlo' />
+                  <textarea
+                    className='comment box-s'
+                    required
+                    name='text'
+                    type='text'
+                    value={details.comment}
+                    onChange={submitDetails}
+                    id=''
+                    cols='30'
+                    rows='10'
+                  ></textarea>
+                  <div className='t-c'>
+                    <input type='checkbox' required className='agree' />
+                    <h5>
+                      <span>*</span>I agree that my data are stored and I can be
+                      called for information purposes or contacted by e-mail.
+                      The data will not be passed on to third parties. I agree
+                      with TERMS and CONDITIONS
+                    </h5>
+                  </div>
+                  <button>Submit</button>
+                </form>
               </div>
-              <div className='mail'>
-                <a href='mailto:Operations@atunlotech.com'>
-                  Operations@atunlotech.com
-                </a>
-                <img src={envelope} alt='Atunlo' />
-              </div>
-              <div className='location'>
-                <p>
-                  Temidire Market, Phase 2, Eleyele
-                  <br />
-                  Waterworks, Eleyele, Ibadan
-                </p>
-                <img src={location} alt='Atunlo' />
+              <div className='direct-contact'>
+                <h3>Direct Contact:</h3>
+                <div className='phone'>
+                  <div className='phone-number'>
+                    <a href='tel:+2349166089980'>+234 916 608 9980</a>
+                    <a href='tel:+2348182440889'>+234 818 244 0889</a>
+                  </div>
+                  <img src={ringer} alt='Atunlo' />
+                </div>
+                <div className='mail'>
+                  <a href='mailto:Operations@atunlotech.com'>
+                    Operations@atunlotech.com
+                  </a>
+                  <img src={envelope} alt='Atunlo' />
+                </div>
+                <div className='location'>
+                  <p>
+                    Temidire Market, Phase 2, Eleyele
+                    <br />
+                    Waterworks, Eleyele, Ibadan
+                  </p>
+                  <img src={location} alt='Atunlo' />
+                </div>
               </div>
             </div>
           </section>
@@ -117,6 +122,28 @@ const ContactPage = () => {
 }
 const ContactUs = styled.section`
   section {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .bg-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+      url(${watermark});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 130vh;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.05;
+  }
+  .bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     display: flex;
     width: 90%;
     margin: 0 auto;
@@ -236,7 +263,7 @@ const ContactUs = styled.section`
     height: 80vh;
   }
   @media screen and (max-width: 1000px) {
-    section {
+    .bg-text {
       flex-direction: column-reverse;
     }
     .form,
@@ -246,6 +273,9 @@ const ContactUs = styled.section`
     }
     h3 {
       margin-right: 0;
+    }
+    .bg-img {
+      height: 180vh;
     }
   }
   @media screen and (max-width: 600px) {
@@ -260,11 +290,18 @@ const ContactUs = styled.section`
     img {
       width: 6%;
     }
+    .bg-img {
+      height: 180vh;
+    }
   }
   @media screen and (max-width: 320px) {
+    textarea,
     .t-c,
     input {
       width: 270px;
+    }
+    .bg-img {
+      height: 250vh;
     }
   }
 `

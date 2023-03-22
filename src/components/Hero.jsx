@@ -68,10 +68,10 @@ const Hero = () => {
               sites
             </h4>
             <div className='request'>
-              <Link className='location' to='#'>
+              <Link className='location white' to='#'>
                 Request pickup
               </Link>
-              <Link onClick={aboutLocate} className='location' to='/dropoff'>
+              <Link onClick={aboutLocate} className='location green' to='/dropoff'>
                 Find drop off points
               </Link>
             </div>
@@ -89,7 +89,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: -10px 0 50px 0;
+    margin: -10px 0 0 0;
     padding: 0;
     height: 100vh;
     position: relative;
@@ -137,7 +137,7 @@ const Wrapper = styled.section`
   }
   h1 {
     font-size: 60px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 70px;
     margin-bottom: 25px;
     letter-spacing: 1.4px;
@@ -160,9 +160,9 @@ const Wrapper = styled.section`
     margin-top: 15px;
   }
   .location {
-    border: 2px solid #4cc800;
     color: #4cc800;
     width: 210px;
+    font-weight: 700;
     font-size: 17px;
     border-radius: 5px;
     text-align: center;
@@ -171,9 +171,23 @@ const Wrapper = styled.section`
     cursor: pointer;
     text-decoration: none;
     transition: all 0.2s ease-in;
+  }
+  .green {
+    border: 2px solid #4cc800;
     :hover {
-      background: #4cc800;
+      background-color: #4cc800;
       color: #fff;
+    }
+  }
+  .white {
+    border: 2px solid #fff;
+
+    background-color: #fff;
+    :hover {
+      color: #fff;
+      border: 2px solid #4cc800;
+
+      background: #4cc800;
     }
   }
   @media screen and (max-width: 900px) {
@@ -183,6 +197,7 @@ const Wrapper = styled.section`
     h1 {
       font-size: 45px;
       line-height: 50px;
+      font-weight: 900;
     }
     h4 {
       font-size: 17px;
@@ -213,6 +228,7 @@ const Wrapper = styled.section`
     h1 {
       font-size: 26px;
       line-height: 30px;
+      font-weight: 900;
     }
     h4 {
       font-size: 13px;

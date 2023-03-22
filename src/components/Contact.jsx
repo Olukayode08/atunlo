@@ -67,7 +67,7 @@ const Wrapper = styled.section`
     align-items: center;
     padding: 0;
     height: 70vh;
-    margin: -10px 0 50px 0;
+    margin: -10px 0 0 0;
     position: relative;
   }
   article {

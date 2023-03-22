@@ -2,6 +2,7 @@ import React from 'react'
 import { About, Whatsapp } from '../components'
 import styled from 'styled-components'
 import { teams } from '../data'
+import watermark from '../assets/watermark.png'
 
 const TeamAbout = () => {
   return (
@@ -10,19 +11,22 @@ const TeamAbout = () => {
       <Whatsapp />
       <Team>
         <div className='atunlo-team'>
-          <h3>Meet Our Team</h3>
-          {teams.map((team) => {
-            const { id, image, name, about } = team
-            return (
-              <div key={id} className='our-team'>
-                <img src={image} alt='Atunlo' />
-                <div>
-                  <h4>{name}</h4>
-                  <p>{about}</p>
+          <div className='bg-img'></div>
+          <div className='bg-text'>
+            <h3>Meet Our Team</h3>
+            {teams.map((team) => {
+              const { id, image, name, about } = team
+              return (
+                <div key={id} className='our-team'>
+                  <img src={image} alt='Atunlo' />
+                  <div>
+                    <h4>{name}</h4>
+                    <p>{about}</p>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </Team>
     </>
@@ -30,6 +34,27 @@ const TeamAbout = () => {
 }
 const Team = styled.section`
   .atunlo-team {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .bg-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+      url(${watermark});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 180vh;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.05;
+  }
+  .bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     width: 80%;
     margin: 0 auto;
   }
@@ -57,7 +82,6 @@ const Team = styled.section`
     text-align: justify;
     width: 90%;
   }
-
   @media screen and (max-width: 900px) {
     img {
       display: none;
@@ -69,8 +93,18 @@ const Team = styled.section`
     h4,
     h3,
     p {
-      text-align: center;
+      /* text-align: center; */
       width: 100%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .bg-img {
+      height: 200vh;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .bg-img {
+      height: 380vh;
     }
   }
 `

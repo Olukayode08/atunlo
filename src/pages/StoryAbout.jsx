@@ -1,8 +1,10 @@
-import React, { useContext,} from 'react'
+import React, { useContext } from 'react'
 import { About, OurPartners, Whatsapp } from '../components'
 import waste from '../assets/corporate-img.png'
 import styled from 'styled-components'
 import { propositionFaq } from '../data'
+import watermark from '../assets/watermark.png'
+
 import { Atunlo } from '../Context'
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
 
@@ -16,93 +18,99 @@ const StoryAbout = () => {
 
       <Story>
         <main>
-          <div className='sec-two'>
-            <img src={waste} className='waste-img' alt='Atunlo' />
-            <div className='sec-two-r'>
-              <div className='waste-pick-up'>
-                <h3>Our Story</h3>
-              </div>
-              <h5 className='spacing'>
-                Our idea was borne out of the need to improve the waste
-                management efforts in Nigeria for a cleaner environment.
-                According to a United Nations Industrial Development
-                Organisation (UNIDO) report, Nigeria generates over 32 million
-                tonnes of waste annually. Plastic waste accounts for 2.5 million
-                tonnes, with about 80% ending up in landfills, sewers, beaches
-                and water bodies. Less than 20% of plastic waste is recycled.
-              </h5>
-              <h5>
-                Nigeria is also ranked ninth globally among top 20 countries
-                with the highest contributions to plastic pollution, as we
-                contribute 83 percent of the total volume of land-based plastic
-                waste that ends up in the oceans.
-              </h5>
-              <h5>
-                Atunlo, which stands for “the art of recycling”, aims to solve
-                this problem by creating a Materials Recovery Facility to
-                collect, sort and bale recyclable PET bottles for sales to
-                offtakers and manufactures to complete the next process in the
-                recycling value chain.
-              </h5>
-              <h5>
-                Our value proposition in relation to the Sustainable Development
-                Goals will focus on creating in impact in relation to ‘No
-                poverty, Zero hunger, Quality education, Responsible consumption
-                and production, Clean water and sanitation as well as Reduction
-                in marine pollution’.
-              </h5>
-              <h5>
-                By taking waste off the street and letting our communities
-                understand the value of recycling, we will ensure over 50,000
-                households are impacted within 5 years, where each household
-                sees used PET bottles as income and not waste.
-              </h5>
-            </div>
-          </div>
-          <div className='value-prop'>
-            <h4>Value Propositions</h4>
-            {propositionFaq.map((propositions, i) => {
-              const {
-                id,
-                hasTwo,
-                hasThree,
-                hasFour,
-                image,
-                text,
-                one,
-                two,
-                three,
-                four,
-              } = propositions
-              return (
-                <div key={id} className='propositions'>
-                  <div
-                    className='accordion'
-                    onClick={() => togglePropAccordion(i)}
-                  >
-                    <div className='title'>
-                      <img src={image} className='prop-img' alt='Atunlo' />
-                      <h2>{text}</h2>
-                    </div>
-                    <span>
-                      {propAccordion === i ? (
-                        <MdKeyboardArrowUp />
-                      ) : (
-                        <MdKeyboardArrowDown />
-                      )}
-                    </span>
-                  </div>
-                  <ul
-                    className={propAccordion === i ? 'content show' : 'content'}
-                  >
-                    <li>{one}</li>
-                    {hasTwo && <li>{two}</li>}
-                    {hasThree && <li>{three}</li>}
-                    {hasFour && <li>{four}</li>}
-                  </ul>
+          <div className='bg-img'></div>
+          <div className='bg-text'>
+            <div className='sec-two'>
+              <img src={waste} className='waste-img' alt='Atunlo' />
+              <div className='sec-two-r'>
+                <div className='waste-pick-up'>
+                  <h3>Our Story</h3>
                 </div>
-              )
-            })}
+                <h5 className='spacing'>
+                  Our idea was borne out of the need to improve the waste
+                  management efforts in Nigeria for a cleaner environment.
+                  According to a United Nations Industrial Development
+                  Organisation (UNIDO) report, Nigeria generates over 32 million
+                  tonnes of waste annually. Plastic waste accounts for 2.5
+                  million tonnes, with about 80% ending up in landfills, sewers,
+                  beaches and water bodies. Less than 20% of plastic waste is
+                  recycled.
+                </h5>
+                <h5>
+                  Nigeria is also ranked ninth globally among top 20 countries
+                  with the highest contributions to plastic pollution, as we
+                  contribute 83 percent of the total volume of land-based
+                  plastic waste that ends up in the oceans.
+                </h5>
+                <h5>
+                  Atunlo, which stands for “the art of recycling”, aims to solve
+                  this problem by creating a Materials Recovery Facility to
+                  collect, sort and bale recyclable PET bottles for sales to
+                  offtakers and manufactures to complete the next process in the
+                  recycling value chain.
+                </h5>
+                <h5>
+                  Our value proposition in relation to the Sustainable
+                  Development Goals will focus on creating in impact in relation
+                  to ‘No poverty, Zero hunger, Quality education, Responsible
+                  consumption and production, Clean water and sanitation as well
+                  as Reduction in marine pollution’.
+                </h5>
+                <h5>
+                  By taking waste off the street and letting our communities
+                  understand the value of recycling, we will ensure over 50,000
+                  households are impacted within 5 years, where each household
+                  sees used PET bottles as income and not waste.
+                </h5>
+              </div>
+            </div>
+            <div className='value-prop'>
+              <h4>Value Propositions</h4>
+              {propositionFaq.map((propositions, i) => {
+                const {
+                  id,
+                  hasTwo,
+                  hasThree,
+                  hasFour,
+                  image,
+                  text,
+                  one,
+                  two,
+                  three,
+                  four,
+                } = propositions
+                return (
+                  <div key={id} className='propositions'>
+                    <div
+                      className='accordion'
+                      onClick={() => togglePropAccordion(i)}
+                    >
+                      <div className='title'>
+                        <img src={image} className='prop-img' alt='Atunlo' />
+                        <h2>{text}</h2>
+                      </div>
+                      <span>
+                        {propAccordion === i ? (
+                          <MdKeyboardArrowUp />
+                        ) : (
+                          <MdKeyboardArrowDown />
+                        )}
+                      </span>
+                    </div>
+                    <ul
+                      className={
+                        propAccordion === i ? 'content show' : 'content'
+                      }
+                    >
+                      <li>{one}</li>
+                      {hasTwo && <li>{two}</li>}
+                      {hasThree && <li>{three}</li>}
+                      {hasFour && <li>{four}</li>}
+                    </ul>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </main>
       </Story>
@@ -113,7 +121,28 @@ const StoryAbout = () => {
 const Story = styled.section`
   main {
     margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+  .bg-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+      url(${watermark});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 220vh;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.05;
+  }
+  .bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     width: 88%;
+    margin: 0 auto;
   }
   .sec-two {
     width: 90%;
@@ -229,7 +258,7 @@ const Story = styled.section`
     margin: 8px 25px;
   }
   @media screen and (max-width: 1200px) {
-    main {
+    .bg-text {
       margin: 0 auto;
       width: 93%;
     }
@@ -252,17 +281,19 @@ const Story = styled.section`
       width: 480px;
     }
     .sec-two-r,
-    h3,
-    h5 {
+    h3 {
       text-align: center;
     }
     .waste-pick-up {
       justify-content: center;
       margin: 0 auto;
     }
+    .bg-img {
+      height: 330vh;
+    }
   }
   @media screen and (max-width: 930px) {
-    main {
+    .bg-text {
       width: 85%;
     }
     .sec-two {
@@ -285,7 +316,7 @@ const Story = styled.section`
     }
   }
   @media screen and (max-width: 700px) {
-    main {
+    .bg-text {
       width: 95%;
     }
     .value-prop {
@@ -361,6 +392,9 @@ const Story = styled.section`
     }
     li {
       font-size: 14px;
+    }
+    .bg-img {
+      height: 450vh;
     }
   }
 `
