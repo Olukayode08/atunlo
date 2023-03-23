@@ -44,7 +44,7 @@ const Team = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 180vh;
+    height: 1200px;
     width: 100%;
     margin: 0 auto;
     opacity: 0.05;
@@ -93,18 +93,20 @@ const Team = styled.section`
     h4,
     h3,
     p {
-      /* text-align: center; */
       width: 100%;
+    }
+    .bg-img {
+      height: 1300px;
     }
   }
   @media screen and (max-width: 600px) {
     .bg-img {
-      height: 200vh;
+      height: 1600px;
     }
   }
   @media screen and (max-width: 320px) {
     .bg-img {
-      height: 380vh;
+      height: 1800px;
     }
   }
 `

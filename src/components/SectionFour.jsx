@@ -40,7 +40,7 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 70vh;
+    height: 600px;
     width: 100%;
     margin: 0 auto;
     opacity: 0.05;
@@ -90,11 +90,5 @@ const Wrapper = styled.section`
       }
     }
   }
-  @media screen and (max-width: 320px) {
-
-  .bg-img {
-    height: 120vh;
-  }
-}
 `
 export default SectionFour

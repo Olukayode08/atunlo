@@ -53,7 +53,7 @@ const WasteDropoff = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 200vh;
+    height: 1200px;
     width: 100%;
     margin: 0 auto;
     opacity: 0.05;
@@ -136,7 +136,7 @@ const WasteDropoff = styled.section`
       text-align: center;
     }
     .bg-img {
-      height: 250vh;
+      height: 2200px;
     }
   }
   @media screen and (max-width: 500px) {
@@ -158,9 +158,6 @@ const WasteDropoff = styled.section`
     .sec-two-r {
       width: 280px;
       margin: 30px 0;
-    }
-    .bg-img {
-      height: 430vh;
     }
   }
 `

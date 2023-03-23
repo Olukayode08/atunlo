@@ -133,7 +133,7 @@ const ContactUs = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 130vh;
+    height: 900px;
     width: 100%;
     margin: 0 auto;
     opacity: 0.05;
@@ -173,7 +173,6 @@ const ContactUs = styled.section`
       linear-gradient(0deg, #8a8a8a, #8a8a8a);
     outline: 0;
     padding: 0 10px;
-
     border: 1px solid #8a8a8a;
     font-family: inherit;
     font-size: 15px;
@@ -258,7 +257,6 @@ const ContactUs = styled.section`
     text-align: right;
   }
   iframe {
-    margin: 30px 0;
     width: 100%;
     height: 80vh;
   }
@@ -275,7 +273,7 @@ const ContactUs = styled.section`
       margin-right: 0;
     }
     .bg-img {
-      height: 180vh;
+      height: 1200px;
     }
   }
   @media screen and (max-width: 600px) {
@@ -290,18 +288,12 @@ const ContactUs = styled.section`
     img {
       width: 6%;
     }
-    .bg-img {
-      height: 165vh;
-    }
   }
   @media screen and (max-width: 320px) {
     textarea,
     .t-c,
     input {
       width: 270px;
-    }
-    .bg-img {
-      height: 250vh;
     }
   }
 `

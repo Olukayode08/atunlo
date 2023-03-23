@@ -46,7 +46,7 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 110vh;
+    height: 800px;
     width: 100%;
     margin: 0 auto;
     opacity: 0.05;
@@ -138,7 +138,7 @@ const Wrapper = styled.section`
       margin: 0 auto;
     }
     .bg-img {
-      height: 170vh;
+      height: 1200px;
     }
   }
   @media screen and (max-width: 600px) {
@@ -175,9 +175,6 @@ const Wrapper = styled.section`
     .sec-two-r {
       margin: 30px 0;
       width: 275px;
-    }
-    .bg-img {
-      height: 220vh;
     }
   }
 `
