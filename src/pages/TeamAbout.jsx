@@ -80,6 +80,7 @@ const Team = styled.section`
   }
   p {
     text-align: justify;
+    text-justify: distribute;
     width: 90%;
   }
   @media screen and (max-width: 900px) {

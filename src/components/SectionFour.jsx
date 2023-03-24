@@ -40,7 +40,7 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 600px;
+    height: 400px;
     width: 100%;
     margin: 0 auto;
     opacity: 0.05;
@@ -72,8 +72,6 @@ const Wrapper = styled.section`
       font-size: 20px;
       line-height: 32px;
       margin-top: 15px;
-      font-family: 'FilsonProRegular';
-      src: url(./fonts/FilsonProRegular.ttf) format(truetype);
       text-align: center;
     }
   }
@@ -88,6 +86,14 @@ const Wrapper = styled.section`
       p {
         font-size: 18px;
       }
+    }
+    .bg-img {
+      height: 500px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .bg-img {
+      height: 600px;
     }
   }
 `

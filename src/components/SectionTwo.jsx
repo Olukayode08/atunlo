@@ -93,6 +93,8 @@ const Wrapper = styled.section`
     line-height: 24px;
     font-weight: 400;
     text-align: justify;
+    text-justify: distribute;
+
   }
   .location {
     border: 2px solid #4cc800;
@@ -130,8 +132,7 @@ const Wrapper = styled.section`
       width: 450px;
     }
 
-    h3,
-    h5 {
+    h3{
       text-align: center;
     }
     .location {
@@ -150,10 +151,6 @@ const Wrapper = styled.section`
     .sec-two-r {
       margin: 30px 0;
       width: 380px;
-    }
-    h3,
-    h5 {
-      text-align: center;
     }
     h3 {
       font-size: 23px;

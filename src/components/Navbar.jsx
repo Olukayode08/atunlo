@@ -324,12 +324,12 @@ const Wrapper = styled.section`
   }
   .desktop-links {
     font-size: 14px;
-    padding: 24px 20px;
+    padding: 26px 20px;
     color: #8a8a8a;
   }
   .active-link,
   .link {
-    padding: 24px 20px;
+    padding: 26px 20px;
     color: #8a8a8a;
     text-decoration: none;
     font-size: 14px;
@@ -429,7 +429,7 @@ const Wrapper = styled.section`
   .desktop-links,
   .active-link,
   .link {
-    padding: 24px 15px;
+    padding: 26px 15px;
   }
   @media screen and (max-width: 1150px) {
     .links {

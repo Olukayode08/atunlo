@@ -265,11 +265,14 @@ const Wrapper = styled.section`
       }
     }
     .bg-img {
-      height: 1400px;
+      height: 1300px;
     }
     .bg-text {
       display: flex;
       flex-direction: column;
+    }
+    br {
+      display: none;
     }
   }
   @media screen and (max-width: 750px) {
@@ -321,6 +324,9 @@ const Wrapper = styled.section`
   @media screen and (max-width: 420px) {
     .value-prop {
       padding: 20px 10px;
+    }
+    .bg-img {
+      height: 1400px;
     }
   }
 

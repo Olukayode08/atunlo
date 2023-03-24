@@ -185,6 +185,8 @@ const Story = styled.section`
     font-weight: lighter;
     line-height: 20px;
     text-align: justify;
+    text-justify: distribute;
+
   }
   .spacing {
     margin-top: 20px;

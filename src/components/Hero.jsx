@@ -91,7 +91,7 @@ const Wrapper = styled.section`
     align-items: center;
     margin: -10px 0 0 0;
     padding: 0;
-    height: 100vh;
+    height: 85vh;
     position: relative;
   }
   article {
@@ -99,13 +99,13 @@ const Wrapper = styled.section`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     opacity: 0;
   }
   img {
     object-fit: cover;
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     filter: blur(1px);
   }
   article.activeSlide {

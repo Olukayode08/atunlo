@@ -34,7 +34,7 @@ const Wrapper = styled.section`
     position: fixed;
     cursor: pointer;
     z-index: 999;
-    bottom: 10px;
+    bottom: 5px;
     right: 0;
     padding: 5px;
   }
