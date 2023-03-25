@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser';
 import { Contact, Whatsapp } from '../components'
 import styled from 'styled-components'
 import envelope from '../assets/envelope.png'
@@ -8,18 +9,18 @@ import watermark from '../assets/watermark.png'
 
 
 const ContactPage = () => {
-  const [details, setdetails] = useState({
-    username: '',
-    email: '',
-    password: '',
-    phone: '',
-    country: '',
-  })
+    const form = useRef()
 
   const submitDetails = (e) => {
-    const name = e.target.name
-    const value = e.target.value
-    setdetails({ ...details, [name]: value })
+    e.preventDefault()
+
+    emailjs.sendForm(
+      'service_wep21d5',
+      'template_43e9y49',
+      form.current,
+      'XtRzW6PtmW2LCiHl9'
+    )
+    e.target.reset()
   }
   return (
     <>
@@ -35,7 +36,7 @@ const ContactPage = () => {
                   Make sure you enter the (<span>*</span>) required information
                   where indicated.
                 </h1>
-                <form onSubmit={submitDetails}>
+                <form ref={form} onSubmit={submitDetails}>
                   <h2>
                     <span>*</span>Your Name:
                   </h2>
@@ -44,8 +45,6 @@ const ContactPage = () => {
                     type='name'
                     required
                     name='name'
-                    value={details.name}
-                    onChange={submitDetails}
                   />
                   <h2>
                     <span>*</span>Your Email:
@@ -54,8 +53,6 @@ const ContactPage = () => {
                     className='box-s'
                     type='email'
                     name='email'
-                    value={details.email}
-                    onChange={submitDetails}
                     required
                   />
                   <h2>
@@ -65,11 +62,8 @@ const ContactPage = () => {
                   <textarea
                     className='comment box-s'
                     required
-                    name='text'
+                    name='message'
                     type='text'
-                    value={details.comment}
-                    onChange={submitDetails}
-                    id=''
                     cols='30'
                     rows='10'
                   ></textarea>
