@@ -130,7 +130,7 @@ const Story = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 1400px;
+    height: 1500px;
     width: 100%;
     margin: 0 auto;
     opacity: 0.05;
@@ -291,7 +291,7 @@ const Story = styled.section`
       margin: 0 auto;
     }
     .bg-img {
-      height: 2100px;
+      height: 2250px;
     }
   }
   @media screen and (max-width: 930px) {

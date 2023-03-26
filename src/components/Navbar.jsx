@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { Squash as Hamburger } from 'hamburger-react'
 import styled from 'styled-components'
 import { Atunlo } from '../Context'

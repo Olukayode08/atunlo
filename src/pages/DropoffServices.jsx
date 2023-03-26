@@ -113,7 +113,6 @@ const WasteDropoff = styled.section`
     font-weight: lighter;
     text-align: justify;
   }
-
   @media screen and (max-width: 1000px) {
     .sec-two {
       display: flex;
@@ -136,9 +135,10 @@ const WasteDropoff = styled.section`
       text-align: center;
     }
     .bg-img {
-      height: 2200px;
+      height: 1950px;
     }
   }
+ 
   @media screen and (max-width: 500px) {
     img {
       width: 350px;
@@ -148,6 +148,9 @@ const WasteDropoff = styled.section`
     .sec-two-r {
       width: 350px;
       margin: 25px 0;
+    }
+        .bg-img {
+      height: 2100px;
     }
   }
   @media screen and (max-width: 320px) {

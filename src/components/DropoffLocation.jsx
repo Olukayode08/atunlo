@@ -56,8 +56,8 @@ const DropoffLocation = () => {
 const Wrapper = styled.section`
   margin-top: 60px;
   section {
-    width: 85%;
     margin: 0 auto;
+    width: 90%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -70,7 +70,6 @@ const Wrapper = styled.section`
 
   main {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
   }
@@ -106,7 +105,7 @@ const Wrapper = styled.section`
   .address {
     margin-bottom: 28px;
   }
-  span{
+  span {
     font-size: 15px;
     opacity: 0.78;
     font-weight: 100;
@@ -114,15 +113,19 @@ const Wrapper = styled.section`
   h4 {
     font-weight: 400;
   }
+
   @media screen and (max-width: 1200px) {
     h2 {
       margin-left: 0;
       text-align: center;
     }
-  }
-  @media screen and (max-width: 1200px) {
     main {
       margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    main {
+      flex-direction: column;
     }
   }
   @media screen and (max-width: 800px) {
@@ -132,6 +135,7 @@ const Wrapper = styled.section`
 
     article {
       margin: 20px 0px;
+      width: 350px;
     }
   }
   @media screen and (max-width: 320px) {
