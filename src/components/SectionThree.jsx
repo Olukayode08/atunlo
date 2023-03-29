@@ -213,6 +213,20 @@ const Wrapper = styled.section`
     text-align: left;
     margin-left: 10px;
   }
+  @media screen and (min-width: 1800px) {
+    .bg-img {
+      height: 90vh;
+    }
+    .bg-text {
+      width: 1200px;
+      justify-content: center;
+      align-items: center;
+    }
+    .value-prop,
+    .brief-desc {
+      width: 700px;
+    }
+  }
 
   @media screen and (max-width: 1200px) {
     .bg-text,

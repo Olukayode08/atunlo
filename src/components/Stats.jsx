@@ -63,6 +63,11 @@ const Wrapper = styled.section`
       background: #8a8a8a;
     }
   }
+  @media screen and (min-width: 1500px) {
+    section {
+      width: 700px;
+    }
+  }
   @media screen and (max-width: 1000px) {
     section {
       width: 70%;

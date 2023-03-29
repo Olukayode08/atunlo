@@ -254,6 +254,12 @@ const ContactUs = styled.section`
     width: 100%;
     height: 80vh;
   }
+  @media screen and (min-width: 1600px) {
+    .bg-text {
+      width: 1300px;
+      justify-content: space-evenly;
+    }
+  }
   @media screen and (max-width: 1000px) {
     .bg-text {
       flex-direction: column-reverse;

@@ -11,24 +11,24 @@ import { Link } from 'react-router-dom'
 import { Atunlo } from '../Context'
 
 const Footer = () => {
-  const { setColor, setColorAbout} = useContext(Atunlo)
+  const { setColor, setColorAbout } = useContext(Atunlo)
   const [modal, setModal] = useState(false)
   const [email, setEmail] = useState('')
   const submitForm = (e) => {
     e.preventDefault()
   }
-    const aboutService = () => {
-      setColor(false)
-      setColorAbout(false)
-    }
-       const aboutTeam = () => {
-         setColor(false)
-         setColorAbout(true)
-       }
-        const aboutLocate = () => {
-          setColor(true)
-          setColorAbout(false)
-        }
+  const aboutService = () => {
+    setColor(false)
+    setColorAbout(false)
+  }
+  const aboutTeam = () => {
+    setColor(false)
+    setColorAbout(true)
+  }
+  const aboutLocate = () => {
+    setColor(true)
+    setColorAbout(false)
+  }
 
   const emailValidation = (e) => {
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
@@ -379,6 +379,13 @@ const Wrapper = styled.section`
     max-width: 400px;
     margin: 0 auto;
   }
+  @media screen and (min-width: 1600px) {
+    section,
+    article,
+    footer {
+      width: 1500px;
+    }
+  }
   @media screen and (max-width: 900px) {
     footer,
     .footer {
@@ -416,6 +423,7 @@ const Wrapper = styled.section`
       font-size: 14px;
     }
   }
+
   @media screen and (max-width: 650px) {
     .subscribe {
       width: 370px;

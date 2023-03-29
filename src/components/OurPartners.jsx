@@ -43,6 +43,11 @@ const Wrapper = styled.section`
     width: 20%;
     margin: 10px;
   }
+  @media screen and (min-width: 1500px) {
+    img {
+      width: 250px;
+    }
+  }
   @media screen and (max-width: 900px) {
     .container {
       flex-direction: column;

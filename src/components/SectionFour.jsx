@@ -75,7 +75,11 @@ const Wrapper = styled.section`
       text-align: center;
     }
   }
-
+  @media screen and (min-width: 1500px) {
+    .three-rs {
+      width: 1200px;
+    }
+  }
   @media screen and (max-width: 900px) {
     .three-rs {
       width: 90%;

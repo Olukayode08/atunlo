@@ -83,6 +83,11 @@ const Team = styled.section`
     text-justify: distribute;
     width: 90%;
   }
+  @media screen and (min-width: 1600px) {
+    .bg-text {
+      width: 1300px;
+    }
+  }
   @media screen and (max-width: 900px) {
     img {
       display: none;

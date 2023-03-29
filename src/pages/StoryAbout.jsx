@@ -186,7 +186,6 @@ const Story = styled.section`
     line-height: 20px;
     text-align: justify;
     text-justify: distribute;
-
   }
   .spacing {
     margin-top: 20px;
@@ -258,6 +257,12 @@ const Story = styled.section`
     line-height: 25px;
     opacity: 0.75;
     margin: 8px 25px;
+  }
+  @media screen and (min-width: 1600px) {
+    .sec-two {
+      width: 1500px;
+      justify-content: space-evenly;
+    }
   }
   @media screen and (max-width: 1200px) {
     .bg-text {

@@ -412,6 +412,11 @@ const Wrapper = styled.section`
   .c-color {
     color: #4cc800;
   }
+  @media screen and (min-width: 1600px) {
+    nav {
+      padding: 0 200px;
+    }
+  }
   @media screen and (min-width: 1150px) {
     .open-links,
     .mobile,
