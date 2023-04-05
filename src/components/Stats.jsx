@@ -17,7 +17,7 @@ const Stats = () => {
           </div>
           <div className='line'></div>
           <div className='stats'>
-            <h4>10,000</h4>
+            <h4>1,000</h4>
             <h2>
               Tonnes preordered by <br /> 3 offtakers
             </h2>
