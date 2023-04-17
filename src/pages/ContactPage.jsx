@@ -40,21 +40,11 @@ const ContactPage = () => {
                   <h2>
                     <span>*</span>Your Name:
                   </h2>
-                  <input
-                    className='box-s'
-                    type='name'
-                    required
-                    name='name'
-                  />
+                  <input className='box-s' type='name' required name='name' />
                   <h2>
                     <span>*</span>Your Email:
                   </h2>
-                  <input
-                    className='box-s'
-                    type='email'
-                    name='email'
-                    required
-                  />
+                  <input className='box-s' type='email' name='email' required />
                   <h2>
                     <span>*</span>Comments and Questions
                   </h2>
@@ -70,10 +60,9 @@ const ContactPage = () => {
                   <div className='t-c'>
                     <input type='checkbox' required className='agree' />
                     <h5>
-                      <span>*</span>I agree that my data are stored and I can be
-                      called for information purposes or contacted by e-mail.
-                      The data will not be passed on to third parties. I agree
-                      with TERMS and CONDITIONS
+                      <span>*</span>By proceeding, you agree that your details
+                      can be stored and used for future research purposes. Note
+                      that your details will not not be passed to a third party.
                     </h5>
                   </div>
                   <button>Submit</button>
@@ -90,7 +79,7 @@ const ContactPage = () => {
                 </div>
                 <div className='mail'>
                   <a href='mailto:Operations@atunlotech.com'>
-                    Operations@atunlotech.com
+                    operations@atunlotech.com
                   </a>
                   <img src={envelope} alt='Atunlo' />
                 </div>
