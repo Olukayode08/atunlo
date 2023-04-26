@@ -164,7 +164,7 @@ const ContactUs = styled.section`
     resize: none;
     padding: 10px;
     font-size: 15px;
-    height: 250px;
+    height: 249px;
   }
   .box-s {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
