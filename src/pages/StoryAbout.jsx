@@ -322,7 +322,7 @@ const Story = styled.section`
       padding: 20px;
     }
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 730px) {
     .bg-text {
       width: 95%;
     }
