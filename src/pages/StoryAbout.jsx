@@ -322,7 +322,7 @@ const Story = styled.section`
       padding: 20px;
     }
   }
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 700px) {
     .bg-text {
       width: 95%;
     }
@@ -371,8 +371,7 @@ const Story = styled.section`
   }
   @media screen and (max-width: 420px) {
     .value-prop {
-      width: 370px;
-      margin: 0 auto;
+      width: 340px;
     }
   }
   @media screen and (max-width: 320px) {
