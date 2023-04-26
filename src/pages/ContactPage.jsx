@@ -278,7 +278,18 @@ const ContactUs = styled.section`
       width: 6%;
     }
   }
+  @media screen and (max-width: 400px) {
+    h1{
+      text-align: center;
+    }
+    textarea,
+    .t-c,
+    input {
+      width: 300px;
+    }
+  }
   @media screen and (max-width: 320px) {
+
     textarea,
     .t-c,
     input {
