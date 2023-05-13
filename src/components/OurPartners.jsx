@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import mohinani from '../assets/Mohinani.png'
+import bio from '../assets/BioLogo.jpeg'
 import fme from '../assets/FME.png'
 
 
@@ -14,7 +14,7 @@ const OurPartners = () => {
             <h1>Our Partners</h1>
             <div className='container'>
               <img src={fme} alt='Atunlo' />
-              <img src={mohinani} alt='Atunlo' />
+              <img src={bio} alt='Atunlo' />
             </div>
           </div>
         </Wrapper>
