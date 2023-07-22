@@ -20,7 +20,7 @@ const SectionTwo = () => {
                 <h5>
                   Atunlo partners with residential, commercial and institutional
                   waste generators, as well as municipal waste collectors whom
-                  we pay to collect used PET bottles for sale to offtakers.
+                  we pay to collect used PET bottles for recycling purposes.
                 </h5>
                 <Link className='location' to='#'>
                   Request pickup
